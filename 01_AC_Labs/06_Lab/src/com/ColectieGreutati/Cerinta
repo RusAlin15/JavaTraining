@@ -1,0 +1,28 @@
+Consideram o colect¸ie de greutat¸i ˆn cadrul careia elementele sunt ret¸inute sub
+forma unui tablou. Fiecare greutate are o anumita capacitate care poate fi obt¸inuta
+apelˆand metoda public int capacitate() pe care o are fiecare greutate. Greutat¸ile
+pot fi de urmatoarele tipuri:
+• simple, a caror capacitate este setata prin constructor.
+• duble, adica formate din 2 greutat¸i ale caror capacitat¸i sunt setate prin constructor
+iar capacitatea acestui tip de greutate e egala cu suma capacitat¸ilor
+celor doua greutat¸i cont¸inute.
+• multiple, care reprezinta o ˆn¸siruire de greutat¸i simple, duble, ¸si/sau eventual
+alte greutat¸i multiple. Cu alte cuvinte, o greutate multipla reprezinta o
+ˆn¸siruire de greutat¸i. Capacitatea unei greutat¸i de acest tip este egala cu suma
+capacitat¸ilor greutat¸ilor componente. Componentele acestui tip de greutate
+se seteaza prin constructorul clasei, dar se poate alege ¸si o alta modalitate de
+inserare a componentelor.
+Sistemul mai cuprinde ¸si clasa ColectieGreutati care cont¸ine un tablou de greutat¸i
+(acestea reprezinta cont¸inutul efectiv al colect¸iei). Clasa ColectieGreutati va cont¸ine
+urmatoarele metode:
+• public void adauga(Greutate g): are rolul de a adauga elemente ˆn tabloul de
+greutat¸i. Presupunem ca o colect¸ie de greutat¸i are o capacitate maxima de
+greutat¸i care se seteaza prin intermediul constructorului.
+• public double medie(): returneaza greutatea medie a colect¸iei (capacitate/numar
+de greutati).
+Se cere:
+• diagrama UML pentru clasele prezentate mai sus.
+• implementarea claselor prezentate ˆn diagrama.
+o metoda main ˆn care se va crea un obiect ColectieGreutati, cˆateva greutat¸i
+simple, duble ¸si multiple care vor fi adaugate colect¸iei de greutat¸i. Se va afi¸sa
+greutatea medie a colect¸iei.

@@ -1,0 +1,50 @@
+Dorim sa modelam printr-un program Java mai multe tipuri de avioane care formeaza
+flota aeriana a unei anumite tari. S¸tim ca aceasta t¸ara dispune de avioane de calatori
+¸si de avioane de lupta. Avioanele de calatori sunt de mai multe tipuri, anume: Boeing
+sau Concorde. De asemenea, avioanele de lupta pot fi Mig-uri sau TomCat-uri
+(F-14).
+Fiecare tip de avion va fi modelat printr-o clasa iar avioanele propriu-zise vor fi
+instant¸e ale claselor respective. Fiecare avion poate sa execute o anumita gama de
+operat¸ii ¸si proceduri, dupa cum se specifica mai jos. Se cere sa se ”construiasca”
+mai multe avioane de diferite tipuri ¸si sa se execute diferitele operat¸ii disponibile
+pentru fiecare avion.
+Fiecare avion trebuie sa cont¸ina un membru planeID de tip String ¸si o metoda public
+String getPlaneID() care sa returneze valoarea acestui membru, precum ¸si un membru
+totalEnginePower de tip ˆntreg ¸si o metoda public int getTotalEnginePower()
+care sa returneze valoarea acestui membru. Deoarece fiecare avion trebuie sa poata
+decola, zbura ¸si ateriza, este normal ca pentru fiecare avion sa putem apela metodele
+public void takeOff(), public void land() ¸si public void fly(). Metoda takeOff() va
+produce pe ecran textul ”Initiating takeoff procedure - Starting engines - Accelerating
+down the runway - Taking off - Retracting gear - Takeoff complete”. Metoda
+fly() va produce pe ecran textul ”Flying”. Metoda land() va produce pe ecran textul
+”Initiating landing procedure - Enabling airbrakes - Lowering gear - Contacting
+runway - Decelerating - Stopping engines - Landing complete”.
+Avioanele de calatori ¸si numai acestea trebuie sa cont¸ina un membru maxPassengers
+de tip ˆntreg ¸si o metoda public int getMaxPassengers() care sa returneze valoarea
+acestui membru. Avioanele de calatori de tip Concorde sunt supersonice deci are
+sens sa apelam pentru un obiect de acest tip metodele public void goSuperSonic() ¸si
+public void goSubSonic() care vor produce pe ecran ”Supersonic mode activated”,
+respectiv ” Supersonic mode deactivated”.
+Avioanele de lupta ¸si numai acestea au posibilitatea de a lansa rachete asupra
+diferitelor t¸inte, de aceea pentru orice avion de lupta trebuie sa putem apela metoda
+public void launchMissile() care va produce pe ecran urmatorul text ”Initiating
+missile launch procedure - Acquiring target - Launching missile - Breaking away -
+Missile launch complete”. Avioanele Mig ¸si numai acestea au geometrie variabila
+pentru zbor de mare viteza, respectiv pentru zbor normal. Clasa corespunzatoare
+trebuie sa cont¸ina metodele public void highSpeedGeometry() ¸si public void normal-
+Geometry() care vor produce pe ecran ”High speed geometry selected”, respectiv
+”Normal geometry selected”. Avioanele TomCat ¸si numai acestea au posibilitatea
+de realimentare ˆn zbor, deci pentru astfel de avioane are sens sa apelam o metoda
+public void refuel() care va produce pe ecran ”Initiating refueling procedure - Locating
+refueller - Catching up - Refueling - Refueling complete”.
+Fiecare din metodele de mai sus trebuie sa afi¸seze ID-ul avionului pentru care a
+fost apelata. Se va ˆncerca implementarea unei ierarhii de clase folosind relat¸ia de
+mo¸stenire, deoarece din cerint¸e rezulta ca o parte din funct¸ionalitate este comuna
+tuturor avioanelor ˆn timp ce o alta parte este specifica doar avioanelor de un anumit
+tip.
+Aleget¸i clasele care trebuie sa apara pe nivelele superioare ale ierarhiei ¸si gasit¸i
+o modalitate potrivita de a ˆmpart¸i metodele disponibile ˆntre clasele aplicat¸iei ˆn
+a¸sa fel incˆat sa beneficiat¸i de avantajele reutilizarii codului pe care le ofera relat¸ia
+de mo¸stenire. Argumentati alegerea facuta! Creat¸i ˆntr-o metoda main mai multe
+variabile de acela¸si tip ce vor referi diferitele tipuri de avioane. ˆIn acest scop utilizat¸i
+mo¸stenirea de tip!

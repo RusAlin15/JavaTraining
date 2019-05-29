@@ -1,0 +1,35 @@
+Se cere sa se modeleze o garnitura de tren. Se va defini ˆn acest scop o clasa Tren.
+Un obiect de tip Tren cont¸ine mai multe referint¸e spre obiecte de tip Vagon care
+sunt pastrate ˆntr-un tablou. Un vagon poate fi de 3 tipuri: CalatoriA, CalatoriB
+¸si Marfa. Despre garnitura de tren ¸si vagoane mai cunoa¸stem urmatoarele:
+• un tren poate cont¸ine maxim 15 vagoane, indiferent de tipul vagoanelor.
+• un vagon de tip CalatoriA
+– are capacitatea de 40 pasageri ¸si 300 colete po¸stale.
+– furnizeaza doua servicii pentru deschiderea, respectiv ˆnchiderea automata
+a u¸silor.
+• un vagon de tip CalatoriB
+– are capacitatea de 50 pasageri ¸si 400 colete po¸stale.
+– furnizeaza doua servicii pentru deschiderea, respectiv ˆnchiderea automata
+a u¸silor.
+– fiind un vagon mai nou, furnizeaza un serviciu automat pentru blocarea
+geamurilor.
+• un vagon de tip Marfa
+– are capacitatea de 400 colete po¸stale.
+– nu furnizeaza servicii pentru deschiderea, respectiv ˆnchiderea automata a
+u¸silor, aceste operat¸ii executˆandu-se manual
+Clasa Tren dispune de un constructor prin intermediul caruia se vor ata¸sa vagoanele
+constituente. Se cere:
+• sa se construiasca diagrama UML pentru clasele identificate pe baza descrierii
+anterioare.
+sa se implementeze clasa care modeleaza conceptul de vagon ˆmpreuna cu eventualele
+sale clase derivate. Se ment¸ioneaza ca apelurile serviciilor pentru deschiderea,
+respectiv ˆnchiderea u¸silor, blocarea geamurilor vor afi¸sa pe ecran
+un mesaj corespunzator, spre exemplu, apelul serviciului pentru blocarea geamurilor
+ar putea tipari “Geamurile s-au blocat”.
+• sa se implementeze o metoda pentru determinarea egalitat¸ii dintre doua trenuri,
+presupunˆandu-se ca doua trenuri sunt egale daca pot transporta acela¸si numar
+de colete, precum ¸si o metoda pentru afi¸sarea tipurilor de vagoane existente
+ˆntr-un tren (ATENT¸ IE: Tipul unui vagon trebuie determinat prin apeluri
+polimorfice).
+• sa se scrie o metoda main pentru exemplificarea apelurilor celor 2 metode
+definite la punctul precedent.

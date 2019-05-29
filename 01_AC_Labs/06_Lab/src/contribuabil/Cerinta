@@ -1,0 +1,36 @@
+La ghi¸seul de ˆncasari a taxelor locale se prezinta un contribuabil. Operatorul de la
+ghi¸seu cauta contribuabilul (dupa nume sau CNP), ˆi spune cˆat are de platit pentru
+anul curent ˆn total pentru toate proprietat¸ile dupa care poate ˆncasa bani (o suma
+totala sau part¸iala). Fiecare contribuabil poate det¸ine mai multe proprietat¸i: cladiri
+¸si/sau terenuri. Fiecare proprietate e situata la o adresa (o adresa are strada ¸si
+numar). Suma datorata ˆn fiecare an pentru fiecare tip de proprietate se calculeaza
+ˆn felul urmator:
+• pentru cladire: 500 * suprafat¸a cladirii(m2)
+• pentru teren: 350 * suprafat¸a terenului(m2) / rangul localitat¸ii ˆn care se afla
+terenul. Rangul unei localitat¸i poate fi 1, 2, 3 sau 4.
+Contribuabilul, indiferent daca plate¸ste sau nu, poate solicita un flutura¸s cu toate
+proprietat¸ile pe care le det¸ine alaturi de suma pe care trebuie sa o plateasca ˆn anul
+curent pentru o proprietate (flutura¸sul arata la fel indiferent daca pentru anul ˆn
+curs contribuabilul a achitat ceva sau nu). Flutura¸sul are urmatoarea structura:
+
+Contribuabil: Ion Popescu
+Proprietati
+Cladire: Strada V Parvan Nr. 2
+Suprafata: 20
+Cost: 10000
+Teren: Strada V. Parvan Nr. 2
+Suprafata: 10, Rang: 1
+Cost: 3500
+Cladire: Strada Lugoj Nr. 4
+Suprafata: 25
+Cost: 12500
+Suma totala: 26000
+
+Se cere:
+• sa se construiasca diagrama UML pentru clasele necesare la realizarea operat¸iilor
+descrise anterior.
+• sa se implementeze o parte din clasele identificate mai sus astfel ˆncˆat sa
+poata fi executata operat¸ia: operatorul, dupa ce a gasit contribuabilul Ion
+Popescu, afi¸seaza flutura¸sul coresupunzator acestui contribuabil. ˆIn metoda
+main se instant¸iaza clasa ce modeleaza conceptul de contribuabil, se seteaza
+proprietat¸ile aferente acestuia dupa care se face afi¸sarea lor.
