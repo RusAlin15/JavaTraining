@@ -1,5 +1,7 @@
 package homework.session02;
 
+import java.math.BigInteger;
+
 public class Weapon {
 	String name;
 	int firePower;
