@@ -3,6 +3,59 @@ package homework.session02;
 public class ClientArmy {
 
 	public static void main(String[] args) {
+		
+		ArmySquad[] armySquadURSS = createWeaponsURSS();
+		ArmySquad[] armySquadGermany = createWeaponsGermany();
+		
+		
+		Army armyURSS = new Army("URSS Army", armySquadURSS);
+		Army armyGermany = new Army("Germany Army", armySquadGermany);
+		
+		System.out.println(armyGermany.toString());
+		System.out.println(armyURSS.toString());	
+	}
+
+	private static ArmySquad[] createWeaponsGermany() {
+		Soldier[] soldiersGermany1 = {
+				new Soldier("Ralf"),
+				new Soldier("Fleishman"),
+				new Soldier("Ralf"),
+				new Soldier("Fleishman"),
+		};
+		Soldier[] soldiersGermany2 = {
+				new Soldier("Alex"),
+				new Soldier("Avram"),
+				new Soldier("Avram"),
+		};
+		Tank[] tanksGermany = {
+				new Tank("Panzer IV",3,40 ),
+				new Tank("Panther",4,90),
+		};
+		WarShip[] warShipsGermany = {
+				new WarShip("Falke",62,878),
+				new WarShip("Condor",52,478),
+		};
+		Submarine[] submarinesGermany = {
+				new Submarine("Bold", 340),
+				new Submarine("Karlz", 520),
+		};
+		Aircraft[] aircraftsGermany = {
+				new Aircraft("Fokker",655,5), //
+				new Aircraft("Junkers - 3", 702, 21), //
+		};
+				
+		ArmySquad[] armySquadsGermany = {
+				new ArmySquad("Soldier Germany", soldiersGermany1),
+				new ArmySquad("Tanks Germany", tanksGermany),
+				new ArmySquad("Soldier Germany", soldiersGermany2),
+				new ArmySquad("WarShips Germany", warShipsGermany),
+				new ArmySquad("Submarines Germany", submarinesGermany),
+				new ArmySquad("Aircrafts Germany", aircraftsGermany),
+		};
+		return armySquadsGermany;
+	}
+
+	private static ArmySquad[] createWeaponsURSS() {
 		Soldier[] soldiersURSS = {
 				new Soldier("Ivan"),
 				new Soldier("Volodia")
@@ -31,43 +84,7 @@ public class ClientArmy {
 				new ArmySquad("Submarines URSS", submarinesURSS),
 				new ArmySquad("Aircrafts URSS", aircraftURSS),
 		};
-		
-						
-		Soldier[] soldiersGermany = {
-				new Soldier("Ralf"),
-				new Soldier("Fleishman"),
-		};
-		Tank[] tanksGermany = {
-				new Tank("Panzer IV",3,40 ),
-				new Tank("Panther",4,90),
-		};
-		WarShip[] warShipsGermany = {
-				new WarShip("Falke",62,878),
-				new WarShip("Condor",52,478),
-		};
-		Submarine[] submarinesGermany = {
-				new Submarine("Bold", 340),
-				new Submarine("Karlz", 520),
-		};
-		Aircraft[] aircraftsGermany = {
-				new Aircraft("Fokker",655,5), //
-				new Aircraft("Junkers - 3", 702, 21), //
-		};
-				
-		ArmySquad[] armySquadsGermany = {
-				new ArmySquad("Soldier URSS", soldiersGermany),
-				new ArmySquad("Tanks URSS", tanksGermany),
-				new ArmySquad("WarShips URSS", warShipsGermany),
-				new ArmySquad("Submarines URSS", submarinesGermany),
-				new ArmySquad("Aircrafts URSS", aircraftsGermany),
-		};
-		
-		Army armyURSS = new Army("URSS Army", armySquadURSS);
-		Army armyGermany = new Army("Germany Army", armySquadsGermany);
-		
-		System.out.println(armyGermany);
-		System.out.println(armyURSS);
-		
+		return armySquadURSS;
 	}
 
 }

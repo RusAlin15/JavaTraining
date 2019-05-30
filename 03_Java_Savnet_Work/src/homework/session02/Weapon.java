@@ -1,27 +1,25 @@
 package homework.session02;
 
-import java.math.BigInteger;
-
 public class Weapon {
-	private static String type;
+	private String type;
 	private String name;
 	private int firePower;
 	
 	
 	public Weapon(String name, String type, int firePower) {
 		this.name = name;
-		Weapon.type = type;
+		this.type = type;
 		this.firePower = firePower;
 	}
 
 
-	public static String getType() {
+	public String getType() {
 		return type;
 	}
 
 
-	public static void setType(String type) {
-		Weapon.type = type;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 
