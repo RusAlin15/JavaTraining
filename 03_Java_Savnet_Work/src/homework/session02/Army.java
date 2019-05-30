@@ -1,25 +1,27 @@
 package homework.session02;
 
-import java.math.BigInteger;
-
 public class Army {
-	String armyName;
-	Weapon[] weapons;
-	int firePower;
+	private String armyNname;
+	private ArmySquad[] armySquads;
+	private int firePower;
 	
-	public Army(String armyName, Weapon[] weapons) {
-		this.armyName = armyName;
-		this.weapons = weapons;		
+	public Army(String armyNname, ArmySquad[] armySquads) {
+		this.armyNname = armyNname;
+		this.armySquads = armySquads;
 		setFierePower();
 	}
 	
 	private void setFierePower () {
-		for(Weapon weapon : weapons) {
-			firePower += weapon.getFirePower();
+		for(ArmySquad squad : armySquads) {
+			firePower += squad.getFirePower();
 		}
-	}
+	}		
 	
 	public String toString() {
-		return armyName + " have " + firePower + " fiere power.";
+		return armyNname + " have " + firePower + " fiere power.";
 	}
+	
+
+	
+	
 }

@@ -1,8 +1,8 @@
 package homework.session02;
 
 public class Tank extends Weapon {
-	int missilesNumber;
-	int bulletsNumber;
+	private int missilesNumber;
+	private int bulletsNumber;
 	
 	public Tank(String name, int missiles, int bullets) {
 		super(name, (50*missiles) + bullets);

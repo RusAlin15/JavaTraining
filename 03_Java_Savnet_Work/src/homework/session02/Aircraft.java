@@ -1,8 +1,8 @@
 package homework.session02;
 
 public class Aircraft extends Weapon {
-	int missilesNumber;
-	int bombsNumber;
+	private int missilesNumber;
+	private int bombsNumber;
 	
 	public Aircraft(String name, int missilesNumber, int bombsNumber) {
 		super(name, (missilesNumber * 1000 + bombsNumber * 2000));

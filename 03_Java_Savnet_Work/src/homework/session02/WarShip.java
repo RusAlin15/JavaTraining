@@ -1,8 +1,8 @@
 package homework.session02;
 
 public class WarShip extends Weapon{
-	int cannonsNumber;
-	int missilesNumber;
+	private int cannonsNumber;
+	private int missilesNumber;
 	
 	public WarShip(String name, int cannonsNumber, int missilesNumber) {
 		super(name, (cannonsNumber * 100 + missilesNumber *1000));

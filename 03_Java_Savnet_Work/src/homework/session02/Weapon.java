@@ -3,8 +3,8 @@ package homework.session02;
 import java.math.BigInteger;
 
 public class Weapon {
-	String name;
-	int firePower;
+	private String name;
+	private int firePower;
 	
 	
 	public Weapon(String name, int firePower) {

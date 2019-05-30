@@ -1,4 +1,4 @@
-Se considera o armata compusa din urmatoarele entitati:
+Se considera o armata compusa din 	 urmatoarele entitati:
 1. Soldati, caracterizati prin nume
 2. Tancuri, caracterizate prin nume, numar de proiectile, numar de gloante
 3. Nave de razboi, caracterizate prin nume, numar de tunuri, numar de rachete   
