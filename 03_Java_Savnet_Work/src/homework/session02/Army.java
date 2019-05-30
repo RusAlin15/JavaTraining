@@ -9,7 +9,7 @@ public class Army {
 	Set< Map.Entry< String,ArmySquad> > st;	
 	
 	public Army(String armyNname, ArmySquad[] armySquads) {
-		this.setArmyNname(armyNname);
+		this.setArmyName(armyNname);
 		setArmySquads(armySquads);
 		setFierePower();
 	}
@@ -27,11 +27,11 @@ public class Army {
 		}
 	}
 	
-	public String getArmyNname() {
+	public String getArmyName() {
 		return armyNname;
 	}
 
-	public void setArmyNname(String armyNname) {
+	public void setArmyName(String armyNname) {
 		this.armyNname = armyNname;
 	}
 
@@ -50,8 +50,9 @@ public class Army {
 	public String toString() {
 		String str = "";
 		for (Map.Entry< String,ArmySquad> me :  st) { 
-	           str += (me.getKey() + ":" + (me.getValue().getFirePower()) + " "); 
-	       } 
+	           str += (me.getKey() + ":" + (me.getValue().getFirePower()) + " " 
+	        		   + me.getValue().getArmyName()) + " \\ "; 
+	       }
 		return str;
 	}
 

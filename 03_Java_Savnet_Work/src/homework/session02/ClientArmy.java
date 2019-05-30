@@ -11,14 +11,13 @@ public class ClientArmy {
 		Army armyURSS = new Army("URSS Army", armySquadURSS);
 		Army armyGermany = new Army("Germany Army", armySquadGermany);
 		
+
 		System.out.println(armyGermany.toString());
 		System.out.println(armyURSS.toString());	
 	}
 
 	private static ArmySquad[] createWeaponsGermany() {
 		Soldier[] soldiersGermany1 = {
-				new Soldier("Ralf"),
-				new Soldier("Fleishman"),
 				new Soldier("Ralf"),
 				new Soldier("Fleishman"),
 		};
@@ -45,13 +44,20 @@ public class ClientArmy {
 		};
 				
 		ArmySquad[] armySquadsGermany = {
-				new ArmySquad("Soldier Germany", soldiersGermany1),
+				new ArmySquad("Soldier Germany1", soldiersGermany1),
 				new ArmySquad("Tanks Germany", tanksGermany),
-				new ArmySquad("Soldier Germany", soldiersGermany2),
+				new ArmySquad("Soldier Germany2", soldiersGermany2),
 				new ArmySquad("WarShips Germany", warShipsGermany),
 				new ArmySquad("Submarines Germany", submarinesGermany),
+				new ArmySquad("Soldier Germany", soldiersGermany1),
 				new ArmySquad("Aircrafts Germany", aircraftsGermany),
 		};
+		
+		ArmySquad gr1 = new ArmySquad("Soldier Germany", soldiersGermany1);
+		ArmySquad gr2 = new ArmySquad("Soldier Germany1", soldiersGermany2);
+		ArmySquad gr3 = gr1.addition(gr2);
+		System.out.println(gr3);
+		
 		return armySquadsGermany;
 	}
 
