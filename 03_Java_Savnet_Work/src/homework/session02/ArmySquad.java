@@ -5,6 +5,7 @@ import java.math.BigInteger;
 public class ArmySquad{
 	
 	private String armyNname;
+	private static String squadType;
 	private Weapon[] weapons;
 	private int firePower;
 	

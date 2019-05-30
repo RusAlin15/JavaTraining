@@ -3,7 +3,7 @@ package homework.session02;
 public class Soldier extends Weapon{
 
 	public Soldier(String name) {
-		super(name, 1);
+		super(name, "Soldier", 1);
 	}
 
 }
