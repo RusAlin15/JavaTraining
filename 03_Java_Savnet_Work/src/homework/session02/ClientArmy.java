@@ -54,9 +54,10 @@ public class ClientArmy {
 		};
 		
 		ArmySquad gr1 = new ArmySquad("Soldier Germany", soldiersGermany1);
-		ArmySquad gr2 = new ArmySquad("Soldier Germany1", soldiersGermany2);
+		ArmySquad gr2 = new ArmySquad("Soldier Germany1",submarinesGermany);
 		ArmySquad gr3 = gr1.addition(gr2);
 		System.out.println(gr3);
+		System.out.println(gr3.getFirePower());
 		
 		return armySquadsGermany;
 	}

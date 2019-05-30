@@ -35,10 +35,12 @@ public class ArmySquad{
 	}
 	
 	public ArmySquad addition(ArmySquad squad2) {
-		this.armyName += " & " + squad2.getArmyName();
-		for(Weapon weapon : squad2.getWeaponsList()) {
-			weaponsList.add(weapon);
-			firePower += weapon.getFirePower();
+		if(this.getType().equals(squad2.getType())) {
+			this.armyName += " & " + squad2.getArmyName();
+			for(Weapon weapon : squad2.getWeaponsList()) {
+				weaponsList.add(weapon);
+				firePower += weapon.getFirePower();
+			}			
 		}
 		return this;
 	}
