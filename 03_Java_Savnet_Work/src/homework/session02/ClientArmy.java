@@ -4,94 +4,87 @@ public class ClientArmy {
 
 	public static void main(String[] args) {
 		
-		ArmySquad[] armySquadURSS = createWeaponsURSS();
-		ArmySquad[] armySquadGermany = createWeaponsGermany();
+		ArmySquad[] armySquadStark = createSquadsStark();
+		ArmySquad[] armySquadLannister = createSquadLannister();
 		
 		
-		Army armyURSS = new Army("URSS Army", armySquadURSS);
-		Army armyGermany = new Army("Germany Army", armySquadGermany);
+		Army armyStark = new Army("URSS Army", armySquadStark);
+		Army armyLannister = new Army("Lannister", armySquadLannister);
 		
 
-		System.out.println(armyGermany.toString());
-		System.out.println(armyURSS.toString());	
+		System.out.println(armyLannister.toString());
+		System.out.println(armyStark.toString());
+		
 	}
 
-	private static ArmySquad[] createWeaponsGermany() {
-		Soldier[] soldiersGermany1 = {
+	private static ArmySquad[] createSquadLannister() {
+		Soldier[] soldierLannister = {
 				new Soldier("Ralf"),
 				new Soldier("Fleishman"),
 		};
-		Soldier[] soldiersGermany2 = {
+		Soldier[] soldierLannister2 = {
 				new Soldier("Alex"),
 				new Soldier("Avram"),
-				new Soldier("Avram"),
+				new Soldier("Rus"),
 		};
-		Tank[] tanksGermany = {
+		Tank[] tankLannister = {
 				new Tank("Panzer IV",3,40 ),
 				new Tank("Panther",4,90),
 		};
-		WarShip[] warShipsGermany = {
+		WarShip[] warShipLannister = {
 				new WarShip("Falke",62,878),
 				new WarShip("Condor",52,478),
 		};
-		Submarine[] submarinesGermany = {
+		Submarine[] submarineLannister = {
 				new Submarine("Bold", 340),
 				new Submarine("Karlz", 520),
 		};
-		Aircraft[] aircraftsGermany = {
+		Aircraft[] aircraftLannister = {
 				new Aircraft("Fokker",655,5), //
 				new Aircraft("Junkers - 3", 702, 21), //
 		};
 				
 		ArmySquad[] armySquadsGermany = {
-				new ArmySquad("Soldier Germany1", soldiersGermany1),
-				new ArmySquad("Tanks Germany", tanksGermany),
-				new ArmySquad("Soldier Germany2", soldiersGermany2),
-				new ArmySquad("WarShips Germany", warShipsGermany),
-				new ArmySquad("Submarines Germany", submarinesGermany),
-				new ArmySquad("Soldier Germany", soldiersGermany1),
-				new ArmySquad("Aircrafts Germany", aircraftsGermany),
-		};
-		
-		ArmySquad gr1 = new ArmySquad("Soldier Germany", soldiersGermany1);
-		ArmySquad gr2 = new ArmySquad("Soldier Germany1",submarinesGermany);
-		ArmySquad gr3 = gr1.addition(gr2);
-		System.out.println(gr3);
-		System.out.println(gr3.getFirePower());
-		
+				new ArmySquad("Lannis", soldierLannister),
+				new ArmySquad("Panzi 4", tankLannister),
+				new ArmySquad("Loris", soldierLannister2),
+				new ArmySquad("Navy 44", warShipLannister),
+				new ArmySquad("Under u2", submarineLannister),
+				new ArmySquad("Skyjets 4", aircraftLannister),
+		};		
 		return armySquadsGermany;
 	}
 
-	private static ArmySquad[] createWeaponsURSS() {
-		Soldier[] soldiersURSS = {
+	private static ArmySquad[] createSquadsStark() {
+		Soldier[] soldierStark = {
 				new Soldier("Ivan"),
 				new Soldier("Volodia")
 		};
-		Tank[] tanksURSS = {
+		Tank[] tankStark = {
 				new Tank("T-24",3,20 ),
 				new Tank("T-35",4,40),
 		};
-		WarShip[] warShipsURSS = {
+		WarShip[] warShipStark = {
 				new WarShip("SSB",6,878),
 				new WarShip("SSGN",12,478),
 		};
-		Submarine[] submarinesURSS = {
+		Submarine[] submarineStark = {
 				new Submarine("Beluga", 240),
 				new Submarine("Juliet", 420),
 		};
-		Aircraft[] aircraftURSS = {
+		Aircraft[] aircraftStark = {
 				new Aircraft("Dolgushin", 65, 4),
 				new Aircraft("Yak - 3", 70, 6),
 		};
 				
-		ArmySquad[] armySquadURSS = {
-				new ArmySquad("Soldier URSS", soldiersURSS),
-				new ArmySquad("Tanks URSS", tanksURSS),
-				new ArmySquad("WarShips URSS", warShipsURSS),
-				new ArmySquad("Submarines URSS", submarinesURSS),
-				new ArmySquad("Aircrafts URSS", aircraftURSS),
+		ArmySquad[] armySquadsStark = {
+				new ArmySquad("Yolvodia 31", soldierStark),
+				new ArmySquad("Tahaj 12", tankStark),
+				new ArmySquad("WET 77", warShipStark),
+				new ArmySquad("WET-UR 32", submarineStark),
+				new ArmySquad("OverSkyj", aircraftStark),
 		};
-		return armySquadURSS;
+		return armySquadsStark;
 	}
 
 }

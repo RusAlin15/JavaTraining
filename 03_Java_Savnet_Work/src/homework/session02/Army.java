@@ -2,7 +2,7 @@ package homework.session02;
 import java.util.*; 
 
 public class Army {
-	private String armyNname;
+	private String armyName;
 	private int firePower;
 	
 	Map< String , ArmySquad > hm = new HashMap< String, ArmySquad >(); 
@@ -14,25 +14,25 @@ public class Army {
 		setFierePower();
 	}
 	
-	private void setArmySquads(ArmySquad[] armySquads) {
+	public void setArmySquads(ArmySquad[] armySquads) {
 		for(ArmySquad armySquad : armySquads) {
 			hm.put(armySquad.getType(), armySquad);
 		}
 		st = hm.entrySet(); 
 	}
 	
-	private void setFierePower () {
+	public void setFierePower () {
 		for (Map.Entry< String,ArmySquad> me :  st) {
 			firePower += me.getValue().getFirePower();
 		}
 	}
 	
 	public String getArmyName() {
-		return armyNname;
+		return armyName;
 	}
 
 	public void setArmyName(String armyNname) {
-		this.armyNname = armyNname;
+		this.armyName = armyNname;
 	}
 
 	public int getFirePower() {
@@ -48,11 +48,11 @@ public class Army {
 	}
 	
 	public String toString() {
-		String str = "";
+		String str = " Army "+ armyName + "{\n";
 		for (Map.Entry< String,ArmySquad> me :  st) { 
-	           str += (me.getKey() + ":" + (me.getValue().getFirePower()) + " " 
-	        		   + me.getValue().getArmyName()) + " \\ "; 
+	           str += "	" + (me.getValue().toString()) + "\n";
 	       }
+		str += "	} Total Army FirePower : " + firePower + "\n";
 		return str;
 	}
 

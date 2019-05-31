@@ -16,14 +16,14 @@ public class ArmySquad{
 		setFierePower();
 	}
 	
-	private void setWeaponsList(Weapon[] weapons) {
+	public void setWeaponsList(Weapon[] weapons) {
 		for(Weapon weapon : weapons) {
 			weaponsList.add(weapon);
 		}
 		
 	}
 
-	private void setFierePower () {
+	public void setFierePower () {
 		for(Weapon weapon : weaponsList) {
 			firePower += weapon.getFirePower();
 		}
@@ -63,10 +63,11 @@ public class ArmySquad{
 	}
 	
 	public String toString() {
-		String str = "";
+		String str = "Squad name: " + this.armyName + ", Type: " + this.type +" {\n";
 		for(Weapon weapon : weaponsList) {
-			str += armyName + " : " + weapon.getName() + " \n";
+			str += "		" + weapon.getType()  + " " + weapon.getName() + " : FirePower --> " +  weapon.getFirePower() + " \n";
 		}
+		str += "		} Squad " + armyName + " FirePower : " + this.firePower + "\n"; 
 		return str;
 	}
 }
