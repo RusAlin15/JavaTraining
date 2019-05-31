@@ -15,8 +15,13 @@ public class Army {
 	}
 	
 	public void setArmySquads(ArmySquad[] armySquads) {
+		
 		for(ArmySquad armySquad : armySquads) {
-			hm.put(armySquad.getType(), armySquad);
+			if(hm.get(armySquad.getType()) == null) {
+				hm.put(armySquad.getType(), armySquad);
+			} else {
+				hm.get(armySquad.getType()).addition(armySquad);
+			}
 		}
 		st = hm.entrySet(); 
 	}
@@ -43,8 +48,26 @@ public class Army {
 		this.firePower = firePower;
 	}
 	
-	public void attak(Army enemy) {
+	public void attakArmy(Army enemy) {
 		
+	}
+	
+	public void allyArmy(Army partner) {
+		for (Map.Entry< String,ArmySquad> me :  st) {
+			if(me.getKey()) {
+				hm.put(armySquad.getType(), armySquad);
+			} else {
+				hm.get(armySquad.getType()).addition(armySquad);
+			}
+		}
+		for(ArmySquad armySquad : partner) {
+			if(hm.get(armySquad.getType()) == null) {
+				hm.put(armySquad.getType(), armySquad);
+			} else {
+				hm.get(armySquad.getType()).addition(armySquad);
+			}
+		}
+		st = hm.entrySet();
 	}
 	
 	public String toString() {
@@ -55,7 +78,5 @@ public class Army {
 		str += "	} Total Army FirePower : " + firePower + "\n";
 		return str;
 	}
-
-
 		
 }

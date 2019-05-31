@@ -83,6 +83,7 @@ public class ClientArmy {
 				new ArmySquad("WET 77", warShipStark),
 				new ArmySquad("WET-UR 32", submarineStark),
 				new ArmySquad("OverSkyj", aircraftStark),
+				
 		};
 		return armySquadsStark;
 	}

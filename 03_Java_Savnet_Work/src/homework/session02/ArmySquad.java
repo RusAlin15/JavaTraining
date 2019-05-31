@@ -65,7 +65,8 @@ public class ArmySquad{
 	public String toString() {
 		String str = "Squad name: " + this.armyName + ", Type: " + this.type +" {\n";
 		for(Weapon weapon : weaponsList) {
-			str += "		" + weapon.getType()  + " " + weapon.getName() + " : FirePower --> " +  weapon.getFirePower() + " \n";
+			str += "		" + weapon.getType()  + " " + weapon.getName() + " : FirePower --> " //
+					+  weapon.getFirePower() + " \n";
 		}
 		str += "		} Squad " + armyName + " FirePower : " + this.firePower + "\n"; 
 		return str;
