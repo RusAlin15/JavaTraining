@@ -17,22 +17,19 @@ public class Army {
 	public Army(Army partner1, Army partner2) {
 		this.armyName = partner1.getArmyName() + " & " + partner2.getArmyName();
 		
-		for (Map.Entry< String,ArmySquad> partner1A :  partner1.st) {
-			for (Map.Entry< String,ArmySquad> partner2A :  partner2.st) {
-				
-				ArmySquad.allySquads(partner1A.getValue(), partner2A.getValue());
-			}
-			
-			for(ArmySquad armySquad : armySquads) {
-				if(hm.get(armySquad.getType()) == null) {
-					hm.put(armySquad.getType(), armySquad);
-				} else {
-					hm.put(armySquad.getType(), ArmySquad.allySquads(hm.get(armySquad.getType()), armySquad));
+				for (Map.Entry< String,ArmySquad> part1 :  partner1.st) {
+					hm.put(part1.getKey(), part1.getValue());
 				}
-			}
-			st = hm.entrySet(); 
-		}
-		}
+							
+				for(Map.Entry< String,ArmySquad> part2 :  partner2.st) {
+					if(hm.get(part2.getValue().getType()) == null) {
+						hm.put(part2.getKey(), part2.getValue());
+					} else {
+						hm.put(part2.getKey(), ArmySquad.allySquads(hm.get(part2.getValue().getType()), part2.getValue()));
+					}
+				}
+				st = hm.entrySet(); 
+				setFierePower();
 	}
 
 	public void setArmySquads(ArmySquad[] armySquads) {

@@ -22,12 +22,15 @@ public class ClientArmy {
 		System.out.println(armyLannister.getArmyName() + " : " + armyLannister.getFirePower());
 		System.out.println(armyFreeMen.getArmyName() + " : " + armyFreeMen.getFirePower());
 		System.out.println(armyAllie.getArmyName() + " : " + armyAllie.getFirePower());
-		
+		System.out.println();
 		
 		statisticAttak(armyLannister, armyStark,2000);
 		statisticAttak(armyStark, armyLannister,2000);
 		statisticAttak(armyLannister, armyFreeMen,2000);
 		statisticAttak(armyFreeMen, armyLannister,2000);
+		System.out.println();
+		statisticAttak(armyLannister, armyAllie,2000);
+		statisticAttak(armyAllie, armyLannister,2000);
 		
 		
 		
@@ -125,32 +128,32 @@ public class ClientArmy {
 
 	private static ArmySquad[] createSquadsFreeMen() {
 		Soldier[] soldierFreeMen = {
-				new Soldier("Ivan"),
-				new Soldier("Volodia")
+				new Soldier("RedHood"),
+				new Soldier("ARA")
 		};
 		Tank[] tankFreeMen = {
-				new Tank("T-24",3,20 ),
-				new Tank("T-35",40,40),
+				new Tank("XR-24",3,20 ),
+				new Tank("RRE-35",40,40),
 		};
 		WarShip[] warShipFreeMen = {
-				new WarShip("SSB",60,878),
-				new WarShip("SSGN",12,478),
+				new WarShip("Ssda",60,878),
+				new WarShip("S21N",12,478),
 		};
 		Submarine[] submarineFreeMan = {
-				new Submarine("Beluga", 740),
-				new Submarine("Juliet", 420),
+				new Submarine("B32c", 740),
+				new Submarine("JuJ", 420),
 		};
 		Aircraft[] aircraftFreeMen = {
-				new Aircraft("Dolgushin", 650, 4),
-				new Aircraft("Yak - 3", 70, 6),
+				new Aircraft("Dolgin", 650, 4),
+				new Aircraft("Yaask - 5", 70, 6),
 		};
 				
 		ArmySquad[] armySquadsFreeMen = {
-				new ArmySquad("Yolvodia 31", soldierFreeMen),
-				new ArmySquad("Tahaj 12", tankFreeMen),
-				new ArmySquad("WET 77", warShipFreeMen),
-				new ArmySquad("WET-UR 32", submarineFreeMan),
-				new ArmySquad("OverSkyj", aircraftFreeMen),
+				new ArmySquad("Yoia 31", soldierFreeMen),
+				new ArmySquad("YATaj 12", tankFreeMen),
+				new ArmySquad("WW@T 77", warShipFreeMen),
+				new ArmySquad("WEGH 32", submarineFreeMan),
+				new ArmySquad("OVWwrj", aircraftFreeMen),
 				
 		};
 		return armySquadsFreeMen;
