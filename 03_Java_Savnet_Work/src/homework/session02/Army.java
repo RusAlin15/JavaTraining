@@ -15,7 +15,7 @@ public class Army {
 	}
 	
 	public Army(Army partner1, Army partner2) {
-		this.armyName = partner1.getArmyName() + " & " + partner2.getArmyName();
+		this.armyName = "Alliance ( " +  partner1.getArmyName() + " & " + partner2.getArmyName() + " )";
 		
 				for (Map.Entry< String,ArmySquad> part1 :  partner1.st) {
 					hm.put(part1.getKey(), part1.getValue());
@@ -60,15 +60,12 @@ public class Army {
 	public int getFirePower() {
 		return firePower;
 	}
-
-	public void setFirePower(int firePower) {
-		this.firePower = firePower;
-	}
 	
 	public boolean attackArmy(Army enemy) {
 		   int myFP = this.getFirePower();
 		   int enemyFP =  enemy.getFirePower();
 		   int enemyTemporarFP;
+		   
 		   while ( myFP > 0 && enemyFP > 0 ){
 			   enemyTemporarFP = enemyFP;
 			   enemyFP  = (int) (enemyFP - myFP * Math.random());

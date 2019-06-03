@@ -18,7 +18,7 @@ public class ArmySquad{
 	
 	
 	public ArmySquad(ArmySquad squad1, ArmySquad squad2) {
-		this.armyName =(squad1.getArmyName() +  " & " + squad2.getArmyName());
+		this.armyName =("Alliance ( " + squad1.getArmyName() +  " & " + squad2.getArmyName()) + " )";
 		this.weaponsList = new ArrayList<Weapon>(squad1.getWeaponsList());
 		this.weaponsList.addAll(squad2.getWeaponsList());
 		setFierePower();

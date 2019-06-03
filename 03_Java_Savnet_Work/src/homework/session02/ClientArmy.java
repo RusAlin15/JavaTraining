@@ -11,29 +11,36 @@ public class ClientArmy {
 		Army armyStark = new Army("Stark", armySquadStark);
 		Army armyLannister = new Army("Lannister", armySquadLannister);
 		Army armyFreeMen = new Army("FreeMen", armySquadFreeMen);
-		Army armyAllie = Army.allyArmys(armyFreeMen, armyStark);
+		
+		Army armyAllie = Army.allyArmys(armyFreeMen, armyStark);  // ally two army
+		Army armyAllie2 = new Army(armyLannister, armyFreeMen);
 		
 		System.out.println(armyStark.toString());
 		System.out.println(armyLannister.toString());
 		System.out.println(armyFreeMen.toString());
 		System.out.println(armyAllie.toString());
 		
-		System.out.println(armyStark.getArmyName() + " : " + armyStark.getFirePower());
-		System.out.println(armyLannister.getArmyName() + " : " + armyLannister.getFirePower());
-		System.out.println(armyFreeMen.getArmyName() + " : " + armyFreeMen.getFirePower());
-		System.out.println(armyAllie.getArmyName() + " : " + armyAllie.getFirePower());
+		System.out.println(armyStark.getArmyName() + " : " + armyStark.getFirePower() + " FP ");
+		System.out.println(armyLannister.getArmyName() + " : " + armyLannister.getFirePower() + " FP ");
+		System.out.println(armyFreeMen.getArmyName() + " : " + armyFreeMen.getFirePower() + " FP ");
+		System.out.println(armyAllie.getArmyName() + " : " + armyAllie.getFirePower() + " FP ");
+		System.out.println(armyAllie2.getArmyName() + " : " + armyAllie2.getFirePower() + " FP ");
 		System.out.println();
 		
-		statisticAttak(armyLannister, armyStark,2000);
-		statisticAttak(armyStark, armyLannister,2000);
-		statisticAttak(armyLannister, armyFreeMen,2000);
-		statisticAttak(armyFreeMen, armyLannister,2000);
+		statisticAttak(armyLannister, armyStark,50);
+		statisticAttak(armyStark, armyLannister,50);
 		System.out.println();
-		statisticAttak(armyLannister, armyAllie,2000);
-		statisticAttak(armyAllie, armyLannister,2000);
 		
+		statisticAttak(armyLannister, armyFreeMen,50);
+		statisticAttak(armyFreeMen, armyLannister,50);		
+		System.out.println();
 		
+		statisticAttak(armyLannister, armyAllie,50);
+		statisticAttak(armyAllie, armyLannister,50);		
+		System.out.println();
 		
+		statisticAttak(armyStark, armyAllie2,50);
+		statisticAttak(armyAllie2, armyStark,50);		
 	}
 
 	
