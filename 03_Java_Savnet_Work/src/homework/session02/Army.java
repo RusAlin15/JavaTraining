@@ -5,22 +5,42 @@ public class Army {
 	private String armyName;
 	private int firePower;
 	
-	Map< String , ArmySquad > hm = new HashMap< String, ArmySquad >(); 
-	Set< Map.Entry< String,ArmySquad> > st;	
+	private Map< String , ArmySquad > hm = new HashMap< String, ArmySquad >(); 
+	private Set< Map.Entry< String,ArmySquad> > st;	
 	
 	public Army(String armyNname, ArmySquad[] armySquads) {
-		this.setArmyName(armyNname);
+		this.armyName = armyNname;
 		setArmySquads(armySquads);
 		setFierePower();
 	}
 	
-	public void setArmySquads(ArmySquad[] armySquads) {
+	public Army(Army partner1, Army partner2) {
+		this.armyName = partner1.getArmyName() + " & " + partner2.getArmyName();
 		
+		for (Map.Entry< String,ArmySquad> partner1A :  partner1.st) {
+			for (Map.Entry< String,ArmySquad> partner2A :  partner2.st) {
+				
+				ArmySquad.allySquads(partner1A.getValue(), partner2A.getValue());
+			}
+			
+			for(ArmySquad armySquad : armySquads) {
+				if(hm.get(armySquad.getType()) == null) {
+					hm.put(armySquad.getType(), armySquad);
+				} else {
+					hm.put(armySquad.getType(), ArmySquad.allySquads(hm.get(armySquad.getType()), armySquad));
+				}
+			}
+			st = hm.entrySet(); 
+		}
+		}
+	}
+
+	public void setArmySquads(ArmySquad[] armySquads) {
 		for(ArmySquad armySquad : armySquads) {
 			if(hm.get(armySquad.getType()) == null) {
 				hm.put(armySquad.getType(), armySquad);
 			} else {
-				hm.get(armySquad.getType()).addition(armySquad);
+				hm.put(armySquad.getType(), ArmySquad.allySquads(hm.get(armySquad.getType()), armySquad));
 			}
 		}
 		st = hm.entrySet(); 
@@ -48,12 +68,26 @@ public class Army {
 		this.firePower = firePower;
 	}
 	
-	public void attakArmy(Army enemy) {
-		
+	public boolean attackArmy(Army enemy) {
+		   int myFP = this.getFirePower();
+		   int enemyFP =  enemy.getFirePower();
+		   int enemyTemporarFP;
+		   while ( myFP > 0 && enemyFP > 0 ){
+			   enemyTemporarFP = enemyFP;
+			   enemyFP  = (int) (enemyFP - myFP * Math.random());
+			   myFP  = (int) (myFP - enemyTemporarFP * Math.random());				   
+		   }
+		   
+		   if(enemyFP > 0 ) {
+			   return false;
+		   } else {
+			   return true;
+		   }
 	}
 	
-	public void allyArmy(Army partner) {
-		
+	public static Army allyArmys(Army partner1, Army partner2) {
+		Army newArmy = new Army(partner1,partner2);
+		return newArmy;
 	}
 	
 	public String toString() {

@@ -11,8 +11,7 @@ public class Weapon {
 		this.type = type;
 		this.firePower = firePower;
 	}
-
-
+	
 	public String getType() {
 		return type;
 	}

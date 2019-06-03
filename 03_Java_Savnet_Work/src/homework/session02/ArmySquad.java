@@ -16,6 +16,13 @@ public class ArmySquad{
 		setFierePower();
 	}
 	
+	public ArmySquad(ArmySquad squad1, ArmySquad squad2) {
+		this.armyName =(squad1.getArmyName() +  " & " + squad2.getArmyName());
+		this.weaponsList = new ArrayList<Weapon>(squad1.getWeaponsList());
+		this.weaponsList.addAll(squad2.getWeaponsList());
+		setFierePower();
+	}
+
 	public void setWeaponsList(Weapon[] weapons) {
 		for(Weapon weapon : weapons) {
 			weaponsList.add(weapon);
@@ -29,23 +36,11 @@ public class ArmySquad{
 		}
 	}
 	
-	private List<Weapon> getWeaponsList() {
+	public List<Weapon> getWeaponsList() {
 
 		return weaponsList;
 	}
 	
-	public ArmySquad addition(ArmySquad squad2) {
-		if(this.getType().equals(squad2.getType())) {
-			this.armyName += " & " + squad2.getArmyName();
-			for(Weapon weapon : squad2.getWeaponsList()) {
-				weaponsList.add(weapon);
-				firePower += weapon.getFirePower();
-			}			
-		}
-		return this;
-	}
-	
-
 	public int getFirePower() {
 		return firePower;
 	}
@@ -60,6 +55,11 @@ public class ArmySquad{
 
 	public void setArmyName(String armyName) {
 		this.armyName = armyName;
+	}
+	
+	public static ArmySquad allySquads(ArmySquad squad1, ArmySquad squad2) {
+		ArmySquad newSquad = new ArmySquad(squad1, squad2);
+		return newSquad;
 	}
 	
 	public String toString() {
