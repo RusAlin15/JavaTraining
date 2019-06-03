@@ -133,19 +133,19 @@ public class ClientArmy {
 		};
 		Tank[] tankFreeMen = {
 				new Tank("XR-24",3,20 ),
-				new Tank("RRE-35",40,40),
+				new Tank("RRE-35",20,40),
 		};
 		WarShip[] warShipFreeMen = {
-				new WarShip("Ssda",60,878),
-				new WarShip("S21N",12,478),
+				new WarShip("Ssda",47,698),
+				new WarShip("S21N",12,378),
 		};
 		Submarine[] submarineFreeMan = {
-				new Submarine("B32c", 740),
-				new Submarine("JuJ", 420),
+				new Submarine("B32c", 560),
+				new Submarine("JuJ", 1420),
 		};
 		Aircraft[] aircraftFreeMen = {
-				new Aircraft("Dolgin", 650, 4),
-				new Aircraft("Yaask - 5", 70, 6),
+				new Aircraft("Dolgin", 250, 4),
+				new Aircraft("Yaask - 5", 55, 4),
 		};
 				
 		ArmySquad[] armySquadsFreeMen = {
