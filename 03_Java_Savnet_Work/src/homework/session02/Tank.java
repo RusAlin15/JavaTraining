@@ -9,6 +9,4 @@ public class Tank extends Weapon {
 		this.missilesNumber = missiles;
 		this.bulletsNumber = bullets;
 	}
-	
-
 }
