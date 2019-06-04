@@ -64,7 +64,7 @@ public class Army {
 	public boolean attackArmy(Army enemy) {
 		   int myFP = this.getFirePower();
 		   int enemyFP =  enemy.getFirePower();
-		   int enemyTemporarFP;
+		   int enemyTemporarFP;  
 		   
 		   while ( myFP > 0 && enemyFP > 0 ){
 			   enemyTemporarFP = enemyFP;
