@@ -1,6 +1,6 @@
 package homework.session02;
 
-public class Weapon {
+public abstract class Weapon {
 	private String type;
 	private String name;
 	private int firePower;
@@ -16,21 +16,9 @@ public class Weapon {
 		return type;
 	}
 
-
-	public void setType(String type) {
-		this.type = type;
-	}
-
-
 	public String getName() {
 		return name;
 	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 
 	public int getFirePower() {
 		return firePower;

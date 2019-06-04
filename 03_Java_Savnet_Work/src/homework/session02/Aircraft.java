@@ -1,7 +1,6 @@
 package homework.session02;
 
 public class Aircraft extends Weapon {
-	private static String type = "Aircraft";
 	private int missilesNumber;
 	private int bombsNumber;
 	

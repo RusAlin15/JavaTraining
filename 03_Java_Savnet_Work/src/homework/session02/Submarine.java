@@ -1,7 +1,6 @@
 package homework.session02;
 
 public class Submarine extends Weapon {
-	private static String type = "Submarine";
 	private int torpedosNumber;
 
 	public Submarine(String name, int torpedosNumber) {
