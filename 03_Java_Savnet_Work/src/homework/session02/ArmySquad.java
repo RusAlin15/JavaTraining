@@ -2,7 +2,7 @@ package homework.session02;
 
 import java.util.*;
 
-public class ArmySquad{
+public class ArmySquad {
 	
 	private String armyName;
 	private String type;
