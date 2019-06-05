@@ -66,6 +66,7 @@ public class ClientArmy {
 		Soldier[] soldierLannister = {
 				new Soldier("Ralf"),
 				new Soldier("Fleishman"),
+				new Tank("Panther",4,90),
 		};
 		Soldier[] soldierLannister2 = {
 				new Soldier("Alex"),
