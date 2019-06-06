@@ -16,8 +16,5 @@ public class Castle {
 	private int damage;
 	private int totalFights;
 	private int totalWonFights;
-	
-	
-	
-	// need to be descused maybe a Squad needed
+
 }

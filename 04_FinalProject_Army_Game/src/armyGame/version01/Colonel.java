@@ -8,10 +8,6 @@ public class Colonel extends Infantry{
 	public Colonel (String type, String colonelName, int citizensNeeded, int damage) {
 		super(type, 0);
 		this.colonelName = colonelName;	
-		
-		Catapult c;
-		Knight k;
-		Ballista b;
 	}
 
 	public int getSkill() {

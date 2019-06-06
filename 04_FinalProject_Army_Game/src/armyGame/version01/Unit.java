@@ -11,4 +11,6 @@ public abstract class Unit {
 		this.damage = damage;
 		this.citizensNeeded = citizensNeeded;
 	}
+	
+	
 }
