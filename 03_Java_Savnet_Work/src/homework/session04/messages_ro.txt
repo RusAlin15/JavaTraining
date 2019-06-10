@@ -1,0 +1,6 @@
+/message/change_ang=Schimba limba
+/message/selsectCurrentLanguage=Selectati limba curenta
+/message/romana=Romana
+/message/engleza=Engleza
+/message/params=Limba curenta este {0} si numarul corespunzator din enumeration-ul Language este {1}
+/message/exit=Iesire
