@@ -7,10 +7,11 @@ import java.util.Scanner;
 public class Menu extends MenuItem {
 
 	private List<MenuItem> items = new ArrayList<>();
-	Scanner scanner = new Scanner(System.in);
+	private Scanner scanner = new Scanner(System.in);
+	private MenuItem backAction;
 	
-	public Menu(String key, String option) {
-		super(key, option);
+	public Menu(String option, String key) {
+		super(option, key);
 	}
 	
 	public void addMenuItem(MenuItem item) {
@@ -30,6 +31,12 @@ public class Menu extends MenuItem {
 				System.out.println("Invalid option.");
 				continue;
 			}
+			
+
+			if(item == backAction) {
+				return;
+			}
+			
 			item.doAction();
 		}
 	}
@@ -42,7 +49,11 @@ public class Menu extends MenuItem {
 		}
 		return null;
 	}
-
+	
+	public void setBackActiom(MenuItem back) {
+		this.backAction = back;
+	}
+	
 	private void showMenu() {
 		for(MenuItem item : items) {
 			System.out.println(item.toString());

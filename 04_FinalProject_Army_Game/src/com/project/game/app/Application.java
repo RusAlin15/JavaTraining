@@ -13,6 +13,5 @@ public class Application {
 	private void run() {
 		FirstMenu firstMenu  = new FirstMenu("", "");
 		firstMenu.doAction();
-		
 	}
 }

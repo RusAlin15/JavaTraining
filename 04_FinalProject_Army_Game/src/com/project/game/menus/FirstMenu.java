@@ -4,27 +4,27 @@ import com.project.game.actions.AddPlayerAction;
 import com.project.game.actions.RemovePlayerAction;
 import com.project.game.actions.ViewPlayersAction;
 
-public class FirstMenu extends MenuItem {
-	
+public class FirstMenu extends Menu {
 	
 	public FirstMenu(String key, String option) {
-		super("", "");
+		super(key, option);
+		createMenu();
 	}	
 	
-	@Override
-	public void doAction() {
-		Menu players = new Menu("3","Players");
+	public void createMenu() {
 		
-		MenuItem addPlayer = new AddPlayerAction("1", "Add Player");
+		MenuItem selectPlayer = new AddPlayerAction("4", "Select Player");
+		MenuItem addPlayer = new AddPlayerAction("3", "Add Player");
 		MenuItem removePlayer = new RemovePlayerAction("2", "Remove Player");
-		MenuItem viewPlayers = new ViewPlayersAction("3", "View Players");
+		MenuItem viewPlayers = new ViewPlayersAction("1", "View Players");
 		BackMenu back = new BackMenu("0", "Back");
 		
-		players.addMenuItem(addPlayer);
-		players.addMenuItem(removePlayer);
-		players.addMenuItem(viewPlayers);
-		players.addMenuItem(back);
-		
+		this.addMenuItem(selectPlayer);
+		this.addMenuItem(addPlayer);
+		this.addMenuItem(removePlayer);
+		this.addMenuItem(viewPlayers);
+		this.addMenuItem(back);
+		this.setBackActiom(back);
 	}
-		
+
 }
