@@ -15,7 +15,7 @@ public class GenerateMainMenu extends CreateMenuAction {
 		MenuItem selectPlayer = new SelectPlayerAction("8", "Select Player");
 		MenuItem addPlayer = new AddPlayerAction("7", "Add Player");
 		MenuItem removePlayer = new RemovePlayerAction("6", "Remove Player");
-		BackMenu back = new BackMenu("0", "Back");
+		BackMenu back = new BackMenu("0", "Exit");
 		
 		this.addMenuItem(viewPlayers);
 		this.addMenuItem(selectPlayer);
