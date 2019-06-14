@@ -14,3 +14,4 @@ public class RusPitagoraChecker implements PitagoraChecker {
 	}
  
 }
+ 
