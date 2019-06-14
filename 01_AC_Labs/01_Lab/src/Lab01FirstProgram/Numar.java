@@ -7,7 +7,7 @@ public class Numar {
 	}
 	
 	Numar(int i){
-		
+		  
 		value = i;
 	}
 	
