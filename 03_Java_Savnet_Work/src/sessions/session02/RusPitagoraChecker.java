@@ -1,4 +1,4 @@
-package session.session02;
+package sessions.session02;
 
 public class RusPitagoraChecker implements PitagoraChecker {
 
