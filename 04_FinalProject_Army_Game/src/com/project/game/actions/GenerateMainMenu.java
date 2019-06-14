@@ -1,19 +1,17 @@
-package com.project.game.menus;
+package com.project.game.actions;
 
-import com.project.game.actions.AddPlayerAction;
-import com.project.game.actions.RemovePlayerAction;
-import com.project.game.actions.ViewPlayersAction;
+import com.project.game.menus.BackMenu;
+import com.project.game.menus.MenuItem;
 
-public class FirstMenu extends Menu {
+public class GenerateMainMenu extends GenerateMenuAction {
 	
-	public FirstMenu(String key, String option) {
+	public GenerateMainMenu(String key, String option) {
 		super(key, option);
-		createMenu();
 	}	
-	
-	public void createMenu() {
-		
-		MenuItem selectPlayer = new AddPlayerAction("4", "Select Player");
+
+	@Override
+	public void generateMenu() {
+		MenuItem selectPlayer = new SelectPlayerAction("4", "Select Player");
 		MenuItem addPlayer = new AddPlayerAction("3", "Add Player");
 		MenuItem removePlayer = new RemovePlayerAction("2", "Remove Player");
 		MenuItem viewPlayers = new ViewPlayersAction("1", "View Players");
@@ -26,5 +24,4 @@ public class FirstMenu extends Menu {
 		this.addMenuItem(back);
 		this.setBackActiom(back);
 	}
-
 }
