@@ -10,7 +10,7 @@ public class SelectPlayerAction extends MenuItem{
 
 	@Override
 	public void doAction() {
-		GenerateMenuAction playerMenu = new GeneratePlayerMenu("", "");
+		CreateMenuAction playerMenu = new GeneratePlayerMenu("", "");
 		playerMenu.generateMenu();
 		playerMenu.doAction();		
 	}

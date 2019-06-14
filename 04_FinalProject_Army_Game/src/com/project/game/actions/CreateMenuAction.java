@@ -2,9 +2,9 @@ package com.project.game.actions;
 
 import com.project.game.menus.Menu;
 
-public abstract class CreateMenu extends Menu {
+public abstract class CreateMenuAction extends Menu {
 
-	public CreateMenu(String option, String key) {
+	public CreateMenuAction(String option, String key) {
 		super(option, key);
 	}
 	
