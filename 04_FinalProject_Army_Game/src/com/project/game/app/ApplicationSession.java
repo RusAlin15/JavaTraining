@@ -1,6 +1,10 @@
 package com.project.game.app;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.List;
+
+import javax.xml.crypto.Data;
 
 import com.project.game.model.Database;
 import com.project.game.model.FileDatabase;
@@ -27,6 +31,18 @@ public class ApplicationSession {
 
 	public Serializer getSerializer() {
 		return serializer;
+	}
+
+	public void init() {
+		Database database;
+
+		try {
+			database = serializer.load();
+			this.database = database;
+		} catch (ClassNotFoundException | IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	
