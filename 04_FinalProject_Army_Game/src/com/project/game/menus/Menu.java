@@ -4,9 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import com.project.game.actions.AddArmyUnitsAction;
 import com.project.game.actions.AddPlayerAction;
+import com.project.game.actions.RemoveArmyUnitsAction;
 import com.project.game.actions.RemovePlayerAction;
+import com.project.game.actions.SelectArmyUnitsAction;
 import com.project.game.actions.SelectPlayerAction;
+import com.project.game.actions.ViewArmyUnitsAction;
 import com.project.game.actions.ViewPlayersAction;
 
 public class Menu extends MenuItem {
@@ -79,12 +83,12 @@ public class Menu extends MenuItem {
 	}
 
 	public void createPlayerMenu() {
-		MenuItem viewArmy = new ViewPlayersAction("9", "View Army");
-		MenuItem addArmy = new SelectPlayerAction("8", "Add Army");
-		MenuItem removeArmy = new AddPlayerAction("7", "Remove Army");
-		MenuItem attackPlayer = new RemovePlayerAction("6", "Attack Player");
+		MenuItem viewArmy = new ViewArmyUnitsAction("9", "View Army Unists");
+		MenuItem addArmy = new SelectArmyUnitsAction("8", "Add Army Unit");
+		MenuItem removeArmy = new AddArmyUnitsAction("7", "Remove Army Unit");
+		MenuItem attackPlayer = new RemoveArmyUnitsAction("6", "Attack Player");
 		BackMenu back = new BackMenu("0", "Back");
-		
+		  
 		this.addMenuItem(viewArmy);
 		this.addMenuItem(addArmy);
 		this.addMenuItem(removeArmy);

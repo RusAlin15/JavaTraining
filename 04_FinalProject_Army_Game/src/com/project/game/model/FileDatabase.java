@@ -11,7 +11,6 @@ public class FileDatabase implements Database, Serializable{
 	private static final long serialVersionUID = 1L;
 	private List<Player> players = new ArrayList<>();
 
-	
 	@Override
 	public void addPlayer(Player player) {
 		players.add(player);
