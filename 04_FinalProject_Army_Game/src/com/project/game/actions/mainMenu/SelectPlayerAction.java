@@ -1,11 +1,10 @@
-package com.project.game.actions;
+package com.project.game.actions.mainMenu;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.app.Keyboard;
-import com.project.game.menus.Menu;
 import com.project.game.menus.MenuGenerator;
 import com.project.game.menus.MenuItem;
-import com.project.game.menus.generators.AddUnitsMenu;
+import com.project.game.menus.generators.PlayerMenu;
 import com.project.game.model.Database;
 
 public class SelectPlayerAction extends MenuItem {
@@ -28,7 +27,8 @@ public class SelectPlayerAction extends MenuItem {
 		
 		ApplicationSession.getInstance().setSelectedPlayer(name);
 		
-		MenuGenerator playerMenu = new AddUnitsMenu("","");
+		MenuGenerator playerMenu = new PlayerMenu("","");
+		playerMenu.generateMenu();
 		playerMenu.doAction();
 	}
 
