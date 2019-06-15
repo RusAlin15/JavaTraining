@@ -1,6 +1,6 @@
 package com.project.game.menus.generators;
 
-import com.project.game.actions.unitsActions.AddUnitAction;
+import com.project.game.actions.unitsActions.AddSoldierAction;
 import com.project.game.menus.BackMenu;
 import com.project.game.menus.MenuGenerator;
 import com.project.game.menus.MenuItem;
@@ -13,7 +13,7 @@ public class AddUnitsMenu extends MenuGenerator {
 
 	@Override
 	public void generateMenu() {
-		MenuItem viewArmy = new AddUnitAction ("9", "Soldier");
+		MenuItem viewArmy = new AddSoldierAction ("9", "Soldier");
 		BackMenu back = new BackMenu("0", "Back");
 		  
 		this.addMenuItem(viewArmy);

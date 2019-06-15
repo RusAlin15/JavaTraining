@@ -9,8 +9,20 @@ public class Army {
 	private double firePower;
 	private double health;
 	
-	public void addUint(Unit unit) {
-		units.add(unit);
-		numberOfUnits++;
+	public Army() {
+		super();
 	}
+
+	public void addUint(Unit unit) {
+			units.add(unit);
+			numberOfUnits++;
+	}
+
+	@Override
+	public String toString() {
+		return "Army [numberOfUnits=" + numberOfUnits + ", units=" + units + ", firePower=" + firePower + ", health="
+				+ health + "]";
+	}
+	
+	
 }

@@ -4,7 +4,7 @@ public class Soldier  extends Infantry{
 	private double firePower;
 	private  double health;
 	
-	public Soldier(String name, ArmyType type) {
+	public Soldier(String name) {
 		super(name, ArmyType.Infantry);
 	}
 

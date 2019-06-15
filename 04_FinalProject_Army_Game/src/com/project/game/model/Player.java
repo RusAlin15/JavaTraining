@@ -12,7 +12,6 @@ public class Player implements Serializable{
 	public Player(String name) {
 		super();
 		this.name = name;
-		
 	}
 	
 	@Override
@@ -23,4 +22,12 @@ public class Player implements Serializable{
 	public String getName() {
 		return name;
 	}
+
+	public Army getArmyByType(ArmyType type) {
+		if(!army.containsValue(type)) {
+			army.put(type, new Army());
+		}
+		return army.get(type);
+	}
+	
 }
