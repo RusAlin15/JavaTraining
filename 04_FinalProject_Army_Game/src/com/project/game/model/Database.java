@@ -6,6 +6,9 @@ public abstract interface Database {
 	
 	void addPlayer(Player player);
 	List<Player> getPlayers();
-	void removePlayerByName(String playerName);
+	Player getPlayerByName(String name);
+	void removePlayer(Player player);
+	boolean existPlayerByName(String name);
+	
 
 }

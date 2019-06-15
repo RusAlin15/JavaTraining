@@ -15,10 +15,13 @@ public class RemovePlayerAction extends MenuItem {
 	public void doAction() {
 		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
 		Database db = ApplicationSession.getInstance().getDatabase();
-			
+		
 		String name = keyboard.getMessage("Name: ");
 		
-		db.removePlayerByName(name);
+		while(!db.existPlayerByName(name)) {
+			name = keyboard.getMessage("Inexistent player... Enter another name: ");
+		}
+		db.removePlayer(db.getPlayerByName(name));
 	}
 
 }

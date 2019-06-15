@@ -1,5 +1,6 @@
 package com.project.game.actions;
 
+
 import com.project.game.app.ApplicationSession;
 import com.project.game.app.Keyboard;
 import com.project.game.menus.MenuItem;
@@ -14,12 +15,15 @@ public class AddPlayerAction extends MenuItem {
 
 	@Override
 	public void doAction() {
-		Keyboard keboard = ApplicationSession.getInstance().getKeboard();
-		Database database = ApplicationSession.getInstance().getDatabase();
+		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
+		Database db = ApplicationSession.getInstance().getDatabase();
+		String name = keyboard.getMessage("Name: ");
 		
-		String name = keboard.getMessage("Name: ");
+		while(db.existPlayerByName(name)) {
+			name = keyboard.getMessage("Player exist... Enter another name: ");
+		}
 		
-		database.addPlayer(new Player(name));
+		db.addPlayer(new Player(name));
 	}
 
 }

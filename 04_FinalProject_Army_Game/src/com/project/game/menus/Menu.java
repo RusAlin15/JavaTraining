@@ -79,11 +79,11 @@ public class Menu extends MenuItem {
 	}
 
 	public void createPlayerMenu() {
-		MenuItem viewArmy = new ViewPlayersAction("9", "View Players");
-		MenuItem addArmy = new SelectPlayerAction("8", "Select Player");
-		MenuItem removeArmy = new AddPlayerAction("7", "Add Player");
-		MenuItem attackPlayer = new RemovePlayerAction("6", "Remove Player");
-		BackMenu back = new BackMenu("0", "Exit");
+		MenuItem viewArmy = new ViewPlayersAction("9", "View Army");
+		MenuItem addArmy = new SelectPlayerAction("8", "Add Army");
+		MenuItem removeArmy = new AddPlayerAction("7", "Remove Army");
+		MenuItem attackPlayer = new RemovePlayerAction("6", "Attack Player");
+		BackMenu back = new BackMenu("0", "Back");
 		
 		this.addMenuItem(viewArmy);
 		this.addMenuItem(addArmy);
