@@ -1,6 +1,9 @@
 package com.project.game.actions;
 
+import com.project.game.app.ApplicationSession;
+import com.project.game.app.Keyboard;
 import com.project.game.menus.MenuItem;
+import com.project.game.model.Database;
 
 public class RemovePlayerAction extends MenuItem {
 
@@ -10,7 +13,12 @@ public class RemovePlayerAction extends MenuItem {
 
 	@Override
 	public void doAction() {
-
+		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
+		Database db = ApplicationSession.getInstance().getDatabase();
+			
+		String name = keyboard.getMessage("Name: ");
+		
+		db.removePlayerByName(name);
 	}
 
 }
