@@ -66,35 +66,5 @@ public class Menu extends MenuItem {
 	public void setBackAction(MenuItem backAction) {
 		this.backAction = backAction;
 	}
-
-	public void createMainMenu() {
-		MenuItem viewPlayers = new ViewPlayersAction("9", "View Players");
-		MenuItem selectPlayer = new SelectPlayerAction("8", "Select Player");
-		MenuItem addPlayer = new AddPlayerAction("7", "Add Player");
-		MenuItem removePlayer = new RemovePlayerAction("6", "Remove Player");
-		BackMenu back = new BackMenu("0", "Exit");
-		
-		this.addMenuItem(viewPlayers);
-		this.addMenuItem(selectPlayer);
-		this.addMenuItem(addPlayer);
-		this.addMenuItem(removePlayer);
-		this.addMenuItem(back);
-		this.setBackAction(back);		
-	}
-
-	public void createPlayerMenu() {
-		MenuItem viewArmy = new ViewArmyUnitsAction("9", "View Army Unists");
-		MenuItem addArmy = new SelectArmyUnitsAction("8", "Add Army Unit");
-		MenuItem removeArmy = new AddArmyUnitsAction("7", "Remove Army Unit");
-		MenuItem attackPlayer = new RemoveArmyUnitsAction("6", "Attack Player");
-		BackMenu back = new BackMenu("0", "Back");
-		  
-		this.addMenuItem(viewArmy);
-		this.addMenuItem(addArmy);
-		this.addMenuItem(removeArmy);
-		this.addMenuItem(attackPlayer);
-		this.addMenuItem(back);
-		this.setBackAction(back);		
-	}
-
+	
 }

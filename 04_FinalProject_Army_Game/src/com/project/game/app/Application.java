@@ -1,5 +1,6 @@
 package com.project.game.app;
 
+import com.project.game.menus.MainMenu;
 import com.project.game.menus.Menu;
 
 public class Application {
@@ -13,8 +14,7 @@ public class Application {
 
 	private void run() {
 		
-		Menu mainMenu = new Menu("", "");
-		mainMenu.createMainMenu();
+		Menu mainMenu = new MainMenu("", "");
 		mainMenu.doAction();
 	}
 }

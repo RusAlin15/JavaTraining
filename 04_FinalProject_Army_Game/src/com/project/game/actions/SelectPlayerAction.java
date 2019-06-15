@@ -4,6 +4,7 @@ import com.project.game.app.ApplicationSession;
 import com.project.game.app.Keyboard;
 import com.project.game.menus.Menu;
 import com.project.game.menus.MenuItem;
+import com.project.game.menus.PlayerMenu;
 import com.project.game.model.Database;
 
 public class SelectPlayerAction extends MenuItem {
@@ -24,8 +25,8 @@ public class SelectPlayerAction extends MenuItem {
 			name = keyboard.getMessage("Inexistent player... Enter another name: ");
 		}
 		
-		Menu playerMenu = new Menu("","");
-		playerMenu.createPlayerMenu();
+		ApplicationSession.getInstance().setSelectedPlayer(name);
+		Menu playerMenu = new PlayerMenu("","");
 		playerMenu.doAction();
 	}
 

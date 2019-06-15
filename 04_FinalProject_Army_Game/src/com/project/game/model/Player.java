@@ -23,6 +23,9 @@ public class Player implements Serializable{
 	public String getName() {
 		return name;
 	}
-	
-	
+
+	public Army getArmyByType(ArmyType type) {
+		
+	}
+
 }

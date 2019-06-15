@@ -10,5 +10,4 @@ public abstract interface Database {
 	void removePlayer(Player player);
 	boolean existPlayerByName(String name);
 	
-
 }
