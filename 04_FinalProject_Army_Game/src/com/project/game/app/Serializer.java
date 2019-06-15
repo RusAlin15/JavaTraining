@@ -21,7 +21,7 @@ public class Serializer {
 
 		return result;
 	}
-	
+
 	public void save(Database db) {
 		try {
 			ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DATABASE_FILE));

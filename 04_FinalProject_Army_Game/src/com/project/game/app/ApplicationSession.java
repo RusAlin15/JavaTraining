@@ -2,19 +2,15 @@ package com.project.game.app;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.List;
-
-import javax.xml.crypto.Data;
 
 import com.project.game.model.Database;
 import com.project.game.model.FileDatabase;
-import com.project.game.model.Player;
 
 public class ApplicationSession {
-	private Keyboard keboard  = new Keyboard();
+	private Keyboard keyboard = new Keyboard();
 	private Database database = new FileDatabase();
 	private Serializer serializer = new Serializer();
-	
+	 
 	private static ApplicationSession instance = new ApplicationSession();
 	
 	public static ApplicationSession getInstance() {
@@ -22,7 +18,7 @@ public class ApplicationSession {
 	}
 
 	public Keyboard getKeboard() {
-		return keboard;
+		return keyboard;
 	}
 
 	public Database getDatabase() {
@@ -34,16 +30,16 @@ public class ApplicationSession {
 	}
 
 	public void init() {
-		Database database;
-
 		try {
-			database = serializer.load();
+			Database database = serializer.load();
 			this.database = database;
-		} catch (ClassNotFoundException | IOException e) {
-			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			System.out.println("File does not exist. Continue...");
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException(e);
+		} catch (IOException e) {
+			throw new RuntimeException(e);
 		}
-
 	}
-	
-	
 }
+	

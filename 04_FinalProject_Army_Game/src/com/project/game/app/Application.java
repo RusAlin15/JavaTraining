@@ -19,18 +19,21 @@ public class Application {
 
 	private void run() {
 		Menu mainMenu = new Menu("", "");	
+		
 		Menu players = new Menu("3", "Players");
 		MenuItem viewPlayers = new ViewPlayersAction("9", "View Players");
-		MenuItem selectPlayer = new SelectPlayerAction("8", "Select Player");
+		//MenuItem selectPlayer = new SelectPlayerAction("8", "Select Player");
 		MenuItem addPlayer = new AddPlayerAction("7", "Add Player");
 		MenuItem removePlayer = new RemovePlayerAction("6", "Remove Player");
 		BackMenu back = new BackMenu("0", "Exit");
 		
 		players.addMenuItem(viewPlayers);
-		players.addMenuItem(selectPlayer);
+		//players.addMenuItem(selectPlayer);
 		players.addMenuItem(addPlayer);
 		players.addMenuItem(removePlayer);
-
+		players.addMenuItem(back);
+		players.setBackAction(back);
+		
 		mainMenu.addMenuItem(players);
 		mainMenu.addMenuItem(back);
 		mainMenu.setBackAction(back);
