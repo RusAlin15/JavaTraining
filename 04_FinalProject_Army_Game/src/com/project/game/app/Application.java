@@ -1,7 +1,7 @@
 package com.project.game.app;
 
-import com.project.game.menus.MainMenu;
-import com.project.game.menus.Menu;
+import com.project.game.menus.MenuGenerator;
+import com.project.game.menus.generators.MainMenu;
 
 public class Application {
 	public static void main(String[] args) {
@@ -9,12 +9,12 @@ public class Application {
 		
 		ApplicationSession.getInstance().init();
 		app.run();
-
 	}
-
+ 
 	private void run() {
 		
-		Menu mainMenu = new MainMenu("", "");
+		MenuGenerator mainMenu = new  MainMenu("", "");
+		mainMenu.generateMenu();
 		mainMenu.doAction();
 	}
 }

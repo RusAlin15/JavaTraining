@@ -1,16 +1,21 @@
-package com.project.game.menus;
+package com.project.game.menus.generators;
 
 import com.project.game.actions.AddArmyUnitsAction;
 import com.project.game.actions.AttackArmyUnitsAction;
 import com.project.game.actions.RemoveArmyUnitsAction;
-import com.project.game.actions.SelectArmyUnitsAction;
 import com.project.game.actions.ViewArmyUnitsAction;
+import com.project.game.menus.BackMenu;
+import com.project.game.menus.MenuGenerator;
+import com.project.game.menus.MenuItem;
 
-public class PlayerMenu extends Menu {
+public class PlayerMenu extends MenuGenerator{
 
 	public PlayerMenu(String option, String key) {
 		super(option, key);
-		
+	}
+
+	@Override
+	public void generateMenu() {
 		MenuItem viewArmy = new ViewArmyUnitsAction("9", "View Army Unists");
 		MenuItem addArmy = new AddArmyUnitsAction("8", "Add Army Unit");
 		MenuItem removeArmy = new RemoveArmyUnitsAction("7", "Remove Army Unit");
@@ -22,7 +27,7 @@ public class PlayerMenu extends Menu {
 		this.addMenuItem(removeArmy);
 		this.addMenuItem(attackPlayer);
 		this.addMenuItem(back);
-		this.setBackAction(back);
+		this.setBackAction(back);		
 	}
 
 }

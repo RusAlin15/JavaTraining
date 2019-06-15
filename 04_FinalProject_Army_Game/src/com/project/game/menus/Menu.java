@@ -4,14 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import com.project.game.actions.AddArmyUnitsAction;
-import com.project.game.actions.AddPlayerAction;
-import com.project.game.actions.RemoveArmyUnitsAction;
-import com.project.game.actions.RemovePlayerAction;
-import com.project.game.actions.SelectArmyUnitsAction;
-import com.project.game.actions.SelectPlayerAction;
-import com.project.game.actions.ViewArmyUnitsAction;
-import com.project.game.actions.ViewPlayersAction;
 
 public class Menu extends MenuItem {
 
@@ -65,6 +57,6 @@ public class Menu extends MenuItem {
 
 	public void setBackAction(MenuItem backAction) {
 		this.backAction = backAction;
-	}
+	}	
 	
 }
