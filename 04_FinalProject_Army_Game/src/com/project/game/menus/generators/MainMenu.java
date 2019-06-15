@@ -1,9 +1,9 @@
 package com.project.game.menus.generators;
 
-import com.project.game.actions.AddPlayerAction;
-import com.project.game.actions.RemovePlayerAction;
-import com.project.game.actions.SelectPlayerAction;
-import com.project.game.actions.ViewPlayersAction;
+import com.project.game.actions.menuActions.AddPlayerAction;
+import com.project.game.actions.menuActions.RemovePlayerAction;
+import com.project.game.actions.menuActions.SelectPlayerAction;
+import com.project.game.actions.menuActions.ViewPlayersAction;
 import com.project.game.menus.BackMenu;
 import com.project.game.menus.MenuGenerator;
 import com.project.game.menus.MenuItem;

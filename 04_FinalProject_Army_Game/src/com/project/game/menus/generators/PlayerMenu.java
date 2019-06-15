@@ -1,9 +1,9 @@
 package com.project.game.menus.generators;
 
-import com.project.game.actions.AddArmyUnitsAction;
-import com.project.game.actions.AttackArmyUnitsAction;
-import com.project.game.actions.RemoveArmyUnitsAction;
-import com.project.game.actions.ViewArmyUnitsAction;
+import com.project.game.actions.playerActions.AddArmyUnitsAction;
+import com.project.game.actions.playerActions.AttackArmyUnitsAction;
+import com.project.game.actions.playerActions.RemoveArmyUnitsAction;
+import com.project.game.actions.playerActions.ViewArmyUnitsAction;
 import com.project.game.menus.BackMenu;
 import com.project.game.menus.MenuGenerator;
 import com.project.game.menus.MenuItem;

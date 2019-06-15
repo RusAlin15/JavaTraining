@@ -1,13 +1,15 @@
-package com.project.game.actions.mainMenu;
+package com.project.game.actions.menuActions;
+
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.app.Keyboard;
 import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
+import com.project.game.model.Player;
 
-public class RemovePlayerAction extends MenuItem {
+public class AddPlayerAction extends MenuItem {
 
-	public RemovePlayerAction(String key, String option) {
+	public AddPlayerAction(String key, String option) {
 		super(key, option);
 	}
 
@@ -15,13 +17,13 @@ public class RemovePlayerAction extends MenuItem {
 	public void doAction() {
 		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
 		Database db = ApplicationSession.getInstance().getDatabase();
-		
 		String name = keyboard.getMessage("Name: ");
 		
-		while(!db.existPlayerByName(name)) {
-			name = keyboard.getMessage("Inexistent player... Enter another name: ");
+		while(db.existPlayerByName(name)) {
+			name = keyboard.getMessage("Player exist... Enter another name: ");
 		}
-		db.removePlayer(db.getPlayerByName(name));
+		
+		db.addPlayer(new Player(name));
 	}
 
 }

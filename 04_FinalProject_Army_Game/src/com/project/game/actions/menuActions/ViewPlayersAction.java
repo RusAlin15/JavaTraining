@@ -1,4 +1,4 @@
-package com.project.game.actions.mainMenu;
+package com.project.game.actions.menuActions;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.menus.MenuItem;

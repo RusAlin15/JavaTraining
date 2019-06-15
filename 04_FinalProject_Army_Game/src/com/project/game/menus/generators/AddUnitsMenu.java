@@ -1,6 +1,6 @@
 package com.project.game.menus.generators;
 
-import com.project.game.actions.AddUnitAction;
+import com.project.game.actions.unitsActions.AddUnitAction;
 import com.project.game.menus.BackMenu;
 import com.project.game.menus.MenuGenerator;
 import com.project.game.menus.MenuItem;
@@ -20,5 +20,4 @@ public class AddUnitsMenu extends MenuGenerator {
 		this.addMenuItem(back);
 		this.setBackAction(back);		
 	}
-
 }
