@@ -15,7 +15,5 @@ public class Application {
 		CreateMenuAction firstMenu  = new GenerateMainMenu("", "");
 		firstMenu.generateMenu();
 		firstMenu.doAction();
-			
-
 	}
 }
