@@ -5,7 +5,6 @@ import com.project.game.actions.RemovePlayerAction;
 import com.project.game.actions.SelectPlayerAction;
 import com.project.game.actions.ViewPlayersAction;
 import com.project.game.menus.BackMenu;
-import com.project.game.menus.CreateMenu;
 import com.project.game.menus.Menu;
 import com.project.game.menus.MenuItem;
 
@@ -34,7 +33,7 @@ public class Application {
 
 		mainMenu.addMenuItem(players);
 		mainMenu.addMenuItem(back);
-		mainMenu.setBackActiom(back);
+		mainMenu.setBackAction(back);
 		
 		mainMenu.doAction();
 	}

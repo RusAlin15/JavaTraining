@@ -10,8 +10,7 @@ import com.project.game.app.ApplicationSession;
 public class FileDatabase implements Database, Serializable{
 	private static final long serialVersionUID = 1L;
 	
-	List<Player> players = new ArrayList<Player>();
-
+	private List<Player> players = new ArrayList<>();
 
 	@Override
 	public void addPlayer(Player player) {
@@ -26,7 +25,7 @@ public class FileDatabase implements Database, Serializable{
 	}
 
 	@Override
-	public void removePlayer(String playerName) {
+	public void removePlayerByName(String playerName) {
 		Iterator<Player> iterator = players.iterator();
 		
 		while (iterator.hasNext()) {
@@ -37,6 +36,5 @@ public class FileDatabase implements Database, Serializable{
 		}
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
-	
 
 }

@@ -7,9 +7,9 @@ import java.util.Scanner;
 public class Menu extends MenuItem {
 
 	private List<MenuItem> items = new ArrayList<>();
-	private Scanner scanner = new Scanner(System.in);
 	private MenuItem backAction;
-	
+	Scanner scanner = new Scanner(System.in);
+	 
 	public Menu(String option, String key) {
 		super(option, key);
 	}
@@ -22,18 +22,16 @@ public class Menu extends MenuItem {
 	public void doAction() {
 		while (true) {
 			showMenu();
+			System.out.print(">");
+			String option = scanner.nextLine();
+			MenuItem item = getMenuItemByOption(option);
 			
-			System.out.println(">");
-			String option =  scanner.nextLine();
-			MenuItem item = getMenuItem(option);
-			
-			if(item == null) {
-				System.out.println("Invalid option.");
+			if (item == null) {
+				System.out.println("Invalid option");
 				continue;
 			}
 			
-
-			if(item == backAction) {
+			if (item == backAction) {
 				return;
 			}
 			
@@ -41,23 +39,23 @@ public class Menu extends MenuItem {
 		}
 	}
 
-	private MenuItem getMenuItem(String option) {
-		for(MenuItem item : items) {
-			if(item.getOption().equals(option)) {
+	private MenuItem getMenuItemByOption(String option) {
+		for (MenuItem item : items) {
+			if (item.getOption().equals(option)) {
 				return item;
 			}
 		}
 		return null;
 	}
 	
-	public void setBackActiom(MenuItem back) {
-		this.backAction = back;
-	}
-	
 	private void showMenu() {
-		for(MenuItem item : items) {
-			System.out.println(item.toString());
+		for (MenuItem item : items) {
+			System.out.println(item);
 		}
+	}
+
+	public void setBackAction(MenuItem backAction) {
+		this.backAction = backAction;
 	}
 
 }
