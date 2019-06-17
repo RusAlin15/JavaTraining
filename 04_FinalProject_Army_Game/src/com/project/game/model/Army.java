@@ -23,6 +23,4 @@ public class Army {
 		return "Army [numberOfUnits=" + numberOfUnits + ", units=" + units + ", firePower=" + firePower + ", health="
 				+ health + "]";
 	}
-	
-	
 }

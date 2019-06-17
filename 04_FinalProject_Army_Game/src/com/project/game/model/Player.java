@@ -24,7 +24,7 @@ public class Player implements Serializable{
 	}
 
 	public Army getArmyByType(ArmyType type) {
-		if(!army.containsValue(type)) {
+		if(!army.containsKey(type)) {
 			army.put(type, new Army());
 		}
 		return army.get(type);
