@@ -16,7 +16,7 @@ public class Serializer {
 		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATABASE_FILE));
 
 		Database result = (Database) ois.readObject();
-
+ 
 		ois.close();
 
 		return result;
