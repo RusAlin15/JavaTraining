@@ -8,6 +8,7 @@ import com.project.game.model.ArmyType;
 import com.project.game.model.Database;
 import com.project.game.model.Player;
 import com.project.game.model.Soldier;
+import com.project.game.model.Unit;
 
 public class AddSoldierAction extends MenuItem {
 
@@ -19,15 +20,17 @@ public class AddSoldierAction extends MenuItem {
 	public void doAction() {
 		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
 		Player selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
+		Database db = ApplicationSession.getInstance().getDatabase();
 		
-		
-		Army army = selectedPlayer.getArmyByType(ArmyType.Infantry);
-				
 		String name = keyboard.getMessage("Insert Soldier name.");
 		
-		System.out.println(army);
-		army.addUint(new Soldier(name));
-		System.out.println(army);
+		Unit unit = new Soldier(name);
+		
+		Army army = selectedPlayer.getArmyByType(unit.getType());
+		 
+		army.addUint(unit);
+		
+		//ApplicationSession.getInstance().getSerializer().save(db);
 	}
 
 }

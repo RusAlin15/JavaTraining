@@ -10,15 +10,15 @@ import java.io.ObjectOutputStream;
 import com.project.game.model.Database;
 
 public class Serializer {
-	private static final String DATABASE_FILE = "DataBase.ser";
+	private static final String DATABASE_FILE = "DataBase100.ser";
 	
 	public Database load() throws FileNotFoundException, IOException, ClassNotFoundException {
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATABASE_FILE));
-
-		Database result = (Database) ois.readObject();
- 
-		ois.close();
-
+			Database result;
+			
+			ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATABASE_FILE));
+			result = (Database) ois.readObject();
+			ois.close();
+	
 		return result;
 	}
 
@@ -31,10 +31,13 @@ public class Serializer {
 			oos.close();
 		} catch (FileNotFoundException e) {
 			System.out.println("File not found");
+			
 		} catch (IOException e) {
 			System.out.println("Error while saving file");
 			e.printStackTrace();
-		}
+		} catch (Exception e) {
+			// TODO: handle exception
+		} 
 	}
 	
 }
