@@ -1,11 +1,11 @@
-package com.project.game.actions.menuActions;
+package com.project.game.actions.menu.log_actions;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.menus.MenuItem;
 
-public class ViewPlayersAction extends MenuItem {
+public class ViewPlayersTemp extends MenuItem {
 
-	public ViewPlayersAction(String key, String option) {
+	public ViewPlayersTemp(String key, String option) {
 		super(key, option);
 	}
 

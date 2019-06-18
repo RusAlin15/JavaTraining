@@ -1,5 +1,5 @@
 package com.project.game.model;
 
 public enum ArmyType {
-	General, AirForce, Infantry, MarineForce
+	AIR_FORCE, INFANTRY, MARINE_FORCE
 }

@@ -46,7 +46,7 @@ public class ApplicationSession {
 			Database database = serializer.load();
 			this.database = database;
 		} catch (FileNotFoundException e) {
-			System.out.println("File does not exist. Continue...");
+			System.out.println("You are the first player ... Please sign up");
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {

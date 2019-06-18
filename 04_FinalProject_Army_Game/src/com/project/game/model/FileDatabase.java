@@ -37,7 +37,6 @@ public class FileDatabase implements Database, Serializable {
 	@Override
 	public Player getPlayerByName(String name) {
 
-		// existPlayerByName(name); // ?
 		Iterator<Player> iterator = players.iterator();
 		while (iterator.hasNext()) {
 			Player p = iterator.next();
@@ -49,13 +48,11 @@ public class FileDatabase implements Database, Serializable {
 	}
 
 	@Override
-	public void addSoldier(Player selectedPlayer, String name) {
-		if (name.length() == 0) {
-			throw new RuntimeException("Name is empty");
-		}
-		Unit unit = new Soldier(name);
+	public void addUnit(Player selectedPlayer, Unit unit) {
 		Army army = selectedPlayer.getArmyByType(unit.getType());
 		army.addUint(unit);
+		
+		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
 }

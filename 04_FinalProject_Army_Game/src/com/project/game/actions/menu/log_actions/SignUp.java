@@ -1,4 +1,4 @@
-package com.project.game.actions.menuActions;
+package com.project.game.actions.menu.log_actions;
 
 
 import com.project.game.app.ApplicationSession;
@@ -7,9 +7,9 @@ import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
 import com.project.game.model.Player;
 
-public class AddPlayerAction extends MenuItem {
+public class SignUp extends MenuItem {
 
-	public AddPlayerAction(String key, String option) {
+	public SignUp(String key, String option) {
 		super(key, option);
 	}
 

@@ -16,8 +16,10 @@ public class Player implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Player [name=" + name + "]";
+		return "Player [name=" + name + ", army=" + army + "]";
 	}
+	
+	
 
 	public String getName() {
 		return name;

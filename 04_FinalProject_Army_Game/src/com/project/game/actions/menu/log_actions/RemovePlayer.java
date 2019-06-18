@@ -1,13 +1,13 @@
-package com.project.game.actions.menuActions;
+package com.project.game.actions.menu.log_actions;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.app.Keyboard;
 import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
 
-public class RemovePlayerAction extends MenuItem {
+public class RemovePlayer extends MenuItem {
 
-	public RemovePlayerAction(String key, String option) {
+	public RemovePlayer(String key, String option) {
 		super(key, option);
 	}
 

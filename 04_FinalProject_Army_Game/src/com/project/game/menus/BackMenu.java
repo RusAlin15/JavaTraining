@@ -12,10 +12,6 @@ public class BackMenu extends MenuItem{
 	@Override
 	public void doAction() {
 		
-		ApplicationSession.getInstance().setSelectedPlayer(null);
-		
-		//Database db = ApplicationSession.getInstance().getDatabase();
-		//ApplicationSession.getInstance().getSerializer().save(db);
 	}
 
 }

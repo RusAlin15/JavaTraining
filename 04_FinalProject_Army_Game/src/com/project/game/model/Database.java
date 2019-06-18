@@ -2,6 +2,7 @@ package com.project.game.model;
 
 import java.util.List;
 
+
 public abstract interface Database {
 
 	void addPlayer(Player player);
@@ -14,6 +15,6 @@ public abstract interface Database {
 
 	boolean existPlayerByName(String name);
 
-	void addSoldier(Player selectedPlayer, String name);
+	void addUnit(Player selectedPlayer, Unit unit);
 
 }
