@@ -16,6 +16,7 @@ public class ViewArmyUnitsAction extends MenuItem {
 	public void doAction() {
 		Player selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
 		Army army = selectedPlayer.getArmyByType(ArmyType.Infantry);
+
 		System.out.println(army);
 	}
 

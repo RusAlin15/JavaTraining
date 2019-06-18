@@ -1,21 +1,23 @@
 package com.project.game.model;
 
-import java.util.*;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Army {
-	
+public class Army implements Serializable {
+
 	private int numberOfUnits;
 	private List<Unit> units = new ArrayList<>();
 	private double firePower;
 	private double health;
-	
+
 	public Army() {
 		super();
 	}
 
 	public void addUint(Unit unit) {
-			units.add(unit);
-			numberOfUnits++;
+		units.add(unit);
+		numberOfUnits++;
 	}
 
 	@Override

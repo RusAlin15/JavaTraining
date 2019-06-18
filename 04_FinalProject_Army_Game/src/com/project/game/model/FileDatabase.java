@@ -7,10 +7,10 @@ import java.util.List;
 
 import com.project.game.app.ApplicationSession;
 
-public class FileDatabase implements Database, Serializable{
+public class FileDatabase implements Database, Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<Player> players = new ArrayList<>();
-	
+
 	@Override
 	public void addPlayer(Player player) {
 		players.add(player);
@@ -30,28 +30,32 @@ public class FileDatabase implements Database, Serializable{
 
 	@Override
 	public boolean existPlayerByName(String name) {
-		Iterator<Player> iterator = players.iterator();
-		while (iterator.hasNext()) {
-			Player p = iterator.next();
-			if (p.getName().toLowerCase().contentEquals(name.toLowerCase())) {
-				return true;
-			}
-		}		
-		return false;
+		Player player = getPlayerByName(name);
+		return player != null;
 	}
 
 	@Override
 	public Player getPlayerByName(String name) {
-		
-		existPlayerByName(name);
+
+		// existPlayerByName(name); // ?
 		Iterator<Player> iterator = players.iterator();
 		while (iterator.hasNext()) {
 			Player p = iterator.next();
 			if (p.getName().toLowerCase().contentEquals(name.toLowerCase())) {
 				return p;
 			}
-		}		
+		}
 		return null;
+	}
+
+	@Override
+	public void addSoldier(Player selectedPlayer, String name) {
+		if (name.length() == 0) {
+			throw new RuntimeException("Name is empty");
+		}
+		Unit unit = new Soldier(name);
+		Army army = selectedPlayer.getArmyByType(unit.getType());
+		army.addUint(unit);
 	}
 
 }
