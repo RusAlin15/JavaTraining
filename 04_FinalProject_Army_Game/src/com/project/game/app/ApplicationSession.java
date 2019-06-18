@@ -2,11 +2,6 @@ package com.project.game.app;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import javax.swing.plaf.SliderUI;
-
-import com.project.game.menus.Menu;
-import com.project.game.menus.MenuGenerator;
 import com.project.game.model.Database;
 import com.project.game.model.FileDatabase;
 import com.project.game.model.Player;

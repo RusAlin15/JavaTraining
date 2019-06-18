@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 import com.project.game.model.Database;
 
 public class Serializer {
-	private static final String DATABASE_FILE = "DataBase100.ser";
+	private static final String DATABASE_FILE = "DataBase101.ser";
 	
 	public Database load() throws FileNotFoundException, IOException, ClassNotFoundException {
 			Database result;
