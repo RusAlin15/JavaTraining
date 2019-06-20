@@ -1,14 +1,13 @@
-package com.project.game.actions.menu.unit_actions;
+package com.project.game.actions.menu.player_actions;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
 import com.project.game.model.Player;
-import com.project.game.model.units.Soldier;
 
-public class AddSoldier extends MenuItem {
+public class ResetUnits extends MenuItem {
 
-	public AddSoldier(String option, String key) {
+	public ResetUnits(String option, String key) {
 		super(option, key);
 	}
 
@@ -16,12 +15,9 @@ public class AddSoldier extends MenuItem {
 	public void doAction() {
 		Player selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
 		Database db = ApplicationSession.getInstance().getDatabase();
-
-		Soldier unit = new Soldier();
 		
-		db.addUnit(selectedPlayer, unit);
-		System.out.println("Soldier added successfully");
-	
+		db.resetUnits(selectedPlayer);
+		System.out.println(selectedPlayer.getName() + " army deleted.");
 	}
 
 }

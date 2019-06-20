@@ -17,9 +17,9 @@ public class AddTank extends MenuItem {
 		Player selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
 		Database db = ApplicationSession.getInstance().getDatabase();
 
-		Tank tank = new Tank();
+		Tank unit = new Tank();
 		
-		db.addUnit(selectedPlayer, tank);
+		db.addUnit(selectedPlayer, unit);
 		System.out.println("Tank added successfully");
 	
 	}

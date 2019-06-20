@@ -55,4 +55,9 @@ public class FileDatabase implements Database, Serializable {
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
+	@Override
+	public void resetUnits(Player selectedPlayer) {
+		selectedPlayer.resetunits();
+		ApplicationSession.getInstance().getSerializer().save(this);
+	}
 }

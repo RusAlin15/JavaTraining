@@ -1,4 +1,4 @@
-package com.project.game.model.units;
+package com.project.game.model;
 
 import com.project.game.model.ArmyType;
 import com.project.game.model.Unit;

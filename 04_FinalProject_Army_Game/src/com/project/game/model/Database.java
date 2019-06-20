@@ -17,4 +17,6 @@ public abstract interface Database {
 
 	void addUnit(Player selectedPlayer, Unit unit);
 
+	void resetUnits(Player selectedPlayer);
+
 }

@@ -31,5 +31,9 @@ public class Player implements Serializable {
 		}
 		return army.get(type);
 	}
+	
+	public void resetunits() {
+		army.clear();
+	}
 
 }
