@@ -25,4 +25,5 @@ public class Army implements Serializable {
 		return "Army [numberOfUnits=" + numberOfUnits + ", units=" + units + ", firePower=" + firePower + ", health="
 				+ health + "]";
 	}
+
 }

@@ -5,15 +5,8 @@ import com.project.game.model.Unit;
 
 public class Tank  extends Unit{
 
-	
 	public Tank() {
 		super(UnitType.INFANTRY, 10, 100);
-	
-	}
-
-	@Override
-	public UnitType getType() {
-		return UnitType.INFANTRY ;
 	}
 
 }

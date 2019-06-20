@@ -9,9 +9,4 @@ public class AirCraft extends Unit{
 		super(UnitType.AIR_FORCE, 10, 20);
 	}
 
-	@Override
-	public UnitType getType() {
-		return UnitType.AIR_FORCE;
-	}
-
 }

@@ -1,8 +1,8 @@
 package com.project.game.menus.generators;
 
-import com.project.game.actions.menu.log_actions.SignIn;
-import com.project.game.actions.menu.log_actions.SignUp;
-import com.project.game.actions.menu.log_actions.ViewPlayersTemp;
+import com.project.game.actions.menu.logactions.SignIn;
+import com.project.game.actions.menu.logactions.SignUp;
+import com.project.game.actions.menu.logactions.ViewPlayersTemp;
 import com.project.game.menus.BackMenu;
 import com.project.game.menus.Menu;
 import com.project.game.menus.MenuGenerator;

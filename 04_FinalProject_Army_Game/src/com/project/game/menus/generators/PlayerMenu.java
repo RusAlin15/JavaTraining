@@ -1,10 +1,10 @@
 package com.project.game.menus.generators;
 
-import com.project.game.actions.menu.player_actions.AddUnit;
-import com.project.game.actions.menu.player_actions.AttackPlayer;
-import com.project.game.actions.menu.player_actions.ResetUnits;
-import com.project.game.actions.menu.player_actions.Settings;
-import com.project.game.actions.menu.player_actions.ViewArmy;
+import com.project.game.actions.menu.playeractions.AddUnit;
+import com.project.game.actions.menu.playeractions.AttackPlayer;
+import com.project.game.actions.menu.playeractions.ResetUnits;
+import com.project.game.actions.menu.playeractions.Settings;
+import com.project.game.actions.menu.playeractions.ViewArmy;
 import com.project.game.menus.BackMenu;
 import com.project.game.menus.Menu;
 import com.project.game.menus.MenuGenerator;

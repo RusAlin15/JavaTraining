@@ -12,11 +12,17 @@ public class Player implements Serializable {
 	public Player(String name) {
 		super();
 		this.name = name;
+		for(UnitType unit : UnitType.values()) {
+			army.put(unit, new Army());
+		}
 	}
 
 	@Override
 	public String toString() {
-		return "Player [name=" + name + ", army=" + army + "]";
+		return "Player [name=" + name + ", army=" + army.get(UnitType.INFANTRY) + "]" + System.lineSeparator() //
+				+ "+ army=" + army.get(UnitType.AIR_FORCE) + "]" + System.lineSeparator() //
+				+ "+ army=" + army.get(UnitType.MARINE_FORCE) + "]" + System.lineSeparator();
+				
 	}
 	
 	
@@ -26,9 +32,6 @@ public class Player implements Serializable {
 	}
 
 	public Army getArmyByType(UnitType type) {
-		if (!army.containsKey(type)) {
-			army.put(type, new Army());
-		}
 		return army.get(type);
 	}
 	

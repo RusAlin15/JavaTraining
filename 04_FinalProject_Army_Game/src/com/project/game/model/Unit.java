@@ -7,7 +7,9 @@ public abstract class Unit implements Serializable {
 	private double firePower;
 	private double health;
 
-	public abstract UnitType getType();
+	public UnitType getType() {
+		return type;
+	}
 
 	public Unit(UnitType type, double firePower, double health) {
 		super();
@@ -18,7 +20,7 @@ public abstract class Unit implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Unit [type=" + type + ", firePower=" + firePower + ", health=" + health + "]";
+		return "Unit [type=" + type + "]";
 	}
 
 }
