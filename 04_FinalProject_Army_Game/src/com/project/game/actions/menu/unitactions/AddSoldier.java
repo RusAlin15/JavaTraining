@@ -1,14 +1,14 @@
-package com.project.game.actions.menu.unit_actions;
+package com.project.game.actions.menu.unitactions;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
 import com.project.game.model.Player;
-import com.project.game.model.units.Tank;
+import com.project.game.model.units.Soldier;
 
-public class AddTank extends MenuItem {
+public class AddSoldier extends MenuItem {
 
-	public AddTank(String option, String key) {
+	public AddSoldier(String option, String key) {
 		super(option, key);
 	}
 
@@ -17,10 +17,10 @@ public class AddTank extends MenuItem {
 		Player selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
 		Database db = ApplicationSession.getInstance().getDatabase();
 
-		Tank unit = new Tank();
+		Soldier unit = new Soldier();
 		
 		db.addUnit(selectedPlayer, unit);
-		System.out.println("Tank added successfully");
+		System.out.println("Soldier added successfully");
 	
 	}
 

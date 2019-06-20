@@ -7,7 +7,7 @@ public class Player implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String name;
-	HashMap<ArmyType, Army> army = new HashMap<>();
+	HashMap<UnitType, Army> army = new HashMap<>();
 
 	public Player(String name) {
 		super();
@@ -25,7 +25,7 @@ public class Player implements Serializable {
 		return name;
 	}
 
-	public Army getArmyByType(ArmyType type) {
+	public Army getArmyByType(UnitType type) {
 		if (!army.containsKey(type)) {
 			army.put(type, new Army());
 		}

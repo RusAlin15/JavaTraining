@@ -3,13 +3,13 @@ package com.project.game.model;
 import java.io.Serializable;
 
 public abstract class Unit implements Serializable {
-	private ArmyType type;
+	private UnitType type;
 	private double firePower;
 	private double health;
 
-	public abstract ArmyType getType();
+	public abstract UnitType getType();
 
-	public Unit(ArmyType type, double firePower, double health) {
+	public Unit(UnitType type, double firePower, double health) {
 		super();
 		this.type = type;
 		this.firePower = firePower;

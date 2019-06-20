@@ -1,4 +1,4 @@
-package com.project.game.actions.menu.player_actions;
+package com.project.game.actions.menu.playeractions;
 
 import com.project.game.menus.Menu;
 import com.project.game.menus.MenuItem;

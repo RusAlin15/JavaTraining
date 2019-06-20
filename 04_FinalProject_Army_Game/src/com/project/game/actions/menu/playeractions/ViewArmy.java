@@ -1,10 +1,10 @@
-package com.project.game.actions.menu.player_actions;
+package com.project.game.actions.menu.playeractions;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.menus.MenuItem;
 import com.project.game.model.Army;
-import com.project.game.model.ArmyType;
 import com.project.game.model.Player;
+import com.project.game.model.UnitType;
 
 public class ViewArmy extends MenuItem {
 
@@ -15,7 +15,7 @@ public class ViewArmy extends MenuItem {
 	@Override
 	public void doAction() {
 		Player selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
-		Army army = selectedPlayer.getArmyByType(ArmyType.INFANTRY);
+		Army army = selectedPlayer.getArmyByType(UnitType.INFANTRY);
 
 		System.out.println(army);
 	}

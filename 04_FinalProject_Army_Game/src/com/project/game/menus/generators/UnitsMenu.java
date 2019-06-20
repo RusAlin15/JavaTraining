@@ -1,5 +1,6 @@
 package com.project.game.menus.generators;
 
+import com.project.game.actions.menu.unit_actions.AddAirCraft;
 import com.project.game.actions.menu.unit_actions.AddHelicopter;
 import com.project.game.actions.menu.unit_actions.AddSoldier;
 import com.project.game.actions.menu.unit_actions.AddTank;
@@ -17,6 +18,7 @@ public class UnitsMenu extends MenuGenerator {
 		MenuItem addSoldier = new AddSoldier ("1", "Soldier");
 		MenuItem addTank = new AddTank ("2", "Tank");
 		MenuItem addHelicopter = new AddHelicopter("3", "Helicopter");
+		MenuItem addAirCraft = new AddAirCraft("4", "AirCraft");
 		BackMenu back = new BackMenu("0", "Back");
 		  
 		menu.addMenuItem(addSoldier);

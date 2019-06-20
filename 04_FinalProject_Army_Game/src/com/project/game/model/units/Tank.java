@@ -1,19 +1,19 @@
 package com.project.game.model.units;
 
-import com.project.game.model.ArmyType;
-import com.project.game.model.InfantryForce;
+import com.project.game.model.UnitType;
+import com.project.game.model.Unit;
 
-public class Tank  extends InfantryForce{
+public class Tank  extends Unit{
 
 	
 	public Tank() {
-		super(ArmyType.INFANTRY, 10, 100);
+		super(UnitType.INFANTRY, 10, 100);
 	
 	}
 
 	@Override
-	public ArmyType getType() {
-		return ArmyType.INFANTRY ;
+	public UnitType getType() {
+		return UnitType.INFANTRY ;
 	}
 
 }

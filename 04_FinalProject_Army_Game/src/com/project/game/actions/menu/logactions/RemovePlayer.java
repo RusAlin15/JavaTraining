@@ -1,4 +1,4 @@
-package com.project.game.actions.menu.log_actions;
+package com.project.game.actions.menu.logactions;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.app.Keyboard;

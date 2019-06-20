@@ -1,15 +1,13 @@
-package com.project.game.actions.menu.unit_actions;
+package com.project.game.actions.menu.playeractions;
 
 import com.project.game.app.ApplicationSession;
 import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
 import com.project.game.model.Player;
-import com.project.game.model.units.Helicopter;
-import com.project.game.model.units.Tank;
 
-public class AddHelicopter extends MenuItem {
+public class ResetUnits extends MenuItem {
 
-	public AddHelicopter(String option, String key) {
+	public ResetUnits(String option, String key) {
 		super(option, key);
 	}
 
@@ -17,12 +15,9 @@ public class AddHelicopter extends MenuItem {
 	public void doAction() {
 		Player selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
 		Database db = ApplicationSession.getInstance().getDatabase();
-
-		Helicopter unit = new Helicopter();
 		
-		db.addUnit(selectedPlayer, unit);
-		System.out.println("Helicopter added successfully");
-	
+		db.resetUnits(selectedPlayer);
+		System.out.println(selectedPlayer.getName() + " army deleted.");
 	}
 
 }
