@@ -2,7 +2,6 @@ package com.project.game.model;
 
 import java.util.List;
 
-
 public abstract interface Database {
 
 	void addPlayer(Player player);
@@ -18,5 +17,7 @@ public abstract interface Database {
 	void addUnit(Player selectedPlayer, Unit unit);
 
 	void resetUnits(Player selectedPlayer);
+
+	void addArmy(Player selPlayer, UnitType unitType);
 
 }

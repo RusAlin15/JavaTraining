@@ -3,7 +3,7 @@ package com.project.game.model.units;
 import com.project.game.model.Unit;
 import com.project.game.model.UnitType;
 
-public class AirCraft extends Unit {
+public class Plane extends Unit {
 	private static final long serialVersionUID = 1L;
 	private int bombs;
 	private int missiles;
@@ -11,8 +11,13 @@ public class AirCraft extends Unit {
 	private boolean superSonicSpeed;
 	private boolean antiRadar;
 
-	public AirCraft() {
+	public Plane() {
 		super(UnitType.AIR_FORCE);
+		setAntiRadar();
+		setBombs();
+		setMissiles();
+		setPilotExp();
+		setSuperSonicSpeed();
 	}
 
 	public void setSuperSonicSpeed() {
@@ -31,7 +36,7 @@ public class AirCraft extends Unit {
 		this.missiles = (int) (Math.random() * (200 - 120)) + 1;
 	}
 
-	public void setPilotExp(int pilotExp) {
+	public void setPilotExp() {
 		this.pilotExp = (int) (Math.random() * (10 - 1)) + 1;
 	}
 

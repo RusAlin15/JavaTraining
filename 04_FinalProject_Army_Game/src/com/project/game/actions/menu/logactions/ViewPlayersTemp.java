@@ -11,7 +11,7 @@ public class ViewPlayersTemp extends MenuItem {
 
 	@Override
 	public void doAction() {
-		System.out.println(ApplicationSession.getInstance().getDatabase().getPlayers().toString());
+		System.out.println(ApplicationSession.getInstance().getDatabase().getPlayers());
 	}
 
 }

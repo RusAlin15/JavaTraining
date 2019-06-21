@@ -14,14 +14,6 @@ public class Player implements Serializable {
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "Player: " + name + System.lineSeparator() //
-				+ army.get(UnitType.INFANTRY) + System.lineSeparator() //
-				+ army.get(UnitType.AIR_FORCE) + System.lineSeparator() //
-				+ army.get(UnitType.MARINE_FORCE) + System.lineSeparator();
-	}
-
 	public String getName() {
 		return name;
 	}
@@ -34,4 +26,29 @@ public class Player implements Serializable {
 		army.clear();
 	}
 
+	public void addArmy(UnitType unitType) {
+		army.put(unitType, new Army());
+	}
+
+	private int getFirePower() {
+		int firePower = 0;
+		for (UnitType type : UnitType.values()) {
+			firePower += army.get(type).getFirePower();
+		}
+		return firePower;
+	}
+
+	private int getHealth() {
+		int health = 0;
+		for (UnitType type : UnitType.values()) {
+			health += army.get(type).getHealth();
+		}
+		return health;
+	}
+
+	@Override
+	public String toString() {
+		return " Players: " + name + ", firePower: " + this.getFirePower() + ", health: " + this.getHealth()
+				+ System.lineSeparator();
+	}
 }

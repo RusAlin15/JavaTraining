@@ -11,6 +11,9 @@ public class Helicopter extends Unit {
 
 	public Helicopter() {
 		super(UnitType.AIR_FORCE);
+		setAntiRadar();
+		setBombs();
+		setRockets();
 	}
 
 	public void setBombs() {

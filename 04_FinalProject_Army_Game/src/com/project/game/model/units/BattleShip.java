@@ -11,6 +11,9 @@ public class BattleShip extends Unit {
 
 	public BattleShip() {
 		super(UnitType.MARINE_FORCE);
+		setBombs();
+		setMissiles();
+		setPilotExp();
 	}
 
 	public void setBombs() {
@@ -21,7 +24,7 @@ public class BattleShip extends Unit {
 		this.missiles = (int) (Math.random() * (200 - 70)) + 1;
 	}
 
-	public void setPilotExp(int pilotExp) {
+	public void setPilotExp() {
 		this.pilotExp = (int) (Math.random() * (10 - 1)) + 1;
 	}
 

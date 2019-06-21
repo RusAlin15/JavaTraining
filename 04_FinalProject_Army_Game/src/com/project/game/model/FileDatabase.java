@@ -50,9 +50,20 @@ public class FileDatabase implements Database, Serializable {
 	@Override
 	public void addUnit(Player selectedPlayer, Unit unit) {
 		Army army = selectedPlayer.getArmyByType(unit.getType());
-		
-			army.addUint(unit);
-		
+
+		if (army == null) {
+			this.addArmy(selectedPlayer, unit.getType());
+			army = selectedPlayer.getArmyByType(unit.getType());
+		}
+
+		army.addUint(unit);
+
+		ApplicationSession.getInstance().getSerializer().save(this);
+	}
+
+	@Override
+	public void addArmy(Player selPlayer, UnitType unitType) {
+		selPlayer.addArmy(unitType);
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
