@@ -6,6 +6,7 @@ import java.util.List;
 
 public class Army implements Serializable {
 
+	private static final long serialVersionUID = 1L;
 	private int numberOfUnits;
 	private List<Unit> units = new ArrayList<>();
 	private double firePower;
@@ -22,8 +23,8 @@ public class Army implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Army [numberOfUnits=" + numberOfUnits + ", units=" + units + ", firePower=" + firePower + ", health="
-				+ health + "]";
+		return "Army: " + ", numberOfUnits = " + numberOfUnits + ", firePower=" + firePower + ", health=" + health
+				+ "]";
 	}
 
 }

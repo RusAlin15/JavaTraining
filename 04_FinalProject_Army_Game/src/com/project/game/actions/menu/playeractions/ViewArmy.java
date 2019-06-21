@@ -16,8 +16,13 @@ public class ViewArmy extends MenuItem {
 	public void doAction() {
 		Player selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
 		Army army = selectedPlayer.getArmyByType(UnitType.INFANTRY);
+		Army army2 = selectedPlayer.getArmyByType(UnitType.AIR_FORCE);
+		Army army3 = selectedPlayer.getArmyByType(UnitType.MARINE_FORCE);
 
-		System.out.println(army);
+//		System.out.println(army);
+//		System.out.println(army2);
+//		System.out.println(army3);
+		System.out.println(selectedPlayer);
 	}
 
 }
