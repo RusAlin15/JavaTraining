@@ -48,7 +48,7 @@ public class Player implements Serializable {
 
 	@Override
 	public String toString() {
-		return " Players: " + name + ", firePower: " + this.getFirePower() + ", health: " + this.getHealth()
+		return " Player: " + name + ", firePower: " + this.getFirePower() + ", health: " + this.getHealth()
 				+ System.lineSeparator();
 	}
 }
