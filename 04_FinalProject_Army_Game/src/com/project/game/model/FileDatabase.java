@@ -110,7 +110,7 @@ public class FileDatabase implements Database, Serializable {
 		}
 		Player player = ApplicationSession.getInstance().getSelectedPlayer();
 		player.setName(name);
-		ApplicationSession.getInstance().getSerializer().save(this); /// asdasdsafsaff
+		ApplicationSession.getInstance().getSerializer().save(this); /// asdasdsafsaffs
 	}
 
 }
