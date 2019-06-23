@@ -21,7 +21,7 @@ public class PlayerMenu extends MenuGenerator {
 		MenuItem addUnit = new AddUnit("3", "Add Unit");
 		MenuItem deleteUnits = new DeleteUnits("4", "Delete Units");
 		MenuItem settings = new Settings("5", "Settings");
-		BackMenu back = new BackMenu("0", "Back");
+		BackMenu back = new BackMenu("0", "Log Off");
 
 		menu.addMenuItem(attackPlayer);
 		menu.addMenuItem(viewArmy);

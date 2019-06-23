@@ -55,4 +55,9 @@ public class Player implements Serializable {
 		return " Player: " + name + ", firePower: " + this.getFirePower() + ", health: " + this.getHealth()
 				+ System.lineSeparator();
 	}
+
+	public void setName(String name2) {
+		this.name = name;
+
+	}
 }

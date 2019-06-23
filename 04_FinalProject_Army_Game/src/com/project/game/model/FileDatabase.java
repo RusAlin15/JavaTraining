@@ -100,4 +100,17 @@ public class FileDatabase implements Database, Serializable {
 
 	}
 
+	@Override
+	public void setPlayerName(String name) {
+		if (name.equals("")) {
+			throw new NullInputException();
+		}
+		if (existPlayerByName(name)) {
+			throw new PlayerExistException();
+		}
+		Player player = ApplicationSession.getInstance().getSelectedPlayer();
+		player.setName(name);
+		ApplicationSession.getInstance().getSerializer().save(this); /// asdasdsafsaff
+	}
+
 }
