@@ -4,27 +4,41 @@ import com.project.game.app.ApplicationSession;
 import com.project.game.app.Keyboard;
 import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
+import com.project.game.model.Player;
 
 public class AttackPlayer extends MenuItem {
+	private Database db;
+	private Player selectedPlayer;
 
 	public AttackPlayer(String option, String key) {
 		super(option, key);
+		db = ApplicationSession.getInstance().getDatabase();
+		selectedPlayer = ApplicationSession.getInstance().getSelectedPlayer();
 	}
 
 	@Override
 	public void doAction() {
-		Database db = ApplicationSession.getInstance().getDatabase();
-		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
+
 		System.out.println(db);
-
-		String name = keyboard.getMessage("Insert player name you want to attak.");
-
 		try {
-			ApplicationSession.getInstance().setAttackedPlayer(name);
+			setAttackedPlayer();
 		} catch (RuntimeException e) {
-			System.out.println("You can not attack yourself.");
+			throw new RuntimeException("You can not attack yourself.");
 		}
 
+		Player attackedPlayer = ApplicationSession.getInstance().getAttackedPlayer();
+		System.out.println(attackedPlayer);
+	}
+
+	private void setAttackedPlayer() {
+		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
+		String name = keyboard.getMessage("Insert player name you want to attak.");
+
+		if (name.toLowerCase().equals(selectedPlayer.getName().toLowerCase())) {
+			throw new RuntimeException();
+		}
+
+		ApplicationSession.getInstance().setAttackedPlayer(name);
 	}
 
 }

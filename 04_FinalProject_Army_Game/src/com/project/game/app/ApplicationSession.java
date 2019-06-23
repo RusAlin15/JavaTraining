@@ -51,9 +51,6 @@ public class ApplicationSession {
 		if (name == null) {
 			attackedPlayer = null;
 		}
-		if (name.toLowerCase() == selectedPlayer.getName().toLowerCase()) {
-			throw new RuntimeException();
-		}
 		attackedPlayer = ApplicationSession.getInstance().getDatabase().getPlayerByName(name);
 	}
 

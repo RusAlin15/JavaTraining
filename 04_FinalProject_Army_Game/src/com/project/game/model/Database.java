@@ -20,4 +20,5 @@ public abstract interface Database {
 
 	void addArmy(Player selPlayer, UnitType unitType);
 
+	void fight(Player selectedPlayer, Player attackedPlayer);
 }

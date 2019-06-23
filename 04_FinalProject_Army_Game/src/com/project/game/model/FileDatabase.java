@@ -82,4 +82,10 @@ public class FileDatabase implements Database, Serializable {
 		return str;
 	}
 
+	@Override
+	public void fight(Player selectedPlayer, Player attackedPlayer) {
+		// TODO Auto-generated method stub
+
+	}
+
 }
