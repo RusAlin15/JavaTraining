@@ -27,7 +27,8 @@ public class AttackPlayer extends MenuItem {
 		}
 
 		Player attackedPlayer = ApplicationSession.getInstance().getAttackedPlayer();
-		System.out.println(attackedPlayer);
+		System.out.println(System.lineSeparator() + attackedPlayer.getName() + " is now your enemy!" //
+				+ System.lineSeparator());
 	}
 
 	private void setAttackedPlayer() {

@@ -38,8 +38,12 @@ public class FileDatabase implements Database, Serializable {
 	}
 
 	private boolean existPlayerByName(String name) {
-		Player player = getPlayerByName(name);
-		return player != null;
+		try {
+			getPlayerByName(name);
+			return true;
+		} catch (RuntimeException e) {
+			return false;
+		}
 	}
 
 	@Override

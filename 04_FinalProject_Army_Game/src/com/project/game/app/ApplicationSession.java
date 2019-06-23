@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import com.project.game.exceptions.NullInputException;
+import com.project.game.exceptions.SamePlayerException;
 import com.project.game.model.Database;
 import com.project.game.model.FileDatabase;
 import com.project.game.model.Player;
@@ -55,6 +56,9 @@ public class ApplicationSession {
 	public void setAttackedPlayer(String name) {
 		if (name.equals("")) {
 			throw new NullInputException();
+		}
+		if (name.toLowerCase().equals(selectedPlayer.getName().toLowerCase())) {
+			throw new SamePlayerException();
 		}
 		attackedPlayer = ApplicationSession.getInstance().getDatabase().getPlayerByName(name);
 	}
