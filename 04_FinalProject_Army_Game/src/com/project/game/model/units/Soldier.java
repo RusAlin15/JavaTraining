@@ -34,4 +34,9 @@ public class Soldier extends Unit {
 		return 10 + shield;
 	}
 
+	@Override
+	public String toString() {
+		return "Soldier { Fire Power " + getFirePower() + " ; Health " + getHealth() + "}";
+	}
+
 }

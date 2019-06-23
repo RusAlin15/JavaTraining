@@ -18,10 +18,10 @@ public class AddSoldier extends MenuItem {
 		Database db = ApplicationSession.getInstance().getDatabase();
 
 		Soldier unit = new Soldier();
-		
+
 		db.addUnit(selectedPlayer, unit);
-		System.out.println("Soldier added successfully");
-	
+		System.out.println(unit.toString() + " added successfully");
+
 	}
 
 }

@@ -10,6 +10,8 @@ public class Tank extends Unit {
 
 	public Tank() {
 		super(UnitType.INFANTRY);
+		setMissile();
+		setAntiMissile();
 	}
 
 	public void setMissile() {
@@ -28,6 +30,11 @@ public class Tank extends Unit {
 	@Override
 	public double getHealth() {
 		return 10 + antiMissile;
+	}
+
+	@Override
+	public String toString() {
+		return "Tank { Fire Power " + getFirePower() + " ; Health " + getHealth() + "}";
 	}
 
 }

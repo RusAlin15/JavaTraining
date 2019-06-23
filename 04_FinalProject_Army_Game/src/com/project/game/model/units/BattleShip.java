@@ -17,11 +17,11 @@ public class BattleShip extends Unit {
 	}
 
 	public void setBombs() {
-		this.bombs = (int) (Math.random() * (200 - 80)) + 1;
+		this.bombs = (int) (Math.random() * (100 - 30)) + 1;
 	}
 
 	public void setMissiles() {
-		this.missiles = (int) (Math.random() * (200 - 70)) + 1;
+		this.missiles = (int) (Math.random() * (60 - 30)) + 1;
 	}
 
 	public void setPilotExp() {
@@ -35,7 +35,11 @@ public class BattleShip extends Unit {
 
 	@Override
 	public double getHealth() {
-		return 600 * pilotExp;
+		return 85 * pilotExp;
 	}
 
+	@Override
+	public String toString() {
+		return "BattleShip { Fire Power " + getFirePower() + " ; Health " + getHealth() + "}";
+	}
 }

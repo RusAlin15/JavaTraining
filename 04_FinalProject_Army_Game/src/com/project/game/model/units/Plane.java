@@ -29,11 +29,11 @@ public class Plane extends Unit {
 	}
 
 	public void setBombs() {
-		this.bombs = (int) (Math.random() * (150 - 80)) + 1;
+		this.bombs = (int) (Math.random() * (60 - 30)) + 1;
 	}
 
 	public void setMissiles() {
-		this.missiles = (int) (Math.random() * (200 - 120)) + 1;
+		this.missiles = (int) (Math.random() * (50 - 12)) + 1;
 	}
 
 	public void setPilotExp() {
@@ -47,7 +47,11 @@ public class Plane extends Unit {
 
 	@Override
 	public double getHealth() {
-		return 200 * pilotExp * (superSonicSpeed ? 2 : 1) * (antiRadar ? 2 : 1);
+		return 75 * pilotExp * (superSonicSpeed ? 2 : 1) * (antiRadar ? 2 : 1);
 	}
 
+	@Override
+	public String toString() {
+		return "Plane { Fire Power " + getFirePower() + " ; Health " + getHealth() + "}";
+	}
 }

@@ -5,7 +5,6 @@ import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
 import com.project.game.model.Player;
 import com.project.game.model.units.Helicopter;
-import com.project.game.model.units.Tank;
 
 public class AddHelicopter extends MenuItem {
 
@@ -19,10 +18,9 @@ public class AddHelicopter extends MenuItem {
 		Database db = ApplicationSession.getInstance().getDatabase();
 
 		Helicopter unit = new Helicopter();
-		
+
 		db.addUnit(selectedPlayer, unit);
-		System.out.println("Helicopter added successfully");
-	
+		System.out.println(unit.toString() + " added successfully");
 	}
 
 }

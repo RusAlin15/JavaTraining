@@ -45,8 +45,8 @@ public class Army implements Serializable {
 
 	@Override
 	public String toString() {
-		return units.get(0).getType() + ": General " + general.getName() + " (" + general.getBonus() + "%) : Units "
-				+ numberOfUnits + " { Fire Power = " + firePower + " ; Health = " + health + "}";
+		return units.get(0).getType() + ":" + general.toString() + " : Units " + numberOfUnits + " { Fire Power = "
+				+ firePower + " ; Health = " + health + "}";
 	}
 
 }

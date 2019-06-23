@@ -17,11 +17,11 @@ public class Helicopter extends Unit {
 	}
 
 	public void setBombs() {
-		this.bombs = (int) (Math.random() * (100 - 50)) + 1;
+		this.bombs = (int) (Math.random() * (60 - 30)) + 1;
 	}
 
 	public void setRockets() {
-		this.rockets = (int) (Math.random() * (200 - 50)) + 1;
+		this.rockets = (int) (Math.random() * (45 - 25)) + 1;
 	}
 
 	public void setAntiRadar() {
@@ -35,7 +35,11 @@ public class Helicopter extends Unit {
 
 	@Override
 	public double getHealth() {
-		return 100 + (antiRadar ? 200 : 0);
+		return 100 + (antiRadar ? 50 : 0);
 	}
 
+	@Override
+	public String toString() {
+		return "Helicopter { Fire Power " + getFirePower() + " ; Health " + getHealth() + "}";
+	}
 }

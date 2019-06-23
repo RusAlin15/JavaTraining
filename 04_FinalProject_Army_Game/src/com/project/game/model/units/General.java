@@ -21,4 +21,8 @@ public class General implements Serializable {
 		return bonus;
 	}
 
+	@Override
+	public String toString() {
+		return "General " + name + " (" + bonus + "%)";
+	}
 }
