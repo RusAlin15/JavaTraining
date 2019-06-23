@@ -22,8 +22,8 @@ public class AttackPlayer extends MenuItem {
 		System.out.println(db);
 		try {
 			setAttackedPlayer();
-		} catch (RuntimeException e) {
-			throw new RuntimeException("You can not attack yourself.");
+		} catch (RuntimeException ex) {
+			throw ex;
 		}
 
 		Player attackedPlayer = ApplicationSession.getInstance().getAttackedPlayer();
@@ -34,11 +34,11 @@ public class AttackPlayer extends MenuItem {
 		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
 		String name = keyboard.getMessage("Insert player name you want to attak.");
 
-		if (name.toLowerCase().equals(selectedPlayer.getName().toLowerCase())) {
-			throw new RuntimeException();
+		try {
+			ApplicationSession.getInstance().setAttackedPlayer(name);
+		} catch (RuntimeException e) {
+			throw e;
 		}
-
-		ApplicationSession.getInstance().setAttackedPlayer(name);
 	}
 
 }

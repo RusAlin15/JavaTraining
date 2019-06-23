@@ -5,7 +5,6 @@ import com.project.game.app.Keyboard;
 import com.project.game.menus.Menu;
 import com.project.game.menus.MenuItem;
 import com.project.game.menus.generators.PlayerMenu;
-import com.project.game.model.Database;
 
 public class SignIn extends MenuItem {
 
@@ -20,15 +19,14 @@ public class SignIn extends MenuItem {
 	@Override
 	public void doAction() {
 		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
-		Database db = ApplicationSession.getInstance().getDatabase();
 
 		String name = keyboard.getMessage("Select Player: ");
 
-		while (!db.existPlayerByName(name)) {
-			name = keyboard.getMessage("Inexistent player... Enter another name: ");
+		try {
+			ApplicationSession.getInstance().setSelectedPlayer(name);
+		} catch (RuntimeException e) {
+			throw e;
 		}
-
-		ApplicationSession.getInstance().setSelectedPlayer(name);
 
 		menu.run();
 	}

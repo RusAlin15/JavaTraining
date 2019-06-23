@@ -21,7 +21,8 @@ public abstract class MenuItem {
 		try {
 			doAction();
 		} catch (RuntimeException ex) {
-			System.out.println(ex.getMessage());
+			System.lineSeparator();
+			System.out.println(System.lineSeparator() + ex.getMessage() + System.lineSeparator());
 		}
 	}
 

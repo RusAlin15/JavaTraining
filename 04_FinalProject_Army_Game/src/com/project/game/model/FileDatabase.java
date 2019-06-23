@@ -6,14 +6,23 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.project.game.app.ApplicationSession;
+import com.project.game.exceptions.NullInputException;
+import com.project.game.exceptions.PlayerExistException;
+import com.project.game.exceptions.PlayerNotExistException;
 
 public class FileDatabase implements Database, Serializable {
 	private static final long serialVersionUID = 1L;
 	private List<Player> players = new ArrayList<>();
 
 	@Override
-	public void addPlayer(Player player) {
-		players.add(player);
+	public void addPlayer(String name) {
+		if (name.equals("")) {
+			throw new NullInputException();
+		}
+		if (existPlayerByName(name)) {
+			throw new PlayerExistException();
+		}
+		players.add(new Player(name));
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
@@ -28,8 +37,7 @@ public class FileDatabase implements Database, Serializable {
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
-	@Override
-	public boolean existPlayerByName(String name) {
+	private boolean existPlayerByName(String name) {
 		Player player = getPlayerByName(name);
 		return player != null;
 	}
@@ -44,7 +52,7 @@ public class FileDatabase implements Database, Serializable {
 				return p;
 			}
 		}
-		return null;
+		throw new PlayerNotExistException();
 	}
 
 	@Override

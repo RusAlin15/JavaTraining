@@ -4,15 +4,13 @@ import java.util.List;
 
 public abstract interface Database {
 
-	void addPlayer(Player player);
+	void addPlayer(String name);
 
 	List<Player> getPlayers();
 
 	Player getPlayerByName(String name);
 
 	void removePlayer(Player player);
-
-	boolean existPlayerByName(String name);
 
 	void addUnit(Player selectedPlayer, Unit unit);
 

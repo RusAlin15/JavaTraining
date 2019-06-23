@@ -3,6 +3,7 @@ package com.project.game.app;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import com.project.game.exceptions.NullInputException;
 import com.project.game.model.Database;
 import com.project.game.model.FileDatabase;
 import com.project.game.model.Player;
@@ -41,15 +42,19 @@ public class ApplicationSession {
 	}
 
 	public void setSelectedPlayer(String name) {
-		if (name == null) {
-			selectedPlayer = null;
+		if (name.equals("")) {
+			throw new NullInputException();
 		}
-		selectedPlayer = ApplicationSession.getInstance().getDatabase().getPlayerByName(name);
+		try {
+			selectedPlayer = ApplicationSession.getInstance().getDatabase().getPlayerByName(name);
+		} catch (RuntimeException e) {
+			throw e;
+		}
 	}
 
 	public void setAttackedPlayer(String name) {
-		if (name == null) {
-			attackedPlayer = null;
+		if (name.equals("")) {
+			throw new NullInputException();
 		}
 		attackedPlayer = ApplicationSession.getInstance().getDatabase().getPlayerByName(name);
 	}
