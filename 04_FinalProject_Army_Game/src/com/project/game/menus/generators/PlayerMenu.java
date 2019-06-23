@@ -2,7 +2,7 @@ package com.project.game.menus.generators;
 
 import com.project.game.actions.menu.playeractions.AddUnit;
 import com.project.game.actions.menu.playeractions.AttackPlayer;
-import com.project.game.actions.menu.playeractions.ResetUnits;
+import com.project.game.actions.menu.playeractions.DeleteUnits;
 import com.project.game.actions.menu.playeractions.Settings;
 import com.project.game.actions.menu.playeractions.ViewArmy;
 import com.project.game.menus.BackMenu;
@@ -15,18 +15,18 @@ public class PlayerMenu extends MenuGenerator {
 	@Override
 	public Menu generateMenu() {
 		Menu menu = new Menu("", "");
-		
+
 		MenuItem attackPlayer = new AttackPlayer("1", "Attack Player");
 		MenuItem viewArmy = new ViewArmy("2", "View Army");
 		MenuItem addUnit = new AddUnit("3", "Add Unit");
-		MenuItem resetUnits = new ResetUnits("4", "Reset Units");
+		MenuItem deleteUnits = new DeleteUnits("4", "Delete Units");
 		MenuItem settings = new Settings("5", "Settings");
 		BackMenu back = new BackMenu("0", "Back");
 
 		menu.addMenuItem(attackPlayer);
 		menu.addMenuItem(viewArmy);
 		menu.addMenuItem(addUnit);
-		menu.addMenuItem(resetUnits);
+		menu.addMenuItem(deleteUnits);
 		menu.addMenuItem(settings);
 		menu.addMenuItem(back);
 		menu.setBackAction(back);

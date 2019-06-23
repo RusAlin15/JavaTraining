@@ -2,6 +2,7 @@ package com.project.game.app;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import com.project.game.model.Database;
 import com.project.game.model.FileDatabase;
 import com.project.game.model.Player;
@@ -11,9 +12,10 @@ public class ApplicationSession {
 	private Database database = new FileDatabase();
 	private Serializer serializer = new Serializer();
 	private Player selectedPlayer;
-	
+	private Player attackedPlayer;
+
 	private static ApplicationSession instance = new ApplicationSession();
-	
+
 	public static ApplicationSession getInstance() {
 		return instance;
 	}
@@ -29,18 +31,32 @@ public class ApplicationSession {
 	public Serializer getSerializer() {
 		return serializer;
 	}
-	
+
 	public Player getSelectedPlayer() {
 		return selectedPlayer;
 	}
-	
+
+	public Player getAttackedPlayer() {
+		return attackedPlayer;
+	}
+
 	public void setSelectedPlayer(String name) {
-		if(name == null) {
+		if (name == null) {
 			selectedPlayer = null;
 		}
 		selectedPlayer = ApplicationSession.getInstance().getDatabase().getPlayerByName(name);
 	}
-	
+
+	public void setAttackedPlayer(String name) {
+		if (name == null) {
+			attackedPlayer = null;
+		}
+		if (name.toLowerCase() == selectedPlayer.getName().toLowerCase()) {
+			throw new RuntimeException();
+		}
+		attackedPlayer = ApplicationSession.getInstance().getDatabase().getPlayerByName(name);
+	}
+
 	public void init() {
 		try {
 			Database database = serializer.load();
@@ -54,4 +70,3 @@ public class ApplicationSession {
 		}
 	}
 }
-	

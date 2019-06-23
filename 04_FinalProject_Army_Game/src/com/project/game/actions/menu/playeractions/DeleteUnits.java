@@ -5,9 +5,9 @@ import com.project.game.menus.MenuItem;
 import com.project.game.model.Database;
 import com.project.game.model.Player;
 
-public class ResetUnits extends MenuItem {
+public class DeleteUnits extends MenuItem {
 
-	public ResetUnits(String option, String key) {
+	public DeleteUnits(String option, String key) {
 		super(option, key);
 	}
 

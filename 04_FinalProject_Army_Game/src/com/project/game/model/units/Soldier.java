@@ -1,5 +1,6 @@
 package com.project.game.model.units;
 
+import com.project.game.app.ApplicationSession;
 import com.project.game.model.Unit;
 import com.project.game.model.UnitType;
 
@@ -26,7 +27,9 @@ public class Soldier extends Unit {
 
 	@Override
 	public double getFirePower() {
-		return 1 + 0.5 * grenades;
+		General gen = ApplicationSession.getInstance().getSelectedPlayer().getArmyByType(UnitType.INFANTRY)
+				.getGeneral();
+		return gen.applyBonus(1 + 1.5 * grenades);
 	}
 
 	@Override

@@ -25,4 +25,8 @@ public class General implements Serializable {
 	public String toString() {
 		return "General " + name + " (" + bonus + "%)";
 	}
+
+	public int applyBonus(double d) {
+		return (int) (d + (d * bonus) / 100);
+	}
 }

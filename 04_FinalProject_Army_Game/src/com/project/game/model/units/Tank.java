@@ -1,5 +1,6 @@
 package com.project.game.model.units;
 
+import com.project.game.app.ApplicationSession;
 import com.project.game.model.Unit;
 import com.project.game.model.UnitType;
 
@@ -24,7 +25,10 @@ public class Tank extends Unit {
 
 	@Override
 	public double getFirePower() {
-		return 10 + 1.5 * missile;
+		General gen = ApplicationSession.getInstance().getSelectedPlayer().getArmyByType(UnitType.INFANTRY)
+				.getGeneral();
+
+		return gen.applyBonus(10 + 2 * missile);
 	}
 
 	@Override

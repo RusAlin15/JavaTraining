@@ -72,4 +72,14 @@ public class FileDatabase implements Database, Serializable {
 		selectedPlayer.resetunits();
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
+
+	@Override
+	public String toString() {
+		String str = System.lineSeparator();
+		for (Player player : players) {
+			str += player.toString();
+		}
+		return str;
+	}
+
 }

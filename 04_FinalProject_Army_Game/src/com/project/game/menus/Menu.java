@@ -18,7 +18,6 @@ public class Menu extends MenuItem {
 		items.add(item);
 	}
 
-
 	@Override
 	public void doAction() {
 		while (true) {

@@ -33,7 +33,9 @@ public class Player implements Serializable {
 	private int getFirePower() {
 		int firePower = 0;
 		for (UnitType type : UnitType.values()) {
-			firePower += army.get(type).getFirePower();
+			if (army.get(type) != null) {
+				firePower += army.get(type).getFirePower();
+			}
 		}
 		return firePower;
 	}
@@ -41,7 +43,9 @@ public class Player implements Serializable {
 	private int getHealth() {
 		int health = 0;
 		for (UnitType type : UnitType.values()) {
-			health += army.get(type).getHealth();
+			if (army.get(type) != null) {
+				health += army.get(type).getHealth();
+			}
 		}
 		return health;
 	}

@@ -14,6 +14,7 @@ public class Army implements Serializable {
 	private int numberOfUnits;
 	private List<Unit> units = new ArrayList<>();
 	private General general;
+
 	private int firePower;
 	private int health;
 
@@ -26,6 +27,7 @@ public class Army implements Serializable {
 		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
 		String name = keyboard.getMessage("New army is created. Give a name for your army general: ");
 		this.general = new General(name);
+		System.out.println(general.toString());
 	}
 
 	public void addUint(Unit unit) {
@@ -41,6 +43,10 @@ public class Army implements Serializable {
 
 	public double getHealth() {
 		return health;
+	}
+
+	public General getGeneral() {
+		return general;
 	}
 
 	@Override
