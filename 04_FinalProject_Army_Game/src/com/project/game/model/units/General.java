@@ -41,4 +41,8 @@ public class General implements Serializable {
 	public double applyBonus(double fire) {
 		return (fire * bonus) / 100;
 	}
+
+	public void resetBonus() {
+		bonus = 0;
+	}
 }

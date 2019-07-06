@@ -20,10 +20,13 @@ public class ReviveUnits extends MenuItem {
 
 		for (UnitType type : UnitType.values()) {
 			Army army = selectedPlayer.getArmyByType(type);
-			db.retriveArmy(army);
+			if (army != null) {
+
+				db.retriveArmy(army);
+			}
 
 		}
-
+		System.out.println("Units retrived.");
 	}
 
 }

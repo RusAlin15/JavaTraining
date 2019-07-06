@@ -63,7 +63,6 @@ public class BattleSimulator {
 
 			fight(attacker, attackerHP, enemyForce);
 			fight(enemy, enemyHP, attackerForce);
-// trebuie gasita metoda sa nu le afecteze healt ul
 
 			if (!attacker.isAlive()) {
 				flag = true;
@@ -79,7 +78,6 @@ public class BattleSimulator {
 
 	private void fight(Unit unit, double hpForce, double attackForce) {
 		if (hpForce < attackForce) {
-			unit.setHealth(0);
 			unit.kill();
 		} else {
 			unit.setHealth(hpForce - attackForce);

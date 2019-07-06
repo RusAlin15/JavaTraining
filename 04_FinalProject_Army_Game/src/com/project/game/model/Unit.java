@@ -48,7 +48,18 @@ public abstract class Unit implements Serializable {
 	}
 
 	public void retrive() {
-		alive = true;
 
+		alive = true;
+		switch (getType()) {
+		case INFANTRY:
+			setHealth(getHealth() + 50);
+			break;
+		case AIR_FORCE:
+			setHealth(getHealth() + 250);
+			break;
+		case MARINE_FORCE:
+			setHealth(getHealth() + 200);
+			break;
+		}
 	}
 }

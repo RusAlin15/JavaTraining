@@ -141,6 +141,7 @@ public class FileDatabase implements Database, Serializable {
 				unit.retrive();
 			}
 		}
+		army.getGeneral().resetBonus();
 		army.recalculateAttributes();
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
