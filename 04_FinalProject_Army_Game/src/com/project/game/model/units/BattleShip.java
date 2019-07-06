@@ -37,7 +37,7 @@ public class BattleShip extends Unit {
 
 	@Override
 	protected void setHealth() {
-		health = 85 * pilotExp;
+		health = 398 * pilotExp;
 	}
 
 }

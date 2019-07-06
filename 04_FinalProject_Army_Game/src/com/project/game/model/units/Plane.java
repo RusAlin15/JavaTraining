@@ -49,7 +49,7 @@ public class Plane extends Unit {
 
 	@Override
 	protected void setHealth() {
-		health = 75 * pilotExp * (superSonicSpeed ? 2 : 1) * (antiRadar ? 2 : 1);
+		health = 475 * pilotExp * (superSonicSpeed ? 2 : 1) * (antiRadar ? 2 : 1);
 	}
 
 }

@@ -37,7 +37,7 @@ public class Helicopter extends Unit {
 
 	@Override
 	protected void setHealth() {
-		health = 100 + (antiRadar ? 50 : 0);
+		health = 387 + 2 * (antiRadar ? 50 : 0);
 	}
 
 }

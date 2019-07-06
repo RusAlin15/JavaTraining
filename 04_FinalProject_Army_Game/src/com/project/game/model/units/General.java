@@ -22,8 +22,14 @@ public class General implements Serializable {
 	}
 
 	public void increseBonus() {
-		while (bonus < 25) {
+		if (bonus < 25) {
 			bonus++;
+		}
+	}
+
+	public void decreaseBonus() {
+		if (bonus > 0) {
+			bonus--;
 		}
 	}
 

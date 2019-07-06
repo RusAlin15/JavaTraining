@@ -23,7 +23,7 @@ public class Soldier extends Unit {
 	}
 
 	private void setShield() {
-		this.shield = (int) (Math.random() * (10 - 1)) + 1;
+		this.shield = (int) (Math.random() * (28 - 1)) + 1;
 	}
 
 	@Override
@@ -33,7 +33,7 @@ public class Soldier extends Unit {
 
 	@Override
 	protected void setHealth() {
-		health = 10 + shield;
+		health = 50 + shield;
 	}
 
 }

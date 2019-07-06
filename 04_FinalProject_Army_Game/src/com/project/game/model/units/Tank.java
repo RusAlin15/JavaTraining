@@ -21,7 +21,7 @@ public class Tank extends Unit {
 	}
 
 	private void setAntiMissile() {
-		this.antiMissile = (int) (Math.random() * (50 - 20)) + 1;
+		this.antiMissile = (int) (Math.random() * (250 - 20)) + 1;
 	}
 
 	@Override
@@ -32,7 +32,7 @@ public class Tank extends Unit {
 
 	@Override
 	protected void setHealth() {
-		health = 10 + antiMissile;
+		health = 100 + antiMissile;
 	}
 
 }

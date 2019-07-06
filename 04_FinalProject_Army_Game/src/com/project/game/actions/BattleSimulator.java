@@ -18,23 +18,37 @@ public class BattleSimulator {
 	}
 
 	public void battle() {
-
 		for (Unit attacker : attackerArmy.getUnits()) {
-			for (Unit enemy : enemyArmy.getUnits()) {
-				if (attacker.isAlive() && enemy.isAlive()) {
-					simulateBattle(attacker, enemy);
-				}
-			}
+			fightEach(attacker);
 		}
 
+		recalculation();
+	}
+
+	private void fightEach(Unit attacker) {
+		for (Unit enemy : enemyArmy.getUnits()) {
+			if (!attacker.isAlive()) { // possible errors
+				break;
+			}
+			if (enemy.isAlive()) {
+				simulateBattle(attacker, enemy);
+			}
+		}
+	}
+
+	private void recalculation() {
 		attackerArmy.recalculateAttributes();
 		enemyArmy.recalculateAttributes();
 
 		if (attackerArmy.getHealth() != 0) {
 			attackerGeneral.increseBonus();
+		} else {
+			attackerGeneral.decreaseBonus();
 		}
 		if (enemyArmy.getHealth() != 0) {
 			enemyGeneral.increseBonus();
+		} else {
+			enemyGeneral.decreaseBonus();
 		}
 	}
 
@@ -47,15 +61,13 @@ public class BattleSimulator {
 			double attackerForce = attacker.getFirePower() + attackerGeneral.getBonus();
 			double enemyForce = enemy.getFirePower() + enemyGeneral.getBonus();
 
-			attacker.setHealth(attackerHP - enemyForce);
-			enemy.setHealth(enemyHP - attackerForce);
+			fight(attacker, attackerHP, enemyForce);
+			fight(enemy, enemyHP, attackerForce);
 
-			if (isKilled(attacker)) {
-				attacker.kill();
+			if (!attacker.isAlive()) {
 				flag = true;
 			}
-			if (isKilled(enemy)) {
-				enemy.kill();
+			if (!enemy.isAlive()) {
 				flag = true;
 			}
 			if (flag) {
@@ -64,8 +76,12 @@ public class BattleSimulator {
 		}
 	}
 
-	private boolean isKilled(Unit attacker) {
-		return attacker.getHealth() < 0;
+	private void fight(Unit unit, double hpForce, double attackForce) {
+		if (hpForce < attackForce) {
+			unit.setHealth(0);
+			unit.kill();
+		} else {
+			unit.setHealth(hpForce - attackForce);
+		}
 	}
-
 }
