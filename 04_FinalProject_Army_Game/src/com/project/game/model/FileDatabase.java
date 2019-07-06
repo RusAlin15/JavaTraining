@@ -134,4 +134,15 @@ public class FileDatabase implements Database, Serializable {
 		return (attacker != null && enemy != null && !attacker.isEmpty() && !enemy.isEmpty());
 	}
 
+	@Override
+	public void retriveArmy(Army army) {
+		for (Unit unit : army.getUnits()) {
+			if (!unit.isAlive()) {
+				unit.retrive();
+			}
+		}
+		army.recalculateAttributes();
+		ApplicationSession.getInstance().getSerializer().save(this);
+	}
+
 }

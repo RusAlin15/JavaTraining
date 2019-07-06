@@ -26,6 +26,8 @@ public class ChangeName extends MenuItem {
 		} catch (NullInputException e) {
 			throw e;
 		}
+		System.out.println("Name changed to " + name);
+
 	}
 
 }

@@ -22,7 +22,7 @@ public class Menu extends MenuItem {
 	public void doAction() {
 		while (true) {
 			showMenu();
-			System.out.print(">");
+			System.out.print(">>");
 			String option = scanner.nextLine();
 			MenuItem item = getMenuItemByOption(option);
 
@@ -49,6 +49,7 @@ public class Menu extends MenuItem {
 	}
 
 	private void showMenu() {
+		System.out.print(System.lineSeparator());
 		for (MenuItem item : items) {
 			System.out.println(item);
 		}

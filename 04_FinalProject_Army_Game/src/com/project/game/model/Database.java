@@ -24,4 +24,6 @@ public abstract interface Database {
 
 	void battleSimulation();
 
+	void retriveArmy(Army army);
+
 }

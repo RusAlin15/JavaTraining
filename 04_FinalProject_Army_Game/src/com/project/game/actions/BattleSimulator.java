@@ -22,7 +22,7 @@ public class BattleSimulator {
 			fightEach(attacker);
 		}
 
-		recalculation();
+		award();
 	}
 
 	private void fightEach(Unit attacker) {
@@ -36,7 +36,7 @@ public class BattleSimulator {
 		}
 	}
 
-	private void recalculation() {
+	private void award() {
 		attackerArmy.recalculateAttributes();
 		enemyArmy.recalculateAttributes();
 
@@ -63,6 +63,7 @@ public class BattleSimulator {
 
 			fight(attacker, attackerHP, enemyForce);
 			fight(enemy, enemyHP, attackerForce);
+// trebuie gasita metoda sa nu le afecteze healt ul
 
 			if (!attacker.isAlive()) {
 				flag = true;

@@ -46,4 +46,9 @@ public abstract class Unit implements Serializable {
 	public String toString() {
 		return type.toString() + " Unit { Fire Power " + firePower + " ; Health " + health + "}";
 	}
+
+	public void retrive() {
+		alive = true;
+
+	}
 }
