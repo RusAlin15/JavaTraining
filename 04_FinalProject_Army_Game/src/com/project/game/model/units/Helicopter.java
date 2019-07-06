@@ -14,32 +14,30 @@ public class Helicopter extends Unit {
 		setAntiRadar();
 		setBombs();
 		setRockets();
+		setFirePower();
+		setHealth();
 	}
 
-	public void setBombs() {
+	private void setBombs() {
 		this.bombs = (int) (Math.random() * (60 - 30)) + 1;
 	}
 
-	public void setRockets() {
+	private void setRockets() {
 		this.rockets = (int) (Math.random() * (45 - 25)) + 1;
 	}
 
-	public void setAntiRadar() {
+	private void setAntiRadar() {
 		this.antiRadar = Math.random() < 0.5;
 	}
 
 	@Override
-	public void setFirePower() {
+	protected void setFirePower() {
 		firePower = (100 + bombs + rockets);
 	}
 
 	@Override
-	public void setHealth() {
+	protected void setHealth() {
 		health = 100 + (antiRadar ? 50 : 0);
 	}
 
-	@Override
-	public String toString() {
-		return "Helicopter { Fire Power " + firePower + " ; Health " + health + "}";
-	}
 }

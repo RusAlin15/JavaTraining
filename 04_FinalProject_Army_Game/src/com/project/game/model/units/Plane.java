@@ -18,40 +18,38 @@ public class Plane extends Unit {
 		setMissiles();
 		setPilotExp();
 		setSuperSonicSpeed();
+		setFirePower();
+		setHealth();
 	}
 
-	public void setSuperSonicSpeed() {
+	private void setSuperSonicSpeed() {
 		this.superSonicSpeed = Math.random() > 0.5;
 	}
 
-	public void setAntiRadar() {
+	private void setAntiRadar() {
 		this.antiRadar = Math.random() > 0.5;
 	}
 
-	public void setBombs() {
+	private void setBombs() {
 		this.bombs = (int) (Math.random() * (60 - 30)) + 1;
 	}
 
-	public void setMissiles() {
+	private void setMissiles() {
 		this.missiles = (int) (Math.random() * (50 - 12)) + 1;
 	}
 
-	public void setPilotExp() {
+	private void setPilotExp() {
 		this.pilotExp = (int) (Math.random() * (10 - 1)) + 1;
 	}
 
 	@Override
-	public void setFirePower() {
+	protected void setFirePower() {
 		firePower = (pilotExp * (100 + bombs + missiles));
 	}
 
 	@Override
-	public void setHealth() {
+	protected void setHealth() {
 		health = 75 * pilotExp * (superSonicSpeed ? 2 : 1) * (antiRadar ? 2 : 1);
 	}
 
-	@Override
-	public String toString() {
-		return "Plane { Fire Power " + firePower + " ; Health " + health + "}";
-	}
 }

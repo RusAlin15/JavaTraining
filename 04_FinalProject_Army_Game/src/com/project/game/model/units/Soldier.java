@@ -14,29 +14,26 @@ public class Soldier extends Unit {
 		super(UnitType.INFANTRY);
 		setGrenades();
 		setShield();
+		setFirePower();
+		setHealth();
 	}
 
-	public void setGrenades() {
+	private void setGrenades() {
 		this.grenades = (int) (Math.random() * (10 - 1)) + 1;
 	}
 
-	public void setShield() {
+	private void setShield() {
 		this.shield = (int) (Math.random() * (10 - 1)) + 1;
 	}
 
 	@Override
-	public void setFirePower() {
+	protected void setFirePower() {
 		firePower = (1 + 1.5 * grenades);
 	}
 
 	@Override
-	public void setHealth() {
+	protected void setHealth() {
 		health = 10 + shield;
-	}
-
-	@Override
-	public String toString() {
-		return "Soldier { Fire Power " + firePower + " ; Health " + health + "}";
 	}
 
 }

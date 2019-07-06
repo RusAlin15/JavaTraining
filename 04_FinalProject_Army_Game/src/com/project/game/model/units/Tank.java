@@ -12,30 +12,27 @@ public class Tank extends Unit {
 		super(UnitType.INFANTRY);
 		setMissile();
 		setAntiMissile();
+		setFirePower();
+		setHealth();
 	}
 
-	public void setMissile() {
+	private void setMissile() {
 		this.missile = (int) (Math.random() * (50 - 20)) + 1;
 	}
 
-	public void setAntiMissile() {
+	private void setAntiMissile() {
 		this.antiMissile = (int) (Math.random() * (50 - 20)) + 1;
 	}
 
 	@Override
-	public void setFirePower() {
+	protected void setFirePower() {
 
 		firePower = 10 + 2 * missile;
 	}
 
 	@Override
-	public void setHealth() {
+	protected void setHealth() {
 		health = 10 + antiMissile;
-	}
-
-	@Override
-	public String toString() {
-		return "Tank { Fire Power " + firePower + " ; Health " + health + "}";
 	}
 
 }

@@ -53,9 +53,33 @@ public class Army implements Serializable {
 		return units;
 	}
 
+	public void recalculateAttributes() {
+		firePower = 0;
+		health = 0;
+
+		for (Unit unit : units) {
+			if (unit.isAlive()) {
+				health += unit.getHealth();
+				firePower += unit.getFirePower();
+			}
+		}
+	}
+
 	@Override
 	public String toString() {
-		return units.get(0).getType() + ":" + general.toString() + " : Units " + numberOfUnits + " { Fire Power = "
-				+ firePower + " ; Health = " + health + "}";
+		return units.get(0).getType() + ":" + general.toString() + " : " + getAliveUnitsNumber()
+				+ " alive units out of " + numberOfUnits + " { Fire Power = " + firePower + " ; Health = " + health
+				+ "}";
 	}
+
+	private int getAliveUnitsNumber() {
+		int aliveUnitsNumber = 0;
+		for (Unit unit : units) {
+			if (unit.isAlive()) {
+				aliveUnitsNumber++;
+			}
+		}
+		return aliveUnitsNumber;
+	}
+
 }

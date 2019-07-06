@@ -5,7 +5,7 @@ import java.io.Serializable;
 public abstract class Unit implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private UnitType type;
-	private boolean alive;
+	private boolean alive = true;
 	protected double firePower;
 	protected double health;
 
@@ -14,9 +14,9 @@ public abstract class Unit implements Serializable {
 		this.type = type;
 	}
 
-	public abstract void setFirePower();
+	protected abstract void setFirePower();
 
-	public abstract void setHealth();
+	protected abstract void setHealth();
 
 	public void setHealth(double health) {
 		this.health = health;
@@ -24,10 +24,6 @@ public abstract class Unit implements Serializable {
 
 	public double getFirePower() {
 		return firePower;
-	}
-
-	public void setFirePower(double firePower) {
-		this.firePower = firePower;
 	}
 
 	public double getHealth() {
@@ -44,5 +40,10 @@ public abstract class Unit implements Serializable {
 
 	public boolean isAlive() {
 		return alive;
+	}
+
+	@Override
+	public String toString() {
+		return type.toString() + " Unit { Fire Power " + firePower + " ; Health " + health + "}";
 	}
 }

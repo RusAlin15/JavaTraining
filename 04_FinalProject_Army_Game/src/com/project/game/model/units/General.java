@@ -21,12 +21,18 @@ public class General implements Serializable {
 		return bonus;
 	}
 
-	@Override
-	public String toString() {
-		return "General " + name + " (" + bonus + "%)" + " added.";
+	public void increseBonus() {
+		while (bonus < 25) {
+			bonus++;
+		}
 	}
 
-	public int applyBonus(double d) {
-		return (int) (d + (d * bonus) / 100);
+	@Override
+	public String toString() {
+		return "General " + name + " (" + bonus + "%)";
+	}
+
+	public double applyBonus(double fire) {
+		return (fire * bonus) / 100;
 	}
 }
