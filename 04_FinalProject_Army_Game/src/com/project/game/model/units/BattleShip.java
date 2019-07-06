@@ -1,6 +1,5 @@
 package com.project.game.model.units;
 
-import com.project.game.app.ApplicationSession;
 import com.project.game.model.Unit;
 import com.project.game.model.UnitType;
 
@@ -30,19 +29,17 @@ public class BattleShip extends Unit {
 	}
 
 	@Override
-	public double getFirePower() {
-		General gen = ApplicationSession.getInstance().getSelectedPlayer().getArmyByType(UnitType.INFANTRY)
-				.getGeneral();
-		return gen.applyBonus(pilotExp * (100 + bombs + missiles));
+	public void setFirePower() {
+		firePower = (pilotExp * (100 + bombs + missiles));
 	}
 
 	@Override
-	public double getHealth() {
-		return 85 * pilotExp;
+	public void setHealth() {
+		health = 85 * pilotExp;
 	}
 
 	@Override
 	public String toString() {
-		return "BattleShip { Fire Power " + getFirePower() + " ; Health " + getHealth() + "}";
+		return "BattleShip { Fire Power " + firePower + " ; Health " + health + "}";
 	}
 }

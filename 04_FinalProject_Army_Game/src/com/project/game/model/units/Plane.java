@@ -1,6 +1,5 @@
 package com.project.game.model.units;
 
-import com.project.game.app.ApplicationSession;
 import com.project.game.model.Unit;
 import com.project.game.model.UnitType;
 
@@ -42,19 +41,17 @@ public class Plane extends Unit {
 	}
 
 	@Override
-	public double getFirePower() {
-		General gen = ApplicationSession.getInstance().getSelectedPlayer().getArmyByType(UnitType.INFANTRY)
-				.getGeneral();
-		return gen.applyBonus(pilotExp * (100 + bombs + missiles));
+	public void setFirePower() {
+		firePower = (pilotExp * (100 + bombs + missiles));
 	}
 
 	@Override
-	public double getHealth() {
-		return 75 * pilotExp * (superSonicSpeed ? 2 : 1) * (antiRadar ? 2 : 1);
+	public void setHealth() {
+		health = 75 * pilotExp * (superSonicSpeed ? 2 : 1) * (antiRadar ? 2 : 1);
 	}
 
 	@Override
 	public String toString() {
-		return "Plane { Fire Power " + getFirePower() + " ; Health " + getHealth() + "}";
+		return "Plane { Fire Power " + firePower + " ; Health " + health + "}";
 	}
 }
