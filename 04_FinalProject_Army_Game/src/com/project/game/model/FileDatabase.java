@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.project.game.actions.BattleSimulator;
 import com.project.game.app.ApplicationSession;
 import com.project.game.exceptions.NullInputException;
 import com.project.game.exceptions.PlayerExistException;
@@ -110,7 +111,25 @@ public class FileDatabase implements Database, Serializable {
 		}
 		Player player = ApplicationSession.getInstance().getSelectedPlayer();
 		player.setName(name);
-		ApplicationSession.getInstance().getSerializer().save(this); /// asdasdsafsaffs
+		ApplicationSession.getInstance().getSerializer().save(this);
+	}
+
+	@Override
+	public void battle() {
+		Player player1 = ApplicationSession.getInstance().getSelectedPlayer();
+		Player player2 = ApplicationSession.getInstance().getAttackedPlayer();
+
+		System.out.println(System.lineSeparator() + player2.getName() + " is now your enemy!" + System.lineSeparator());
+
+		for (UnitType type : UnitType.values()) {
+			if (player1.getArmyByType(type) != null && player2.getArmyByType(type) != null) {
+				BattleSimulator bs = new BattleSimulator(player1.getArmyByType(type), player2.getArmyByType(type));
+				bs.battle();
+
+			}
+		}
+
+		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
 }

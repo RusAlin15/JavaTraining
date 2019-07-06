@@ -25,7 +25,7 @@ public class Army implements Serializable {
 
 	private void setGeneral() {
 		Keyboard keyboard = ApplicationSession.getInstance().getKeboard();
-		String name = keyboard.getMessage("New army is created. Give a name for your army general: ");
+		String name = keyboard.getMessage("New detachment is created. Give a name for detachment general: ");
 		this.general = new General(name);
 		System.out.println(general.toString());
 	}
@@ -49,10 +49,13 @@ public class Army implements Serializable {
 		return general;
 	}
 
+	public List<Unit> getUnits() {
+		return units;
+	}
+
 	@Override
 	public String toString() {
 		return units.get(0).getType() + ":" + general.toString() + " : Units " + numberOfUnits + " { Fire Power = "
 				+ firePower + " ; Health = " + health + "}";
 	}
-
 }

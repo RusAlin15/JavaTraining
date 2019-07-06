@@ -23,7 +23,7 @@ public class General implements Serializable {
 
 	@Override
 	public String toString() {
-		return "General " + name + " (" + bonus + "%)";
+		return "General " + name + " (" + bonus + "%)" + " added.";
 	}
 
 	public int applyBonus(double d) {

@@ -21,4 +21,7 @@ public abstract interface Database {
 	void fight(Player selectedPlayer, Player attackedPlayer);
 
 	void setPlayerName(String name);
+
+	void battle();
+
 }

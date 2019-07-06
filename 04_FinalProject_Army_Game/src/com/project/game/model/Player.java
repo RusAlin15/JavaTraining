@@ -56,7 +56,7 @@ public class Player implements Serializable {
 				+ System.lineSeparator();
 	}
 
-	public void setName(String name2) {
+	public void setName(String name) {
 		this.name = name;
 
 	}
