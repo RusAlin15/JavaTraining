@@ -115,20 +115,23 @@ public class FileDatabase implements Database, Serializable {
 	}
 
 	@Override
-	public void battle() {
-		Player attacker = ApplicationSession.getInstance().getSelectedPlayer();
-		Player enemy = ApplicationSession.getInstance().getAttackedPlayer();
-
-		System.out.println(System.lineSeparator() + enemy.getName() + " is now your enemy!" + System.lineSeparator());
+	public void battleSimulation() {
 
 		for (UnitType type : UnitType.values()) {
-			if (attacker.getArmyByType(type) != null && enemy.getArmyByType(type) != null) {
-				BattleSimulator bs = new BattleSimulator(attacker.getArmyByType(type), enemy.getArmyByType(type));
+			Army attacker = ApplicationSession.getInstance().getSelectedPlayer().getArmyByType(type);
+			Army enemy = ApplicationSession.getInstance().getAttackedPlayer().getArmyByType(type);
+
+			if (battleCondition(attacker, enemy)) {
+				BattleSimulator bs = new BattleSimulator(attacker, enemy);
 				bs.battle();
 			}
 		}
 
 		ApplicationSession.getInstance().getSerializer().save(this);
+	}
+
+	private boolean battleCondition(Army attacker, Army enemy) {
+		return (attacker != null && enemy != null && !attacker.isEmpty() && !enemy.isEmpty());
 	}
 
 }

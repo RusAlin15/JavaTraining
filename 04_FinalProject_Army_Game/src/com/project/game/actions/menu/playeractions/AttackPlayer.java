@@ -23,7 +23,7 @@ public class AttackPlayer extends MenuItem {
 			throw ex;
 		}
 
-		db.battle();
+		db.battleSimulation();
 
 	}
 

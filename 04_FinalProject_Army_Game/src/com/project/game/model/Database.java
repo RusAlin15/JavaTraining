@@ -22,6 +22,6 @@ public abstract interface Database {
 
 	void setPlayerName(String name);
 
-	void battle();
+	void battleSimulation();
 
 }

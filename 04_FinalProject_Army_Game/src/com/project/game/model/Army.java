@@ -82,4 +82,8 @@ public class Army implements Serializable {
 		return aliveUnitsNumber;
 	}
 
+	public boolean isEmpty() {
+		return getAliveUnitsNumber() == 0;
+	}
+
 }
