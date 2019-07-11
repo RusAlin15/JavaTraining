@@ -1,21 +1,33 @@
 package javaself;
 
 public class TestME3 {
+
 	public static void main(String[] args) {
-		System.out.println(evaluate("3 + 2 * 4 *6 - 5"));
+		String expression = " 3-2*4-5".replaceAll(" ", "").trim();
+		System.out.println(evaluate(expression));
 	}
 
 	public static int evaluate(String expression) {
-		int rezultat = 0;
 		expression = expression.replaceAll(" ", "").trim();
-		char[] ch = expression.toCharArray();
-		for (int i = 0; i < ch.length; i += 2) {
-			calcul(ch[i], ch[i + 1]);
+		for (int i = 1; i < expression.length(); i++) {
+			switch (expression.charAt(i)) {
+			case '+':
+				return evaluate(expression.substring(0, i)) + evaluate(expression.substring(i + 1));
+			case '-':
+				return evaluate(expression.substring(0, i)) - evaluate(expression.substring(i + 1));
+
+			}
 		}
-		return rezultat;
-	}
+		for (int i = 1; i < expression.length(); i++) {
+			switch (expression.charAt(i)) {
 
-	private static void calcul(char c, char d) {
-	}
+			case '*':
+				return evaluate(expression.substring(0, i)) * evaluate(expression.substring(i + 1));
 
+			case '/':
+				return evaluate(expression.substring(0, i)) / evaluate(expression.substring(i + 1));
+			}
+		}
+		return Integer.parseInt(expression);
+	}
 }
