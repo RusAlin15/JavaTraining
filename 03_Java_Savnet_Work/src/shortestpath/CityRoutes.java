@@ -45,13 +45,13 @@ public class CityRoutes {
 		return city;
 	}
 
-	public City getCityByName(String name) {
+	public City getCityByName(String name) throws CityNotFoundException {
 		for (City city : cityRoutes) {
 			if (city.getName() == name) {
 				return city;
 			}
 		}
-		throw new RuntimeException("City not exist!");
+		throw new CityNotFoundException();
 	}
 
 	public void show() {
@@ -60,20 +60,18 @@ public class CityRoutes {
 		}
 	}
 
-	public List<Route> findRoutes(String fromName, String toName) {
+	public List<Route> findRoutes(String fromName, String toName)
+			throws CloneNotSupportedException, CityNotFoundException {
 		City start = takeCity(fromName);
 		City end = takeCity(toName);
 		Route route = new Route();
 		List<Route> routesList = new ArrayList<>();
 
 		find(routesList, route, start, end);
-		for (Route rout : routesList) {
-			rout.show();
-		}
 		return routesList;
 	}
 
-	private void find(List<Route> routesList, Route route, City start, City end) {
+	private void find(List<Route> routesList, Route route, City start, City end) throws CloneNotSupportedException {
 		if (route.contains(start)) {
 			return;
 		}
@@ -81,7 +79,9 @@ public class CityRoutes {
 		route.add(start);
 
 		if (start.equals(end)) {
-			routesList.add(route);
+			Route clone = route.clone();
+			clone.caclulateDistance();
+			routesList.add(clone);
 		} else {
 			for (Map.Entry<City, Integer> entry : start.getNeighbours().entrySet()) {
 				find(routesList, route, entry.getKey(), end);
@@ -90,14 +90,11 @@ public class CityRoutes {
 		route.removeLast();
 	}
 
-	private City takeCity(String name) {
-		City city = null;
-		try {
-			city = getCityByName(name);
-			return city;
-		} catch (Exception e) {
-			System.out.println(e);
+	private City takeCity(String name) throws CityNotFoundException {
+		City city = getCityByName(name);
+		if (city == null) {
+			throw new CityNotFoundException();
 		}
-		throw new RuntimeException();
+		return city;
 	}
 }
