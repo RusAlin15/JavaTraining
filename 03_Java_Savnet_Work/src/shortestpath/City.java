@@ -4,7 +4,8 @@ import java.util.HashMap;
 
 public class City {
 	private String name;
-	private HashMap<City, Integer> neighbours = new HashMap<>();
+	private HashMap<City, Integer> neighboursDistance = new HashMap<>();
+	private HashMap<City, Double> neighboursTime = new HashMap<>();
 
 	public City(String name) {
 		super();
@@ -15,12 +16,13 @@ public class City {
 		return name;
 	}
 
-	public void addNeighbour(City city, int distance) {
-		neighbours.put(city, distance);
+	public void addNeighbour(City city, int distance, double time) {
+		neighboursDistance.put(city, distance);
+		neighboursTime.put(city, time);
 	}
 
 	public HashMap<City, Integer> getNeighbours() {
-		return neighbours;
+		return neighboursDistance;
 	}
 
 	@Override
@@ -46,7 +48,11 @@ public class City {
 	}
 
 	public Integer getDistance(City to) {
-		return neighbours.get(to);
+		return neighboursDistance.get(to);
+	}
+
+	public double getTime(City to) {
+		return neighboursTime.get(to);
 	}
 
 }
