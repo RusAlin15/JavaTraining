@@ -1,10 +1,11 @@
-package shortestpath.app;
+package shortestpath;
 
 import java.util.HashMap;
 
 public class City {
 	private String name;
-	private HashMap<City, Integer> neighbours = new HashMap<>();
+	private HashMap<City, Integer> neighboursDistance = new HashMap<>();
+	private HashMap<City, Double> neighboursTime = new HashMap<>();
 
 	public City(String name) {
 		super();
@@ -15,25 +16,18 @@ public class City {
 		return name;
 	}
 
-	public void addNeighbour(City city, int distance) {
-		neighbours.put(city, distance);
+	public void addNeighbour(City city, int distance, double time) {
+		neighboursDistance.put(city, distance);
+		neighboursTime.put(city, time);
 	}
 
 	public HashMap<City, Integer> getNeighbours() {
-		return neighbours;
+		return neighboursDistance;
 	}
 
 	@Override
 	public String toString() {
 		return " " + name + " ";
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
-		return result;
 	}
 
 	@Override
@@ -51,6 +45,14 @@ public class City {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+
+	public Integer getDistance(City to) {
+		return neighboursDistance.get(to);
+	}
+
+	public double getTime(City to) {
+		return neighboursTime.get(to);
 	}
 
 }
