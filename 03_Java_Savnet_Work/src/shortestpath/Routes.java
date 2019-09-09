@@ -1,6 +1,8 @@
 package shortestpath;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 
@@ -49,10 +51,11 @@ public class Routes {
 
 	private void setFastestRoute() throws CloneNotSupportedException {
 		for (Route route : routes) {
-			if (fastestRoute.getTime() > route.getTime()) {
+			if (fastestRoute.getTime() >= route.getTime()) {
 				fastestRoute = route.clone();
 			}
 		}
+
 	}
 
 	public void setShortestRoute() throws CloneNotSupportedException {
@@ -83,5 +86,25 @@ public class Routes {
 
 	public String getDestination() {
 		return endName;
+	}
+
+	public void sortByDistance() {
+		Collections.sort(routes, new Comparator<Route>() {
+			@Override
+			public int compare(Route a, Route b) {
+				return a.getDistance() - b.getDistance();
+			}
+		});
+
+	}
+
+	public void sortByTime() {
+		Collections.sort(routes, new Comparator<Route>() {
+
+			@Override
+			public int compare(Route a, Route b) {
+				return (int) (a.getTime() - b.getTime());
+			}
+		});
 	}
 }

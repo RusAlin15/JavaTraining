@@ -5,7 +5,7 @@ public class Application {
 
 	public static void main(String[] args) throws CloneNotSupportedException {
 		cr.init();
-		Routes routes = new Routes("Timisoara", "Oradea");
+		Routes routes = new Routes("Timisoara", "Suceava");
 		search(routes);
 
 		Routes routes1 = new Routes("Timisoara", "Arad");
@@ -17,6 +17,9 @@ public class Application {
 		try {
 			routes.findRoutes(cr);
 
+			routes.sortByTime();
+			routes.show();
+
 			System.out.println("Shortest route is...");
 			routes.getShortestRoute().show();
 
@@ -25,6 +28,7 @@ public class Application {
 			System.out.println("Fastest route is...");
 			routes.getFastestRoute().show();
 			System.out.println();
+
 		} catch (CityNotFoundException e) {
 			System.out
 					.println("Check if " + routes.getStart() + " or " + routes.getDestination() + " exist on the map!");

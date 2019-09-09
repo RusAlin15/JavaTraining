@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Route implements Cloneable {
-	int distance = Integer.MAX_VALUE;
-	double time = Double.MAX_VALUE;
-	List<City> citys = new ArrayList<>();
+	private int distance = Integer.MAX_VALUE;
+	private double time = Double.MAX_VALUE;
+	private List<City> citys = new ArrayList<>();
 
 	public void add(City city) {
 		citys.add(city);

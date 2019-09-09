@@ -37,7 +37,7 @@ public class CitysMap {
 		City city = null;
 		try {
 			city = getCityByName(name);
-		} catch (Exception e) {
+		} catch (CityNotFoundException e) {
 			city = new City(name);
 			cityRoutes.add(city);
 		}
@@ -61,9 +61,6 @@ public class CitysMap {
 
 	public City takeCity(String name) throws CityNotFoundException {
 		City city = getCityByName(name);
-		if (city == null) {
-			throw new CityNotFoundException();
-		}
 		return city;
 	}
 
