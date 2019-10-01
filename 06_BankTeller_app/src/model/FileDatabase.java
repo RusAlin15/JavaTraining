@@ -1,41 +1,34 @@
 package model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 import app.ApplicationSession;
 
 public class FileDatabase implements Database, Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private List<User> users = new ArrayList<>();
+	private User user;
 
 	@Override
-	public void addUser(User user) {
-		users.add(user);
-		System.out.println(user);
+	public void addUserName(String userName) {
+		user = new User(userName);
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
 	@Override
-	public List<User> getClients() {
-		return users;
+	public String getUserName() {
+		return user.getName();
 	}
 
 	@Override
-	public void removeUserByName(String name) {
-		Iterator<User> iterator = users.iterator();
-
-		while (iterator.hasNext()) {
-			User user = iterator.next();
-			if (user.getName().equals(name)) {
-				iterator.remove();
-			}
-		}
+	public void removeUser() {
 
 		ApplicationSession.getInstance().getSerializer().save(this);
+	}
+
+	@Override
+	public void changeUserName(String userName) {
+
 	}
 
 }

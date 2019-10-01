@@ -1,13 +1,13 @@
 package model;
 
-import java.util.List;
-
 public interface Database {
 
-	void addUser(User user);
+	void addUserName(String userName);
 
-	List<User> getClients();
+	void changeUserName(String userName);
 
-	void removeUserByName(String name);
+	String getUserName();
+
+	void removeUser();
 
 }

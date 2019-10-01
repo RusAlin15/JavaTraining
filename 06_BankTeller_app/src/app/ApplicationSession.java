@@ -33,8 +33,12 @@ public class ApplicationSession {
 		try {
 			Database database = serializer.load();
 			this.database = database;
+			String userName = database.getUserName();
+			System.out.println("Welcome " + userName + ".");
 		} catch (FileNotFoundException e) {
-			System.out.println("File does not exist. Continue...");
+			System.out.println("App configure... Set your user name.");
+			String newUserName = keyboard.getString("Insert your user name.");
+			database.addUserName(newUserName);
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {
