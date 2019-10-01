@@ -1,9 +1,9 @@
 package app;
 
-import actions.AddBankAction;
-import actions.RemoveBankAction;
-import actions.SelectBankAction;
-import actions.ViewBanksAction;
+import actions.AddAccount;
+import actions.RemoveAccount;
+import actions.SelectAccount;
+import actions.ViewAccounts;
 import menus.BackMenu;
 import menus.Menu;
 import menus.MenuItem;
@@ -17,18 +17,17 @@ public class Application {
 
 	private void run() {
 		Menu mainMenu = new Menu("", "");
-
 		BackMenu back = new BackMenu("0", "Back");
 
-		MenuItem addBank = new AddBankAction("1", "Add Bank");
-		MenuItem removeBank = new RemoveBankAction("2", "Remove Bank");
-		MenuItem viewBanks = new ViewBanksAction("3", "View All Banks");
-		MenuItem selectBank = new SelectBankAction("4", "Select Bank");
+		MenuItem addAccount = new AddAccount("1", "Add Account");
+		MenuItem viewAccounts = new ViewAccounts("2", "View Accounts");
+		MenuItem removeAccount = new RemoveAccount("3", "Remove Account");
+		MenuItem selectAccount = new SelectAccount("4", "Select Account");
 
-		mainMenu.addMenuItem(addBank);
-		mainMenu.addMenuItem(removeBank);
-		mainMenu.addMenuItem(viewBanks);
-		mainMenu.addMenuItem(selectBank);
+		mainMenu.addMenuItem(addAccount);
+		mainMenu.addMenuItem(viewAccounts);
+		mainMenu.addMenuItem(removeAccount);
+		mainMenu.addMenuItem(selectAccount);
 		mainMenu.addMenuItem(back);
 		mainMenu.setBackAction(back);
 

@@ -1,7 +1,8 @@
 package model;
 
 public class Account implements TotalSum {
-
+	
+	private Bank bank;
 	private String accountNumber;
 	private float amount;
 

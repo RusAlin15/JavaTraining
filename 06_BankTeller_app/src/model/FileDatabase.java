@@ -10,27 +10,27 @@ import app.ApplicationSession;
 public class FileDatabase implements Database, Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private List<Bank> banks = new ArrayList<>();
+	private List<User> users = new ArrayList<>();
 
 	@Override
-	public void addBank(Bank bank) {
-		banks.add(bank);
-		System.out.println(bank);
+	public void addUser(User user) {
+		users.add(user);
+		System.out.println(user);
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
 	@Override
-	public List<Bank> getClients() {
-		return banks;
+	public List<User> getClients() {
+		return users;
 	}
 
 	@Override
-	public void removeBankByName(String name) {
-		Iterator<Bank> iterator = banks.iterator();
+	public void removeUserByName(String name) {
+		Iterator<User> iterator = users.iterator();
 
 		while (iterator.hasNext()) {
-			Bank s = iterator.next();
-			if (s.getName().equals(name)) {
+			User user = iterator.next();
+			if (user.getName().equals(name)) {
 				iterator.remove();
 			}
 		}

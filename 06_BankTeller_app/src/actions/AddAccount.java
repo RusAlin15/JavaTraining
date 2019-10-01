@@ -2,9 +2,9 @@ package actions;
 
 import menus.MenuItem;
 
-public class AddBankAction extends MenuItem {
+public class AddAccount extends MenuItem {
 
-	public AddBankAction(String key, String option) {
+	public AddAccount(String key, String option) {
 		super(key, option);
 		// TODO Auto-generated constructor stub
 	}

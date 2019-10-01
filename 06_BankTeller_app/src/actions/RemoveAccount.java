@@ -2,9 +2,9 @@ package actions;
 
 import menus.MenuItem;
 
-public class RemoveClientAction extends MenuItem {
+public class RemoveAccount extends MenuItem {
 
-	public RemoveClientAction(String key, String option) {
+	public RemoveAccount(String key, String option) {
 		super(key, option);
 		// TODO Auto-generated constructor stub
 	}
