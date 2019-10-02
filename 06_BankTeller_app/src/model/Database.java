@@ -10,4 +10,8 @@ public interface Database {
 
 	void removeUser();
 
+	void addAccount(Account account);
+
+	void showAccounts();
+
 }

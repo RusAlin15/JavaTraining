@@ -8,21 +8,24 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private String name;
+	private List<Account> accounts = new ArrayList<>();
 	private int totalAccounts = 0;
-
-	private List<Account> accounts = new ArrayList<Account>();
 
 	public User(String name) {
 		this.name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "Client [name=" + name;
-	}
-
 	public String getName() {
 		return name;
+	}
+
+	public void addAcount(Account account) {
+		accounts.add(account);
+	}
+
+	@Override
+	public String toString() {
+		return accounts + "";
 	}
 
 }

@@ -31,4 +31,15 @@ public class FileDatabase implements Database, Serializable {
 
 	}
 
+	@Override
+	public void addAccount(Account account) {
+		user.addAcount(account);
+		ApplicationSession.getInstance().getSerializer().save(this);
+	}
+
+	@Override
+	public void showAccounts() {
+		System.out.println(user.toString());
+	}
+
 }

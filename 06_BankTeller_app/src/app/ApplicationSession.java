@@ -36,14 +36,18 @@ public class ApplicationSession {
 			String userName = database.getUserName();
 			System.out.println("Welcome " + userName + ".");
 		} catch (FileNotFoundException e) {
-			System.out.println("App configure... Set your user name.");
-			String newUserName = keyboard.getString("Insert your user name.");
-			database.addUserName(newUserName);
+			configureUserAccount();
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {
 			throw new RuntimeException(e);
 		}
+	}
+
+	private void configureUserAccount() {
+		System.out.println("App configure... Set your user name.");
+		String newUserName = keyboard.getString("Insert your user name.");
+		database.addUserName(newUserName);
 	}
 
 }

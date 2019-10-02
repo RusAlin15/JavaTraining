@@ -1,18 +1,19 @@
 package actions;
 
+import app.ApplicationSession;
 import menus.MenuItem;
+import model.Database;
 
 public class ViewAccounts extends MenuItem {
 
 	public ViewAccounts(String key, String option) {
 		super(key, option);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void doAction() {
-		// TODO Auto-generated method stub
-
+		Database db = ApplicationSession.getInstance().getDatabase();
+		db.showAccounts();
 	}
 
 }

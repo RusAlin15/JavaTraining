@@ -1,20 +1,26 @@
 package model;
 
-public class Account implements TotalSum {
-	
-	private Bank bank;
-	private String accountNumber;
-	private float amount;
+import java.io.Serializable;
 
-	public Account(String accountNumber, float amount) {
+public class Account implements Serializable, TotalSum {
+
+	private static final long serialVersionUID = 1L;
+	private String accountName;
+	private float amount;
+	private Bank bank;
+
+	public Account(String accountNumber, Bank bank, float amount) {
 		super();
-		this.accountNumber = accountNumber;
+		this.accountName = accountNumber;
 		this.amount = amount;
+		this.bank = bank;
+
 	}
 
 	@Override
 	public String toString() {
-		return "Account " + accountNumber + ", amount= " + amount;
+		return System.lineSeparator() + bank + " : " + "Account name: " + accountName + " : " + amount
+				+ System.lineSeparator();
 	}
 
 	@Override
