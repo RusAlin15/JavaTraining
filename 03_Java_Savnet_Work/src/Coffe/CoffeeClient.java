@@ -6,6 +6,7 @@ import java.util.List;
 public class CoffeeClient {
 
 	public static void main(String[] args) {
+
 		List<Ingredient> ingredients = new ArrayList<>();
 		ingredients.add(new WhiteSugar(1));
 		ingredients.add(new BrownSugar(2));
