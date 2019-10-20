@@ -4,10 +4,10 @@ import java.util.List;
 public abstract class Project implements Risky {
 	private String title;
 	private String purpose;
-	private long founds;
-	private int membersNr = 0;
+	protected int membersNr;
 	private Manager manager;
-	private List<Memberr> members = new ArrayList<>();
+	private long founds;
+	protected List<Memberr> members = new ArrayList<>();
 
 	public Project(String title, String purpose, long founds, Manager managerName) {
 		super();
@@ -15,18 +15,12 @@ public abstract class Project implements Risky {
 		this.purpose = purpose;
 		this.founds = founds;
 		this.manager = managerName;
-		membersNr++;
+		this.membersNr = 1;
 	}
 
-	@Override
-	public String toString() {
-		return "Project title=" + title + ", purpose=" + purpose + ", founds=" + getFounds() + ", membersNr="
-				+ getMembersNr() + ", Manager: " + manager + ", members=" + members;
-	}
+	public abstract void addMember(Memberr member) throws ToManyMembersException;
 
-	public void addMember(Memberr member) {
-		members.add(member);
-	}
+	public abstract double getRisk();
 
 	public long getFounds() {
 		return founds;
@@ -36,5 +30,9 @@ public abstract class Project implements Risky {
 		return membersNr;
 	}
 
-	public abstract double getRisk();
+	@Override
+	public String toString() {
+		return "Project title: " + title + ", purpose: " + purpose + ", founds: " + getFounds() + ", membersNr: "
+				+ getMembersNr() + ", Manager: " + manager;
+	}
 }

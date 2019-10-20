@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class InvestmentCompany {
+
 	private List<Project> projects = new ArrayList<>();
 
 	public static void main(String args[]) {
@@ -14,9 +15,25 @@ public class InvestmentCompany {
 		Memberr member5 = new Memberr("Valer", 24);
 		Memberr member6 = new Memberr("Sorina", 52);
 
-		Project comercial = new ComercialProject("Comercial", "Comert Public", 3000, managerComercial, "12.12.2020");
-		comercial.addMember(member1);
+		Project comercial = new ComercialProject("Comercial", "Comert Public", 4000, managerComercial, "12.12.2020");
+		try {
+			comercial.addMember(member1);
+			comercial.addMember(member6);
+			comercial.addMember(member4);
+			comercial.addMember(member1);
+			comercial.addMember(member6);
+			comercial.addMember(member4);
+			comercial.addMember(member1);
+			comercial.addMember(member6);
+			comercial.addMember(member4);
+			comercial.addMember(member1);
+			comercial.addMember(member6);
+			comercial.addMember(member4);
+			comercial.addMember(member1);
+			comercial.addMember(member6);
+		} catch (ToManyMembersException e) {
+			System.out.println("Error! To many members aded.");
+		}
 		System.out.println(comercial);
-		System.out.println(comercial.getRisk());
 	}
 }
