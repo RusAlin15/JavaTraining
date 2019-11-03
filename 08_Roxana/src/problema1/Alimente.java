@@ -9,9 +9,13 @@ public class Alimente extends Achizitie {
 		this.dataDeExpirare = dataDeExpirare;
 	}
 
+	public int getSpecialDate() {
+		return dataDeExpirare;
+	}
+
 	@Override
 	public String toString() {
-		return "Alimente [dataDeExpirare=" + dataDeExpirare + "]";
+		return "Aliment: " + super.toString() + ", dataExpirare: " + dataDeExpirare + System.lineSeparator();
 	}
 
 }

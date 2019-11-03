@@ -1,14 +1,14 @@
 package problema1;
 
-public class Achizitie {
+public abstract class Achizitie {
 
-	private String NumeAchizitie;
+	private String numeAchizitie;
 	private int cantitate;
 	private double pret;
 
 	public Achizitie(String numeAchizitie, int cantitate, double pret) {
 		super();
-		NumeAchizitie = numeAchizitie;
+		numeAchizitie = numeAchizitie;
 		this.cantitate = cantitate;
 		this.pret = pret;
 	}
@@ -19,8 +19,9 @@ public class Achizitie {
 
 	@Override
 	public String toString() {
-		return "NumeAchizitie=" + NumeAchizitie + ", cantitate=" + cantitate + ", pret=" + pret + ", pret total="
-				+ this.getPretTotal() + System.lineSeparator();
+		return "Cantitate=" + cantitate + ", pret=" + pret + ", pret total=" + this.getPretTotal();
 	}
+
+	public abstract int getSpecialDate();
 
 }
