@@ -37,21 +37,16 @@ public class Aplicatie {
 		alimente.add(al5);
 		Collections.sort(alimente, new MyComparator());
 
-		achizitii.add(ap1);
 		achizitii.add(ap2);
-		achizitii.add(ap3);
-		achizitii.add(ap4);
-		achizitii.add(ap5);
-		achizitii.add(al1);
-		achizitii.add(al2);
-		achizitii.add(al3);
 		achizitii.add(al4);
-		achizitii.add(al5);
+
 		Collections.sort(achizitii, new MyComparator());
 
-		System.out.println(aparate);
-		System.out.println(alimente);
-		System.out.println(achizitii);
+		System.out.println("Aparate sortate dupa garantie " + System.lineSeparator() + aparate);
+		System.out.println();
+		System.out.println("Alimente sortate dupa data de expirare " + System.lineSeparator() + alimente);
+		System.out.println();
+		System.out.println("Achizitii sortate dupa pret " + System.lineSeparator() + achizitii);
 	}
 
 }
