@@ -1,0 +1,17 @@
+package problema1;
+
+public class Alimente extends Achizitie {
+
+	private int dataDeExpirare;
+
+	public Alimente(String numeAchizitie, int cantitate, double pret, int dataDeExpirare) {
+		super(numeAchizitie, cantitate, pret);
+		this.dataDeExpirare = dataDeExpirare;
+	}
+
+	@Override
+	public String toString() {
+		return "Alimente [dataDeExpirare=" + dataDeExpirare + "]";
+	}
+
+}
