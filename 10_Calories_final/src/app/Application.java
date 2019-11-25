@@ -20,9 +20,9 @@ public class Application {
 		Menu foodLogMenu = new Menu("2", "Food Log");
 		MenuItem backItem = new BackMenu("0", "Back");
 
-		MenuItem addFood = new AddFoodItem("3", "Add Food");
+		MenuItem addFood = new AddFoodItem("1", "Add Food");
 		MenuItem viewItem = new ViewFoodItem("2", "View Food");
-		MenuItem deleteFood = new DeleteFoodItem("1", "Add Food");
+		MenuItem deleteFood = new DeleteFoodItem("3", "Delete Food");
 
 		foodMenu.addItem(addFood);
 		foodMenu.addItem(viewItem);
