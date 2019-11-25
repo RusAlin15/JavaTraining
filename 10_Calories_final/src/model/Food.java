@@ -19,4 +19,8 @@ public class Food implements Serializable {
 		return name + ", unit : " + unit + ", caloriesPerUnit=" + caloriesPerUnit + System.lineSeparator();
 	}
 
+	public Object getName() {
+		return name;
+	}
+
 }

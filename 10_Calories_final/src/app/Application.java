@@ -16,6 +16,7 @@ public class Application {
 
 	private void run() {
 		Menu mainMenu = new Menu("", "");
+
 		Menu foodMenu = new Menu("1", "Food Management");
 		Menu foodLogMenu = new Menu("2", "Food Log");
 		MenuItem backItem = new BackMenu("0", "Back");
