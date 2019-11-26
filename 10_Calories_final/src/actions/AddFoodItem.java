@@ -28,7 +28,7 @@ public class AddFoodItem extends MenuItem {
 		msg = key.getString("Inset caloriesPerUnit");
 		double caloriesPerUnit = Double.parseDouble(msg);
 
-		Food food = new Food(name, Unit.g, caloriesPerUnit);
+		Food food = new Food(name, unit, caloriesPerUnit);
 		db.addFood(food);
 	}
 

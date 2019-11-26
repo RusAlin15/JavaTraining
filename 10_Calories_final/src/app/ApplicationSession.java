@@ -34,7 +34,7 @@ public class ApplicationSession {
 			Database database = serializer.load();
 			this.database = database;
 		} catch (FileNotFoundException e) {
-			System.out.println("File does not exist. Continue...");
+			System.out.println("First time used. Continue...");
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e);
 		} catch (IOException e) {

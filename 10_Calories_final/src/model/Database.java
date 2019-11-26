@@ -10,6 +10,10 @@ public interface Database {
 
 	void remove(Food foodName) throws FoodNotFoundException;
 
-	Food getFoodByFoodName(String foodName) throws FoodNotFoundException;
+	Food getFoodIfExist(Food food) throws FoodNotFoundException;
+
+	void addDaylyLog(DaylyLogs dayly, Log log);
+
+	void viewDaylyLogs();
 
 }

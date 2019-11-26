@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 import model.Database;
 
 public class Serializer {
-	private static final String DATABASE_FILE = "db5.ser";
+	private static final String DATABASE_FILE = "db15.ser";
 
 	public Database load() throws FileNotFoundException, IOException, ClassNotFoundException {
 		ObjectInputStream ois = new ObjectInputStream(new FileInputStream(DATABASE_FILE));

@@ -11,6 +11,7 @@ public class FileDatabase implements Database, Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private List<Food> foodList = new ArrayList<>();
+	private List<DaylyLogs> daylyLogs = new ArrayList<>();
 
 	@Override
 	public void addFood(Food food) {
@@ -24,19 +25,38 @@ public class FileDatabase implements Database, Serializable {
 	}
 
 	@Override
-	public void remove(Food foodName) throws FoodNotFoundException {
+	public void remove(Food foodName) {
 		foodList.remove(foodName);
 		ApplicationSession.getInstance().getSerializer().save(this);
 	}
 
 	@Override
-	public Food getFoodByFoodName(String foodName) throws FoodNotFoundException {
+	public Food getFoodIfExist(Food food) throws FoodNotFoundException {
 		for (Food it : foodList) {
-			if (it.getName().equals(foodName)) {
+			if (it.equals(food)) {
 				return it;
 			}
 		}
 		throw new FoodNotFoundException();
 
+	}
+
+	@Override
+	public void addDaylyLog(DaylyLogs dayly, Log log) {
+		for (DaylyLogs dly : daylyLogs) {
+			if (dly.equals(dayly)) {
+				dly.addLog(log);
+				return;
+			}
+		}
+		dayly.addLog(log);
+		daylyLogs.add(dayly);
+
+		ApplicationSession.getInstance().getSerializer().save(this);
+	}
+
+	@Override
+	public void viewDaylyLogs() {
+		System.out.println(daylyLogs.toString());
 	}
 }
