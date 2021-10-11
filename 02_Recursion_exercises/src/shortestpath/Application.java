@@ -8,7 +8,7 @@ public class Application {
 		Routes routes = new Routes("Timisoara", "Suceava");
 		search(routes);
 
-		Routes routes1 = new Routes("Timisoara", "Arad");
+		Routes routes1 = new Routes("Timisoara", "Oradea");
 		search(routes1);
 	}
 
