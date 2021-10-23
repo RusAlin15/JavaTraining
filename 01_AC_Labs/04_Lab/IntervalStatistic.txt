@@ -1,9 +1,0 @@
-[ 3 : 6 ] : a fost testata de 20 numere, dintre care 11 numere sunt apartenente intervalului.Media de apartenenta este: 55.0
-[ 1 : 8 ] : a fost testata de 20 numere, dintre care 14 numere sunt apartenente intervalului.Media de apartenenta este: 70.0
-[ 5 : 33 ] : a fost testata de 20 numere, dintre care 9 numere sunt apartenente intervalului.Media de apartenenta este: 45.0
-[ 4 : 6 ] : a fost testata de 20 numere, dintre care 7 numere sunt apartenente intervalului.Media de apartenenta este: 35.0
-[ 6 : 8 ] : a fost testata de 20 numere, dintre care 3 numere sunt apartenente intervalului.Media de apartenenta este: 15.0
-[ 12 : 17 ] : a fost testata de 20 numere, dintre care 2 numere sunt apartenente intervalului.Media de apartenenta este: 10.0
-[ 45 : 67 ] : a fost testata de 20 numere, dintre care 1 numere sunt apartenente intervalului.Media de apartenenta este: 5.0
-[ 12 : 14 ] : a fost testata de 20 numere, dintre care 2 numere sunt apartenente intervalului.Media de apartenenta este: 10.0
-[ 4 : 7 ] : a fost testata de 20 numere, dintre care 8 numere sunt apartenente intervalului.Media de apartenenta este: 40.0
