@@ -1,0 +1,4 @@
+4. a) + toString
+c) vector de obiecte tip melodie
+alg sort nnu stie sa ordoneze obiecte de tip melodie
+fa cu bubble sort
