@@ -16,7 +16,7 @@ public class Application {
 		ApplicationSession.getInstance().init();
 		app.run();
 	}
-
+ 
 	private void run() {
 		Menu mainMenu = new Menu("", "");
 
