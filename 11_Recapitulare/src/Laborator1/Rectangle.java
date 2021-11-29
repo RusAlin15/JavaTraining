@@ -23,4 +23,10 @@ public class Rectangle extends Polygon {
 	public double getArea() {
 		return area;
 	}
+
+	@Override
+	public String toString() {
+		return name + " : [area = " + area + "] " + " [perimetru=" + getPerimetru() + "]";
+	}
+
 }

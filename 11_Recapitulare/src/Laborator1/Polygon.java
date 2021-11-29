@@ -11,21 +11,25 @@ public class Polygon {
 	}
 
 	public void setSides() {
-		for (int d = 0; d < sides.length; d++) {
-			sides[d] = Double.parseDouble(Keyboard.getMessage("Introduceti lungimea unei laturi pentru " + name));
+		for (int d = 0; d < sides.length;) {
+			sides[d] = Double
+					.parseDouble(Keyboard.getMessage("Introduceti lungimea laturii " + (++d) + " pentru " + name));
 		}
 	}
 
-	public double calculatePrametru() {
+	public void calculatePrametru() {
 		for (double d : sides) {
 			perimetru += d;
 		}
+	}
+
+	public double getPerimetru() {
 		return perimetru;
 	}
 
 	@Override
 	public String toString() {
-		return name + "are perimetrul : " + perimetru;
+		return name + " : [perimetru = " + perimetru + "]";
 	}
 
 }
