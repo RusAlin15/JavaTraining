@@ -9,14 +9,7 @@ public class Exercise3 {
 		int number;
 		ArrayList<Integer> numberDividersList;
 
-		while (true) {
-			try {
-				number = Integer.parseInt(keyboard.getMessage("Introduceti un numar natural"));
-				break;
-			} catch (NumberFormatException e) {
-				System.out.println("Nu ati introdus un numar natural. Reincercati!\n");
-			}
-		}
+		number = keyboard.getInt("Introduceti un numar natural");
 
 		numberDividersList = getNumberDividersList(number);
 		System.out.println("Divizorii numarului " + number + " sunt : " + numberDividersList);
