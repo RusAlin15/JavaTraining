@@ -1,3 +1,4 @@
+//
 package Laborator1;
 
 public class Rectangle extends Polygon {
