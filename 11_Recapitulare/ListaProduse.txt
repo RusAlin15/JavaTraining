@@ -1,2 +1,4 @@
-zahar;1.5;50
-miere;3;33
+Zahar;1;50
+Miere;3;33
+Popcorn;5;32
+Suc;2;45

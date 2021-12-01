@@ -37,7 +37,10 @@ public class Exercise2 {
 
 		} catch (FileNotFoundException e) {
 			System.out.println("Inexistent File Exception!");
+			e.printStackTrace();
+			return;
 		}
+
 	}
 
 	private static ArrayList<Double> castMethod(ArrayList<String> list) {

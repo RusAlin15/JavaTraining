@@ -3,18 +3,26 @@ package Laborator2;
 public class Produs {
 	private String name;
 	private double price;
-	private int cuantity;
+	private int quantity;
 
-	public Produs(String name, double price, int cuantity) {
+	public Produs(String name, double price, int quantity) {
 		super();
 		this.name = name;
 		this.price = price;
-		this.cuantity = cuantity;
+		this.quantity = quantity;
 	}
 
 	@Override
 	public String toString() {
-		return "[ " + name + " ] , Price : [ " + price + " ] , Cuantity : [ " + cuantity + " ]";
+		return name + " - " + quantity + " pcs  at " + price + " $ each";
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public int getQuantity() {
+		return quantity;
 	}
 
 }

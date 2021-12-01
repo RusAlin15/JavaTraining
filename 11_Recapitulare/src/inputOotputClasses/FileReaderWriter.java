@@ -15,7 +15,6 @@ public class FileReaderWriter {
 	public FileReaderWriter(String inputFileName, String outputFileName) throws FileNotFoundException {
 		inputFile = new Scanner(new File(inputFileName));
 		outputFile = new PrintStream(outputFileName);
-
 	}
 
 	public ArrayList<String> extractor() {
@@ -26,16 +25,21 @@ public class FileReaderWriter {
 		}
 		inputFile.close();
 		return numberList;
-
 	}
 
 	public <T> void inserter(String message, T value) {
-		outputFile.println(value);
-		outputFile.close();
+		outputFile.append(message);
+		outputFile.append(value.toString());
+		outputFile.append("\n");
 	}
 
 	public String getLine() {
 
 		return null;
+	}
+
+	public void close() {
+		inputFile.close();
+		outputFile.close();
 	}
 }

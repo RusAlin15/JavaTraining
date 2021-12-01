@@ -1,1 +1,5 @@
-[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, -2.0, 100.0, -150.0, 98.0]
+Lista numerelor: [1.0, 2.0, 3.0, 4.0, 5.0, 6.0, -2.0, 100.0, -150.0, 98.0]
+Suma numerelor: 67.0
+Media aritmetica a numerelor: 6.7
+Minimum numerelor: -150.0
+Maximum numerelor: 100.0
