@@ -1,6 +1,5 @@
 package Laborator1;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class Exercise4 {
@@ -43,24 +42,4 @@ public class Exercise4 {
 			return getCmmdc(b, a % b);
 		}
 	}
-
-	private static ArrayList<Integer> generatePrimeList(int upToNumber) {
-		ArrayList<Integer> primeNrList = new ArrayList<Integer>();
-		for (int i = 1; i <= upToNumber; i++) {
-			if (isPrime(i)) {
-				primeNrList.add(i);
-			}
-		}
-		return primeNrList;
-	}
-
-	private static boolean isPrime(int testNr) {
-		for (int i = 2; i < testNr; i++) {
-			if (testNr % i == 0) {
-				return false;
-			}
-		}
-		return true;
-	}
-
 }
