@@ -42,4 +42,5 @@ public class Exercise4 {
 			return getCmmdc(b, a % b);
 		}
 	}
+
 }
