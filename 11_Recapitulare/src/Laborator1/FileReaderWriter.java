@@ -26,4 +26,7 @@ public class FileReaderWriter {
 
 	}
 
+	public <T> void inserter(String message, T value) {
+		outputFile.println(value);
+	}
 }
