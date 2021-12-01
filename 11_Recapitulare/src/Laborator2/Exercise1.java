@@ -12,7 +12,7 @@ public class Exercise1 {
 		p1.move(8, -2);
 		p2.move(6, 7);
 
-		System.out.println("S-au executat " + Punct.getContor() + " mutari.");
+		System.out.println("S-au executat " + Punct.getContor() + "mutari.");
 
 		System.out.println("(x1,y1) = (" + p1.getX() + "," + p1.getY() + ")"); // se afiseaza
 		// coordonatele curente ale primului punct

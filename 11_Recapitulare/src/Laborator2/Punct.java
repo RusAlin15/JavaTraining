@@ -1,13 +1,13 @@
 package Laborator2;
 
 class Punct {
-	private int x;
-	private int y;
+	private double x;
+	private double y;
 	private static int contor = 0; // initializator implicit
 
-	public Punct(int xx, int yy) {
-		x = xx;
-		y = yy;
+	public Punct(double x, double y) {
+		this.x = x;
+		this.y = y;
 	}
 
 	public Punct(Punct p) {
@@ -15,12 +15,12 @@ class Punct {
 		y = p.y;
 	}
 
-	public void init(int xx, int yy) {
+	public void init(double xx, double yy) {
 		x = xx;
 		y = yy;
 	}
 
-	public void move(int dx, int dy) {
+	public void move(double dx, double dy) {
 		x += dx;
 		y += dy;
 		contor++;
@@ -30,19 +30,25 @@ class Punct {
 		return contor;
 	}
 
-	public int distV(Punct p) {
+	public double distV(Punct p) {
 		return y - p.y;
 	}
 
-	public int distH(Punct p) {
+	public double distH(Punct p) {
 		return x - p.x;
 	}
 
-	public int getX() {
+	public double getX() {
 		return x;
 	}
 
-	public int getY() {
+	public double getY() {
 		return y;
 	}
+
+	@Override
+	public String toString() {
+		return "Punct ( " + x + " , " + y + ")";
+	}
+
 }
