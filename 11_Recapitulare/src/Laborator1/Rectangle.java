@@ -1,6 +1,8 @@
 //
 package Laborator1;
 
+import inputOotputClasses.Keyboard;
+
 public class Rectangle extends Polygon {
 
 	private double area;

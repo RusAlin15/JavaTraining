@@ -3,6 +3,8 @@ package Laborator1;
 
 import java.util.ArrayList;
 
+import inputOotputClasses.Keyboard;
+
 public class Exercise3 {
 
 	public static void main(String[] args) {

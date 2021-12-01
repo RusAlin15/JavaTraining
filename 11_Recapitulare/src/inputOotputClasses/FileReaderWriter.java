@@ -1,5 +1,5 @@
 //
-package Laborator2;
+package inputOotputClasses;
 
 import java.io.File;
 import java.io.FileNotFoundException;

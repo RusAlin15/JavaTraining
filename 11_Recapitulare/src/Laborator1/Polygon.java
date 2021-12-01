@@ -1,6 +1,8 @@
 //
 package Laborator1;
 
+import inputOotputClasses.Keyboard;
+
 public class Polygon {
 	protected double[] sides;
 	private double perimetru = 0;

@@ -1,5 +1,5 @@
 //
-package Laborator1;
+package inputOotputClasses;
 
 import java.util.Scanner;
 

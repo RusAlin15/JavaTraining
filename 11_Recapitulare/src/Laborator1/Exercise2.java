@@ -4,6 +4,8 @@ package Laborator1;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
+import inputOotputClasses.FileReaderWriter;
+
 public class Exercise2 {
 	public static void main(String[] args) {
 		ArrayList<Double> numbersList = null;
