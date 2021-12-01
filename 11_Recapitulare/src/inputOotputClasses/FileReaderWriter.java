@@ -18,20 +18,24 @@ public class FileReaderWriter {
 
 	}
 
-	public FileReaderWriter(String inputFileName) throws FileNotFoundException {
-		inputFile = new Scanner(new File(inputFileName));
-	}
-
-	public ArrayList<Double> extractor() {
-		ArrayList<Double> numberList = new ArrayList<Double>();
+	public ArrayList<String> extractor() {
+		ArrayList<String> numberList = new ArrayList<>();
 		while (inputFile.hasNext()) {
-			numberList.add(Double.parseDouble(inputFile.nextLine()));
+			String nextLine = inputFile.nextLine();
+			numberList.add(nextLine);
 		}
+		inputFile.close();
 		return numberList;
 
 	}
 
 	public <T> void inserter(String message, T value) {
 		outputFile.println(value);
+		outputFile.close();
+	}
+
+	public String getLine() {
+
+		return null;
 	}
 }

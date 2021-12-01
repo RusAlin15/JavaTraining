@@ -8,11 +8,14 @@ import inputOotputClasses.FileReaderWriter;
 
 public class Exercise2 {
 	public static void main(String[] args) {
-		ArrayList<Double> numbersList = null;
+		ArrayList<String> list;
+		ArrayList<Double> numbersList;
 
 		try {
 			FileReaderWriter fileBind = new FileReaderWriter("in.txt", "out.txt");
-			numbersList = fileBind.extractor();
+			list = fileBind.extractor();
+			numbersList = castMethod(list);
+
 			System.out.println("Lista numerelor: " + numbersList);
 			fileBind.inserter("Lista numerelor: ", numbersList);
 
@@ -35,6 +38,14 @@ public class Exercise2 {
 		} catch (FileNotFoundException e) {
 			System.out.println("Inexistent File Exception!");
 		}
+	}
+
+	private static ArrayList<Double> castMethod(ArrayList<String> list) {
+		ArrayList<Double> numbersList = new ArrayList<Double>();
+		for (String s : list) {
+			numbersList.add(Double.parseDouble(s));
+		}
+		return numbersList;
 	}
 
 	private static double minimumNumerelor(ArrayList<Double> numbersList) {
@@ -64,6 +75,7 @@ public class Exercise2 {
 
 	private static double sumaNumerelor(ArrayList<Double> numbersList) {
 		double suma = 0;
+
 		for (double n : numbersList) {
 			suma += n;
 		}
