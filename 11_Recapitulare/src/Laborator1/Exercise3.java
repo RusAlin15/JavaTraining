@@ -9,7 +9,7 @@ public class Exercise3 {
 		int number;
 		ArrayList<Integer> numberDividersList;
 
-		number = keyboard.getInt();
+		number = keyboard.getInt("Introduceti un numar pentru care doriti aifsarea divizorilor");
 
 		numberDividersList = getNumberDividersList(number);
 		System.out.println("Divizorii numarului " + number + " sunt : " + numberDividersList);
