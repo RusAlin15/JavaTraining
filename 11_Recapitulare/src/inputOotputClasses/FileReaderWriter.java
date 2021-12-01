@@ -18,6 +18,10 @@ public class FileReaderWriter {
 
 	}
 
+	public FileReaderWriter(String inputFileName) throws FileNotFoundException {
+		inputFile = new Scanner(new File(inputFileName));
+	}
+
 	public ArrayList<Double> extractor() {
 		ArrayList<Double> numberList = new ArrayList<Double>();
 		while (inputFile.hasNext()) {
