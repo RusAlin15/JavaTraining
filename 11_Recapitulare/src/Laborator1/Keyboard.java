@@ -10,14 +10,14 @@ public class Keyboard {
 		return scanner.nextLine();
 	}
 
-	public int getInt(String message) {
+	public int getInt() {
 		int number;
 		while (true) {
 			try {
-				number = Integer.parseInt(getMessage("Introduceti un numar natural"));
+				number = Integer.parseInt(getMessage("Insert a number"));
 				break;
 			} catch (NumberFormatException e) {
-				System.out.println("Nu ati introdus un numar natural. Reincercati!\n");
+				System.out.println("This is not a number. Retry!\n");
 			}
 		}
 
