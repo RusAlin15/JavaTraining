@@ -1,0 +1,27 @@
+Birds flying high, you know how I feel			--> Number of Words : 8 ; Number of vowels : 10
+Sun in the sky, you know how I feel			--> Number of Words : 9 ; Number of vowels : 10
+Breeze driftin' on by, you know how I feel			--> Number of Words : 9 ; Number of vowels : 13
+
+It's a new dawn			--> Number of Words : 4 ; Number of vowels : 4
+IT'S A NEW DAY			--> NUMBER OF WORDS : 4 ; NUMBER OF VOWELS : 4
+IT'S A NEW LIFE FOR ME, YEAH			--> NUMBER OF WORDS : 7 ; NUMBER OF VOWELS : 9
+It's a new dawn			--> Number of Words : 4 ; Number of vowels : 4
+It's a new day			--> Number of Words : 4 ; Number of vowels : 4
+It's a new life for me, ooh			--> Number of Words : 7 ; Number of vowels : 9
+And I'm feeling good			--> Number of Words : 4 ; Number of vowels : 7
+
+Fish in the sea, you know how I feel			--> Number of Words : 9 ; Number of vowels : 12
+RIVER RUNNING FREE, YOU KNOW HOW I FEEL			--> NUMBER OF WORDS : 8 ; NUMBER OF VOWELS : 13
+Blossom on the tree, you know how I feel			--> Number of Words : 9 ; Number of vowels : 13
+
+It's a new dawn			--> Number of Words : 4 ; Number of vowels : 4
+IT'S A NEW DAY			--> NUMBER OF WORDS : 4 ; NUMBER OF VOWELS : 4
+It's a new life for me			--> Number of Words : 6 ; Number of vowels : 7
+And I'm feeling			--> Number of Words : 3 ; Number of vowels : 5
+And I'm feeling			--> Number of Words : 3 ; Number of vowels : 5
+And I'm feeling good			--> Number of Words : 4 ; Number of vowels : 7
+
+Stars when you shine, you know how I feel			--> Number of Words : 9 ; Number of vowels : 13
+Scent of the pine, you know how I feel			--> Number of Words : 9 ; Number of vowels : 12
+Oh, freedom is mine			--> Number of Words : 4 ; Number of vowels : 7
+And I know how I feel			--> Number of Words : 6 ; Number of vowels : 7
