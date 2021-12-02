@@ -11,6 +11,19 @@ public class Keyboard {
 		return scanner.nextLine();
 	}
 
+//	public <T> T getValue(String message) {
+//		T number;
+//		while (true) {
+//			try {
+//				number = getMessage(message));
+//				break;
+//			} catch (NumberFormatException e) {
+//				System.out.println("This is not a number. Retry!\n");
+//			}
+//		}
+//		return number;
+//	}
+
 	public int getInt(String message) {
 		int number;
 		System.out.println(message);
