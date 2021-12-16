@@ -3,6 +3,10 @@ package model;
 import java.io.Serializable;
 
 public class Date implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String day;
 	private String mounth;
 	private String year;

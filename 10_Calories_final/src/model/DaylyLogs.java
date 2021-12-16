@@ -5,6 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DaylyLogs implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Date date;
 	private double totalCalories = 0;
 	private List<Log> logList = new ArrayList<>();

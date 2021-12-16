@@ -7,7 +7,7 @@ public class ComercialProject extends Project {
 
 	public ComercialProject(String title, String purpose, long founds, Manager managerName, String deadline) {
 		super(title, purpose, founds, managerName);
-		this.deadline = deadline;
+		this.setDeadline(deadline);
 		this.marketFounds = founds / 2;
 		teamNr++;
 	}
@@ -29,5 +29,13 @@ public class ComercialProject extends Project {
 		System.out.println(teamNr);
 		return risk;
 
+	}
+
+	public String getDeadline() {
+		return deadline;
+	}
+
+	public void setDeadline(String deadline) {
+		this.deadline = deadline;
 	}
 }

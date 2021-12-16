@@ -11,14 +11,15 @@ public class MiniCalculatorClient {
 
 	private void run() {
 		MiniCalculator c = new MiniCalculator();
-		Scanner scanner = new Scanner(System.in);
-		while (true) {
-			System.out.println("(press enter to exit) >>");
-			String operation = scanner.nextLine();
-			if (operation.length() == 0) {
-				break;
+		try (Scanner scanner = new Scanner(System.in)) {
+			while (true) {
+				System.out.println("(press enter to exit) >>");
+				String operation = scanner.nextLine();
+				if (operation.length() == 0) {
+					break;
+				}
+				System.out.println(c.doOperation(operation));
 			}
-			System.out.println(c.doOperation(operation));
 		}
 	}
 }

@@ -84,6 +84,7 @@ public class Exercise3 {
 		return new Produs(str[0], Double.parseDouble(str[1]), Integer.parseInt(str[2]));
 	}
 
+	@SuppressWarnings("unused")
 	private static void afisareString(String[] str) {
 		for (String s : str) {
 			System.out.print(s + " ");

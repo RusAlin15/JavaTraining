@@ -8,7 +8,7 @@ public abstract class Achizitie {
 
 	public Achizitie(String numeAchizitie, int cantitate, double pret) {
 		super();
-		numeAchizitie = numeAchizitie;
+		this.setNumeAchizitie(numeAchizitie);
 		this.cantitate = cantitate;
 		this.pret = pret;
 	}
@@ -23,5 +23,13 @@ public abstract class Achizitie {
 	}
 
 	public abstract int getSpecialDate();
+
+	public String getNumeAchizitie() {
+		return numeAchizitie;
+	}
+
+	public void setNumeAchizitie(String numeAchizitie) {
+		this.numeAchizitie = numeAchizitie;
+	}
 
 }

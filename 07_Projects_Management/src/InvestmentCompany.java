@@ -9,10 +9,18 @@ public class InvestmentCompany {
 
 		Manager managerComercial = new Manager("Alex", 12);
 		Memberr member1 = new Memberr("Mihai", 45);
+
+		@SuppressWarnings("unused")
 		Memberr member2 = new Memberr("Sorin", 54);
+
+		@SuppressWarnings("unused")
 		Memberr member3 = new Memberr("Ion", 62);
+
 		Memberr member4 = new Memberr("Deju", 42);
+
+		@SuppressWarnings("unused")
 		Memberr member5 = new Memberr("Valer", 24);
+
 		Memberr member6 = new Memberr("Sorina", 52);
 
 		Project comercial = new ComercialProject("Comercial", "Comert Public", 4000, managerComercial, "12.12.2020");
@@ -35,5 +43,13 @@ public class InvestmentCompany {
 			System.out.println("Error! To many members aded.");
 		}
 		System.out.println(comercial);
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
 	}
 }

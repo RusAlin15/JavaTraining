@@ -5,6 +5,8 @@ public class Exercise1 {
 	public static void main(String[] args) {
 		Punct p1 = new Punct(10, 20);
 		Punct p2 = new Punct(30, 40);
+
+		@SuppressWarnings("unused")
 		Punct p3 = new Punct(p1);
 
 		p1.init(10, 20);

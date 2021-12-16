@@ -10,22 +10,21 @@ import java.io.PrintWriter;
 
 public class FileThing {
 	public static void main(String[] args) throws IOException {
-		//writeFile();
+		// writeFile();
 		readFile();
 	}
 
-	
 	private static void readFile() throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("test.txt")));
 		int suma = 0;
-		
+
 		while (true) {
 			String s = br.readLine();
-						
+
 			if (s == null) {
 				break;
 			}
-			
+
 			String[] splits = s.split(",");
 
 			for (String splits1 : splits) {
@@ -37,6 +36,7 @@ public class FileThing {
 		br.close();
 	}
 
+	@SuppressWarnings("unused")
 	private static void writeFile() throws FileNotFoundException {
 		PrintWriter pw = new PrintWriter(new File("test.txt"));
 		pw.close();
