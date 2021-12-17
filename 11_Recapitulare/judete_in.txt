@@ -1,0 +1,43 @@
+Buzau
+Caras Severin
+Cluj
+Valcea
+Constanta
+Gorj
+Galati
+Giurgiu
+Hunedoara
+Harghita
+Iasi
+Ialomita
+Ilfov
+Mehedinti
+Alba Iulia
+Arad
+Arges
+Calarasi
+Covasna
+Dolj 
+Dambovita
+Bihor
+Bistrita Nasaud
+Bacau
+Brasov
+Botosani
+Suceava
+Teleorman
+Tulcea
+Timis
+Sibiu
+Braila
+Bucuresti
+Maramures
+Mures
+Neamt
+Olt
+Prahova
+Satu Mare
+Salaj
+Vaslui
+Vrancea
+
