@@ -4,12 +4,14 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
 import inputOotputClasses.FileReaderWriter;
+import inputOotputClasses.Keyboard;
 import laborator3.model.Verse;
 
 public class Application1 {
 	public static void main(String[] args) {
 		ArrayList<String> list = new ArrayList<String>();
 		ArrayList<Verse> versesList = new ArrayList<Verse>();
+
 		try {
 			FileReaderWriter fileBind = new FileReaderWriter("cantec_in.txt", "cantec_out.txt");
 			list = fileBind.extractor();
@@ -30,11 +32,18 @@ public class Application1 {
 		}
 	}
 
+	@SuppressWarnings("static-access")
 	private static void versesInit(ArrayList<Verse> versesList) {
+		String word;
+		Keyboard keyboard = new Keyboard();
+		word = keyboard.getMessage("Insert a word");
+
 		for (Verse v : versesList) {
 			v.initWordsNumber();
 			v.initVowelsNumber();
 			v.generateRandomUperCase();
+			v.addStarIf(word);
+
 		}
 	}
 

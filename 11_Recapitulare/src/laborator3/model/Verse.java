@@ -70,4 +70,15 @@ public class Verse {
 			upperCaseFlag = true;
 		}
 	}
+
+	public void addStarIf(String word) {
+		if (rhythmicCondition(word)) {
+			verse += "*";
+		}
+
+	}
+
+	private boolean rhythmicCondition(String word) {
+		return verse.lastIndexOf(word) + word.length() == verse.length();
+	}
 }
