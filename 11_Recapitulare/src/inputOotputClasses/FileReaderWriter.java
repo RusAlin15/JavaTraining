@@ -17,6 +17,10 @@ public class FileReaderWriter {
 		outputFile = new PrintStream(outputFileName);
 	}
 
+	public FileReaderWriter(String inputFileName) throws FileNotFoundException {
+		inputFile = new Scanner(new File(inputFileName));
+	}
+
 	public ArrayList<String> extractor() {
 		ArrayList<String> numberList = new ArrayList<>();
 		while (inputFile.hasNext()) {
