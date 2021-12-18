@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Song {
 	private String name;
-	ArrayList<Singer> singers;
-	int launchYear;
-	double viewsNumber;
+	private ArrayList<Singer> singers;
+	private int launchYear;
+	private double viewsNumber;
 
 	public Song(String name, ArrayList<Singer> singers, int launchYear, double viewsNumber) {
 		super();
@@ -16,25 +16,26 @@ public class Song {
 		this.viewsNumber = viewsNumber;
 	}
 
-	public int getLaunchYear() {
-		return launchYear;
+	public String getName() {
+		return name;
 	}
 
-	public void setLaunchYear(int launchYear) {
-		this.launchYear = launchYear;
+	public ArrayList<Singer> getSingers() {
+		return singers;
+	}
+
+	public int getLaunchYear() {
+		return launchYear;
 	}
 
 	public double getViewsNumber() {
 		return viewsNumber;
 	}
 
-	public void setViewsNumber(double viewsNumber) {
-		this.viewsNumber = viewsNumber;
-	}
-
 	@Override
 	public String toString() {
-		return "-> " + name + ", singers: " + singers + ", launchYear: " + launchYear + ", viewsNumber: " + viewsNumber;
+		return "Song [name=" + name + ", singers=" + singers + ", launchYear=" + launchYear + ", viewsNumber="
+				+ viewsNumber + "]";
 	}
 
 }
