@@ -17,7 +17,7 @@ public class Singer {
 
 	@Override
 	public String toString() {
-		return "Singer [name=" + name + ", songsList=" + songsList.toString() + "]";
+		return name;
 	}
 
 }

@@ -1,6 +1,9 @@
 package laborator3.app;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 
 import laborator3.model.Singer;
@@ -23,7 +26,7 @@ public class ApplicationSession4 {
 		String[] splitter;
 
 		System.out.println("Note that invalid input data linse were skipped!!!");
-		System.out.println("e.g. Missing Names or Misleading Launch Informations");
+		System.out.println("e.g. Missing Names or Misleading Launch Informations\n");
 
 		for (String line : extractor) {
 			if (line == "" || line == null) {
@@ -51,7 +54,6 @@ public class ApplicationSession4 {
 				}
 
 			} catch (Exception e) {
-				System.out.println("Erroressd");
 				continue;
 			}
 		}
@@ -87,7 +89,7 @@ public class ApplicationSession4 {
 		ArrayList<Singer> singersList = new ArrayList<Singer>();
 		Singer singer;
 		String singers[];
-		singers = string.split("&");
+		singers = string.split("&|/");
 		if (singers == null) {
 			throw new Exception();
 		}
@@ -106,10 +108,23 @@ public class ApplicationSession4 {
 		return string;
 	}
 
-	public void showSongs() {
+	public void showAllSongs() {
 		for (Song s : songArr) {
-			System.out.println(s.getName());
+			System.out.println(s.toString());
 		}
 	}
 
+	public void showDescendentByViews() {
+		ArrayList<Song> orderedList = songArr;
+		
+		Collections.sort(orderedList,(song1,song2)-> {
+				return (int) (song2.getViewsNumber() - song1.getViewsNumber());
+			});
+		for (Song s : orderedList) {
+			System.out.println(s.toString());
+		}
+		}
+
 }
+
+

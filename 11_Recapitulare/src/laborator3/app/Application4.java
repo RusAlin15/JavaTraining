@@ -11,7 +11,8 @@ public class Application4 {
 
 			FileReaderWriter file = new FileReaderWriter("in_songs.txt");
 			ApplicationSession4.getInstance().init(file.extractor());
-			ApplicationSession4.getInstance().showSongs();
+			// ApplicationSession4.getInstance().showAllSongs();
+			ApplicationSession4.getInstance().showDescendentByViews();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

@@ -34,8 +34,8 @@ public class Song {
 
 	@Override
 	public String toString() {
-		return "Song [name=" + name + ", singers=" + singers + ", launchYear=" + launchYear + ", viewsNumber="
-				+ viewsNumber + "]";
+		return "Song Name: " + getName() + "\nArtists: " + getSingers().toString() + ";\nPublished in: "
+				+ getLaunchYear() + "; Youtube views: " + getViewsNumber() + "\n";
 	}
 
 }
