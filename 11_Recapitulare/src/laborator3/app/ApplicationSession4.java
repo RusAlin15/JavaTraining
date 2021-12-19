@@ -23,44 +23,65 @@ public class ApplicationSession4 {
 	}
 
 	public void init(ArrayList<String> extractor) {
-		String[] splitter;
 
 		System.out.println("Note that invalid input data linse were skipped!!!");
 		System.out.println("e.g. Missing Names or Misleading Launch Informations\n");
 
 		for (String line : extractor) {
-			if (line == "" || line == null) {
-				continue;
-			}
 
 			try {
-				String name;
-				ArrayList<Singer> singers;
-				int launchYear;
-				long viewsNumber;
+				isValidLine(line);
 
-				splitter = line.split(";");
-
-				name = initName(splitter[0].trim());
-				singers = initSingers(splitter[1].trim());
-				launchYear = initLauncYear(splitter[2].trim());
-				viewsNumber = initViewsNr(splitter[3].trim());
-
-				Song song = new Song(name, singers, launchYear, viewsNumber);
-
+				Song song = constructSong(line);
 				songArr.add(song);
-
-				System.out.println();
-
-				for (Singer sr : singerArr) {
-					singerArr.add(sr);
+				// store(song);
+				for (Singer singer : song.getSingers()) {
+					singer.addSong(song);
 				}
+
 			} catch (Exception e) {
-				System.out.println("de ce?");
 				continue;
 			}
 		}
 
+	}
+
+	private void store(Song song) {
+
+		for (Song so : songArr) {
+			if (so.equals(song)) {
+			} else {
+				System.out.println("dublura");
+
+				for (Singer singer : song.getSingers()) {
+					singer.addSong(song);
+				}
+			}
+
+		}
+	}
+
+	private Song constructSong(String line) throws Exception {
+		String[] splitter;
+		String name;
+		ArrayList<Singer> singers;
+		int launchYear;
+		long viewsNumber;
+
+		splitter = line.split(";");
+
+		name = initName(splitter[0].trim());
+		singers = initSingers(splitter[1].trim());
+		launchYear = initLauncYear(splitter[2].trim());
+		viewsNumber = initViewsNr(splitter[3].trim());
+
+		Song song = new Song(name, singers, launchYear, viewsNumber);
+		return song;
+	}
+
+	private void isValidLine(String line) throws Exception {
+		if (line == "" || line == null)
+			throw new Exception();
 	}
 
 	private long initViewsNr(String string) throws Exception {
@@ -94,6 +115,7 @@ public class ApplicationSession4 {
 		Singer singer;
 		String singers[];
 		singers = string.split("&|/");
+
 		if (singers == null) {
 			throw new Exception();
 		}
@@ -118,20 +140,24 @@ public class ApplicationSession4 {
 		}
 	}
 
-	public void showDescendentByViews(int i) {
+	public void showOrdered() {
 		ArrayList<Song> orderedList = songArr;
 
-		if (i == 1) {
-			Collections.sort(orderedList, (song1, song2) -> {
-				return (int) (song1.getViewsNumber() - song2.getViewsNumber());
-			});
-		}
+		Collections.sort(orderedList, (song1, song2) -> {
+			return (int) (song1.getViewsNumber() - song2.getViewsNumber());
+		});
 
-		if (i == -1) {
-			Collections.sort(orderedList, (song1, song2) -> {
-				return (int) (song2.getViewsNumber() - song1.getViewsNumber());
-			});
+		for (Song s : orderedList) {
+			System.out.println(s.toString());
 		}
+	}
+
+	public void showOrdered(int i) {
+		ArrayList<Song> orderedList = songArr;
+
+		Collections.sort(orderedList, (song1, song2) -> {
+			return (int) (song2.getViewsNumber() - song1.getViewsNumber());
+		});
 
 		for (Song s : orderedList) {
 			System.out.println(s.toString());
