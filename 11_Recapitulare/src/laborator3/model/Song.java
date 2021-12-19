@@ -32,6 +32,13 @@ public class Song {
 		return viewsNumber;
 	}
 
+	public boolean contains(Song obj) {
+		if (this.getName() == obj.getName())
+			return true;
+		else
+			return false;
+	}
+
 	@Override
 	public String toString() {
 		return "Song Name: " + getName() + "\nArtists: " + getSingers().toString() + ";\nPublished in: "

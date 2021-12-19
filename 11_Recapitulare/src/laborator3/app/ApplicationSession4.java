@@ -1,16 +1,16 @@
 package laborator3.app;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 
+import inputOotputClasses.Keyboard;
 import laborator3.model.Singer;
 import laborator3.model.Song;
 
 public class ApplicationSession4 {
 	private ArrayList<Song> songArr = new ArrayList<Song>();
+	private ArrayList<Singer> singerArr = new ArrayList<Singer>();
 
 	private static ApplicationSession4 instance = new ApplicationSession4();
 
@@ -47,16 +47,20 @@ public class ApplicationSession4 {
 				viewsNumber = initViewsNr(splitter[3].trim());
 
 				Song song = new Song(name, singers, launchYear, viewsNumber);
+
 				songArr.add(song);
 
-				for (Singer s : singers) {
-					s.addSong(song);
-				}
+				System.out.println();
 
+				for (Singer sr : singerArr) {
+					singerArr.add(sr);
+				}
 			} catch (Exception e) {
+				System.out.println("de ce?");
 				continue;
 			}
 		}
+
 	}
 
 	private long initViewsNr(String string) throws Exception {
@@ -114,17 +118,33 @@ public class ApplicationSession4 {
 		}
 	}
 
-	public void showDescendentByViews() {
+	public void showDescendentByViews(int i) {
 		ArrayList<Song> orderedList = songArr;
-		
-		Collections.sort(orderedList,(song1,song2)-> {
+
+		if (i == 1) {
+			Collections.sort(orderedList, (song1, song2) -> {
+				return (int) (song1.getViewsNumber() - song2.getViewsNumber());
+			});
+		}
+
+		if (i == -1) {
+			Collections.sort(orderedList, (song1, song2) -> {
 				return (int) (song2.getViewsNumber() - song1.getViewsNumber());
 			});
+		}
+
 		for (Song s : orderedList) {
 			System.out.println(s.toString());
 		}
+	}
+
+	public void showSingerSongs() {
+		Keyboard keyboard = new Keyboard();
+		keyboard.getMessage("Insert Singer's Name");
+
+		for (Song song : songArr) {
+
 		}
+	}
 
 }
-
-
