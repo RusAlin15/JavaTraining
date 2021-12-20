@@ -33,11 +33,8 @@ public class ApplicationSession4 {
 				isValidLine(line);
 
 				Song song = constructSong(line);
-				songArr.add(song);
-				// store(song);
-				for (Singer singer : song.getSingers()) {
-					singer.addSong(song);
-				}
+
+				store(song);
 
 			} catch (Exception e) {
 				continue;
@@ -48,16 +45,24 @@ public class ApplicationSession4 {
 
 	private void store(Song song) {
 
+		if (songArr.size() == 0) {
+			songArr.add(song);
+			addSongToSinger(song);
+		}
+
 		for (Song so : songArr) {
 			if (so.equals(song)) {
-			} else {
-				System.out.println("dublura");
-
-				for (Singer singer : song.getSingers()) {
-					singer.addSong(song);
-				}
+				return;
 			}
+		}
 
+		songArr.add(song);
+		addSongToSinger(song);
+	}
+
+	private void addSongToSinger(Song song) {
+		for (Singer singer : song.getSingers()) {
+			singer.addSong(song);
 		}
 	}
 
