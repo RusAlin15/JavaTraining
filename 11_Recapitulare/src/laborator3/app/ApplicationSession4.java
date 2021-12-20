@@ -4,7 +4,13 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 
+import javax.naming.InvalidNameException;
+
 import inputOotputClasses.Keyboard;
+import laborator3.exceptions.InvalidFileLineException;
+import laborator3.exceptions.InvalidSingerException;
+import laborator3.exceptions.InvalidViewsNumberException;
+import laborator3.exceptions.InvalidYearException;
 import laborator3.exceptions.SingerNotFoundException;
 import laborator3.model.Singer;
 import laborator3.model.Song;
@@ -17,10 +23,6 @@ public class ApplicationSession4 {
 
 	public static ApplicationSession4 getInstance() {
 		return instance;
-	}
-
-	public ArrayList<Song> getSongArr() {
-		return songArr;
 	}
 
 	public void init(ArrayList<String> extractor) {
@@ -67,7 +69,8 @@ public class ApplicationSession4 {
 		}
 	}
 
-	private Song constructSong(String line) throws Exception {
+	private Song constructSong(String line)
+			throws InvalidViewsNumberException, InvalidYearException, InvalidSingerException, InvalidNameException {
 		String[] splitter;
 		String name;
 		ArrayList<Singer> singers;
@@ -85,24 +88,22 @@ public class ApplicationSession4 {
 		return song;
 	}
 
-	private void isValidLine(String line) throws Exception {
+	private void isValidLine(String line) throws InvalidFileLineException {
 		if (line == "" || line == null)
-			throw new Exception();
+			throw new InvalidFileLineException("Invalid line into file!");
 	}
 
-	private long initViewsNr(String string) throws Exception {
-		// Future validations to be added!!!
-
+	private long initViewsNr(String string) throws InvalidViewsNumberException {
 		long viewNr;
 		viewNr = Long.parseLong(string);
 		if (viewNr < 0) {
-			throw new Exception();
+			throw new InvalidViewsNumberException("Invalid YouTube views number!!");
 		}
 		return viewNr;
 	}
 
 	@SuppressWarnings("deprecation")
-	private int initLauncYear(String string) throws Exception {
+	private int initLauncYear(String string) throws InvalidYearException {
 		// Future validations to be added!!!
 
 		Date date = new Date();
@@ -111,11 +112,11 @@ public class ApplicationSession4 {
 		if (year > 1800 && year <= (date.getYear() + 1900)) {
 			return year;
 		} else {
-			throw new Exception();
+			throw new InvalidYearException("Invalid Year!");
 		}
 	}
 
-	private ArrayList<Singer> initSingers(String string) throws Exception {
+	private ArrayList<Singer> initSingers(String string) throws InvalidSingerException {
 
 		ArrayList<Singer> singersList = new ArrayList<Singer>();
 		Singer singer;
@@ -123,19 +124,34 @@ public class ApplicationSession4 {
 		singers = string.split("&|/");
 
 		if (singers == null) {
-			throw new Exception();
-		}
-		for (String name : singers) {
-			singer = new Singer(name.trim());
-			singersList.add(singer);
+			throw new InvalidSingerException("Invalid Singer!");
 		}
 
+		for (String name : singers) {
+
+			try {
+				singer = returnSingerIfExist(name.trim());
+				singersList.add(singer);
+			} catch (SingerNotFoundException e) {
+				singer = new Singer(name.trim());
+				singersList.add(singer);
+				singerArr.add(singer);
+			}
+		}
 		return singersList;
 	}
 
-	private String initName(String string) throws Exception {
+	private Singer returnSingerIfExist(String name) throws SingerNotFoundException {
+		for (Singer singer : singerArr) {
+			if (singer.getName().equalsIgnoreCase(name))
+				return singer;
+		}
+		throw new SingerNotFoundException("SingerNotFound");
+	}
+
+	private String initName(String string) throws InvalidNameException {
 		if (string == null) {
-			throw new Exception();
+			throw new InvalidNameException("Invalid Name!!");
 		}
 		return string;
 	}
@@ -173,24 +189,15 @@ public class ApplicationSession4 {
 	public void showSingerSongs() {
 		Keyboard keyboard = new Keyboard();
 		String name = keyboard.getMessage("Insert Singer's Name");
-
 		try {
-			Singer singer = returnSingerByName(name);
+			Singer singer = returnSingerIfExist(name);
+			System.out.println("All songs by : " + singer.toString() + "\n");
+			System.out.println(singer.toString(2));
 
-			System.out.println("Singer");
+			return;
 		} catch (SingerNotFoundException e) {
-			e.printStackTrace();
+			System.out.println("Please insert a valid artist name!");
 		}
-	}
-
-	private Singer returnSingerByName(String name) throws SingerNotFoundException {
-		for (Singer singer : singerArr) {
-			System.out.println("ac");
-			if (singer.getName().equals(name)) {
-				return singer;
-			}
-		}
-		throw new SingerNotFoundException("Singer not found");
 	}
 
 }

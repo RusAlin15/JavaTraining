@@ -57,34 +57,39 @@ public class Song {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
+
 		Song other = (Song) obj;
-		if (launchYear != other.launchYear)
-			return false;
+
 		if (name == null) {
 			if (other.name != null)
 				return false;
-		}
-		if (singers == null) {
-			if (other.singers != null)
-				return false;
-		} else if (equalSingers(other))
+		} else if (!name.equals(other.name))
 			return false;
-		return true;
-	}
 
-	private boolean equalSingers(Song other) {
-		for (Singer s : singers) {
+		if (launchYear != other.launchYear)
+			return false;
+
+		if (viewsNumber != other.viewsNumber)
+			return false;
+
+		for (Singer s : this.singers) {
 			if (!other.singers.contains(s)) {
 				return false;
 			}
 		}
+
 		return true;
+
 	}
 
 	@Override
 	public String toString() {
 		return "Song Name: " + getName() + "\nArtists: " + getSingers().toString() + ";\nPublished in: "
 				+ getLaunchYear() + "; Youtube views: " + getViewsNumber() + "\n";
+	}
+
+	public boolean existSingerByName(String name2) {
+		return singers.contains(name);
 	}
 
 }
