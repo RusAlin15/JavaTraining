@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Date;
 
 import inputOotputClasses.Keyboard;
+import laborator3.exceptions.SingerNotFoundException;
 import laborator3.model.Singer;
 import laborator3.model.Song;
 
@@ -171,11 +172,25 @@ public class ApplicationSession4 {
 
 	public void showSingerSongs() {
 		Keyboard keyboard = new Keyboard();
-		keyboard.getMessage("Insert Singer's Name");
+		String name = keyboard.getMessage("Insert Singer's Name");
 
-		for (Song song : songArr) {
+		try {
+			Singer singer = returnSingerByName(name);
 
+			System.out.println("Singer");
+		} catch (SingerNotFoundException e) {
+			e.printStackTrace();
 		}
+	}
+
+	private Singer returnSingerByName(String name) throws SingerNotFoundException {
+		for (Singer singer : singerArr) {
+			System.out.println("ac");
+			if (singer.getName().equals(name)) {
+				return singer;
+			}
+		}
+		throw new SingerNotFoundException("Singer not found");
 	}
 
 }

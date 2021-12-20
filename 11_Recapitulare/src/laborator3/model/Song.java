@@ -63,8 +63,7 @@ public class Song {
 		if (name == null) {
 			if (other.name != null)
 				return false;
-		} else if (!name.equals(other.name))
-			return false;
+		}
 		if (singers == null) {
 			if (other.singers != null)
 				return false;
